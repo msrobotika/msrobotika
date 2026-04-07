@@ -14,11 +14,11 @@ Todo el ecosistema AB-GEN ha sido forjado bajo una filosofía de máxima eficien
 Bajo este estricto límite de hardware, el motor AB-GEN ha sido sometido a pruebas de estrés contra los datasets más exigentes, demostrando su versatilidad topológica en múltiples dominios:
 
 * 🔢 **Fundamentos de Visión (MNIST, Fashion MNIST & SVHN):** Validación de los cimientos. Precisión probada del **97.79%** (Dígitos), **90.17%** (Prendas) y **84.57%** en entornos reales de Street View House Numbers (Google Maps).
-* 🩸 **Diagnóstico Clínico Médico (BloodMNIST):** Adaptación del enjambre al campo clínico, logrando una precisión en test del **87.14%** en la clasificación de células sanguíneas.
+* 🩸 **Diagnóstico Médico (BloodMNIST):** Adaptación del enjambre al campo clínico, logrando una precisión en test del **87.14%** en la clasificación de células sanguíneas.
 * 🛰️ **Teledetección Espacial (EuroSAT):** Clasificación de imágenes satelitales Sentinel-2 para el uso de la tierra con un **73.02%** de precisión topológica.
 * 🚦 **Seguridad Vial (Traffic Violations):** Detección de infracciones de tráfico superando el **82.29%** de precisión en entornos complejos.
-* ⚙️ **Forjado Avanzado (Fase M6):** Desarrollo de módulos experimentales como *"Master M5 (Slow Burn)"* y *"M6 (La Herejía de los Rebeldes)"*, diseñados específicamente para aislar y domar los casos de falsos positivos más rebeldes del dataset.
-* 🌿 **Despliegue Producción B2B (AgroVive):** El hito comercial actual. Diagnóstico de 38 patologías agrícolas con redes ONNX inyectadas en React Native para inferencia offline en milisegundos en el bolsillo del agricultor.
+* ⚙️ **Forjado Avanzado (Fase M6):** Desarrollo de módulos experimentales como *"Master M5 (Slow Burn)"* y *"M6 (La Herejía de los Rebeldes)"*, diseñados para aislar y domar los falsos positivos más complejos.
+* 🌿 **AgroVive (Demostrador Edge AI):** El hito tecnológico actual. Un sistema aplicado de diagnóstico de 38 patologías agrícolas con redes ONNX inyectadas en React Native para inferencia móvil offline en milisegundos.
 
 ---
 
@@ -32,10 +32,18 @@ Bajo este estricto límite de hardware, el motor AB-GEN ha sido sometido a prueb
   <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
 </p>
 
-### 🚀 Repositorios Destacados
-* **🌿 [AgroVive M5 Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard):** Sistema integral y aplicación Edge AI para el escaneo offline de cultivos. *(Proyecto en Producción)*
+### 🚀 Repositorios de Investigación
+* **🌿 [AgroVive M5 Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard):** Demostrador aplicado de Edge AI para el escaneo offline de cultivos. *(Prueba de Concepto Tecnológica)*
 * **⚡ [AB-GEN Green AI](https://github.com/msrobotika/AB-GEN-Green-AI):** Enjambre matemático libre de convoluciones diseñado para un consumo energético ultra-bajo.
 * **👨‍⚕️ [AB-GEN Medical Demo](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.):** Inferencia asimétrica aplicada al entorno clínico.
+
+---
+
+### 📫 Contacto y Demostraciones
+Gran parte del núcleo duro de AB-GEN se mantiene privado por motivos de investigación. Si eres investigador, desarrollador o estás interesado en la arquitectura Edge AI sin convoluciones y quieres **ver demostraciones técnicas más profundas, analizar los resultados o discutir sobre optimización matemática**, no dudes en contactarme:
+
+* 📧 Escríbeme a: **[msarobotika@gmail.com](mailto:msarobotika@gmail.com)**
+* 💼 Conecta conmigo en **[LinkedIn](https://www.linkedin.com/in/abel-moreno-bermejo-71a9a0228)**
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=msrobotika&show_icons=true&theme=radical" alt="Estadísticas de GitHub de Abel" />
