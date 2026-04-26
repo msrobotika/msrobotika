@@ -1,35 +1,47 @@
-🌿 Abel Moreno Bermejo | AI Infrastructure & Green AI Researcher
-Bridging the gap between high-performance autonomous agents and sustainable computing.
+# Abel Moreno Bermejo
+**AI Infrastructure & Sustainable Computing Researcher**
 
-I don't just use AI; I build the systems that make AI sustainable, autonomous, and efficient. My focus is on reducing the computational footprint of intelligence without sacrificing reasoning power.
+ la intersección entre la autonomía de los agentes de IA y la eficiencia energética del hardware. Mi enfoque se centra en el desarrollo de sistemas que maximicen la capacidad de razonamiento reduciendo la huella computacional.
 
-🛠️ The Ecosystem: The AB-Suite
-I have developed a vertical stack of AI tools that demonstrate the full lifecycle of an efficient intelligence system:
+---
 
-1. AB-CODE 🚀 (The Application Layer)
-Autonomous Software Engineer. A local-first agent that implements Semantic Vector Memory and Dynamic Model Routing to modify codebases in real-time.
+## 🏗️ Ecosistema de Desarrollo (AB-Suite)
 
-Key Tech: RAG, Tool-Augmented Generation (TAG), Local LLMs (Ollama).
-2. AB-AGENT-Core 🤖 (The Orchestration Layer)
-The Autonomous Green Coder. The foundational engine that implements the "Plan-Execute-Verify" loop, designed for edge computing and low-resource hardware.
+He diseñado una arquitectura vertical que abarca desde la optimización del modelo hasta la ejecución autónoma:
 
-Key Tech: Autonomous Reasoning Core (ARC), Context Compression, Resource-Aware Execution.
-3. AB-GEN 🧬 (The Intelligence Layer)
-Sustainable Model Architecture. A research-driven approach to image classification using a Convolution-Free Geometric-Polynomial Ensemble.
+### ⚡ AB-CODE | Autonomous Software Engineering
+Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos. 
+- **Enfoque:** RAG (Retrieval-Augmented Generation) y Tool-Augmented Generation (TAG).
+- **Objetivo:** Autonomía total en la modificación y análisis de bases de código locales.
 
-Impact: 80.14% accuracy on CIFAR-10 with 92.6% less energy consumption than traditional CNNs.
-Status: Core logic is proprietary; benchmarks and demos are public.
-🧠 Technical Philosophy
-Efficiency > Brute Force: I believe the future of AI isn't in larger models, but in smarter architectures.
-Sovereignty: Local-first AI is the only way to ensure privacy and accessibility.
-Autonomous Evolution: Software should not just be written; it should be capable of evolving through TDD and self-correction.
-📈 Skills & Toolbelt
-Languages: Python (Advanced), JavaScript/Node.js, Bash.
-AI/ML: Vector Embeddings, RAG, Prompt Engineering, Model Optimization, Local LLM Deployment.
-DevOps: Docker, Git (Conventional Commits), TDD, CI/CD logic.
-📫 Get in touch
-If you are interested in Green AI, Autonomous Systems, or the future of Edge Intelligence, let's connect.
+### 🤖 AB-AGENT-Core | Autonomous Reasoning Framework
+Núcleo de orquestación basado en el ciclo *Plan-Execute-Verify*.
+- **Enfoque:** Computación sostenible y ejecución en entornos de recursos limitados (Edge Computing).
+- **Objetivo:** Implementar un razonamiento recursivo eficiente que evite la redundancia de tokens.
 
-[LinkedIn] | [YouTube - AI Demos] | [Email]
+### 🧬 AB-GEN | Sustainable Model Architecture
+Investigación en arquitecturas de clasificación de imágenes sin convoluciones.
+- **Logro Técnico:** Reducción del 92.6% en el consumo energético manteniendo una precisión del 80.14% en CIFAR-10.
+- **Estado:** Propiedad intelectual reservada; benchmarks y demostraciones disponibles en canales oficiales.
 
-"Precision is born from architectural optimization, not from brute force."
+---
+
+## 🛠️ Stack Técnico & Especialidades
+
+- **Inteligencia Artificial:** Arquitecturas de Agentes, Memoria Vectorial, Optimización de Modelos Locales (Ollama), Prompt Engineering avanzado.
+- **Ingeniería de Software:** Python (Sistemas), JavaScript/Node.js, Docker, TDD, Git Workflow Profesional.
+- **Filosofía de Diseño:** *Sovereign AI* (IA Soberana) y *Green Computing* (Computación Sostenible).
+
+---
+
+## 📈 Visión Técnica
+El futuro de la IA no reside en el aumento indiscriminado de los parámetros, sino en la optimización de la arquitectura y la eficiencia en el uso de los datos. Mi trabajo busca demostrar que la inteligencia de alto nivel es posible en hardware accesible y sostenible.
+
+---
+
+## 📫 Contacto y Recursos
+- **Demos Técnicas:** [Enlace a YouTube]
+- **Red Profesional:** [Enlace a LinkedIn]
+- **Email:** [Tu Email]
+
+*"La precisión es el resultado de la optimización arquitectónica, no de la fuerza bruta."*
