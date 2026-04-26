@@ -1,50 +1,35 @@
-<h1 align="center">Hola 👋, soy Abel Moreno Bermejo</h1>
-<h3 align="center">⚙️ Creador de la Arquitectura AB-GEN | Especialista en Edge AI & Green Computing</h3>
+🌿 Abel Moreno Bermejo | AI Infrastructure & Green AI Researcher
+Bridging the gap between high-performance autonomous agents and sustainable computing.
 
-<p align="left">
-  Investigador y desarrollador de Inteligencia Artificial. Mi trabajo se centra en el desarrollo de <b>AB-GEN (Quimera Verde)</b>, una arquitectura matemática asimétrica libre de convoluciones. Mi objetivo es llevar la inferencia de Deep Learning directamente al <b>Edge Computing</b> (móviles y hardware de bajos recursos), garantizando latencia cero, funcionamiento 100% offline y una reducción masiva del consumo energético.
-</p>
+I don't just use AI; I build the systems that make AI sustainable, autonomous, and efficient. My focus is on reducing the computational footprint of intelligence without sacrificing reasoning power.
 
----
+🛠️ The Ecosystem: The AB-Suite
+I have developed a vertical stack of AI tools that demonstrate the full lifecycle of an efficient intelligence system:
 
-### 💻 El Laboratorio de Forjado (Green Computing)
-Todo el ecosistema AB-GEN ha sido forjado bajo una filosofía de máxima eficiencia computacional. Demostrando que la precisión nace de la optimización arquitectónica y no de la fuerza bruta, los modelos han sido entrenados en un entorno de bajos recursos: un procesador **Intel Xeon E5-2650 v2** apoyado por una GPU **ASUS GTX 1050 Ti (768 núcleos CUDA)**. 
+1. AB-CODE 🚀 (The Application Layer)
+Autonomous Software Engineer. A local-first agent that implements Semantic Vector Memory and Dynamic Model Routing to modify codebases in real-time.
 
-### 🧪 La Evolución de AB-GEN (I+D y Experimentación)
-Bajo este estricto límite de hardware, el motor AB-GEN ha sido sometido a pruebas de estrés contra los datasets más exigentes, demostrando su versatilidad topológica en múltiples dominios:
+Key Tech: RAG, Tool-Augmented Generation (TAG), Local LLMs (Ollama).
+2. AB-AGENT-Core 🤖 (The Orchestration Layer)
+The Autonomous Green Coder. The foundational engine that implements the "Plan-Execute-Verify" loop, designed for edge computing and low-resource hardware.
 
-* 🔢 **Fundamentos de Visión (MNIST, Fashion MNIST & SVHN):** Validación de los cimientos. Precisión probada del **97.79%** (Dígitos), **90.17%** (Prendas) y **84.57%** en entornos reales de Street View House Numbers (Google Maps).
-* 🩸 **Diagnóstico Médico (BloodMNIST):** Adaptación del enjambre al campo clínico, logrando una precisión en test del **87.14%** en la clasificación de células sanguíneas.
-* 🛰️ **Teledetección Espacial (EuroSAT):** Clasificación de imágenes satelitales Sentinel-2 para el uso de la tierra con un **73.02%** de precisión topológica.
-* 🚦 **Seguridad Vial (Traffic Violations):** Detección de infracciones de tráfico superando el **82.29%** de precisión en entornos complejos.
-* ⚙️ **Forjado Avanzado (Fase M6):** Desarrollo de módulos experimentales como *"Master M5 (Slow Burn)"* y *"M6 (La Herejía de los Rebeldes)"*, diseñados para aislar y domar los falsos positivos más complejos.
-* 🌿 **AgroVive (Demostrador Edge AI):** El hito tecnológico actual. Un sistema aplicado de diagnóstico de 38 patologías agrícolas con redes ONNX inyectadas en React Native para inferencia móvil offline en milisegundos.
+Key Tech: Autonomous Reasoning Core (ARC), Context Compression, Resource-Aware Execution.
+3. AB-GEN 🧬 (The Intelligence Layer)
+Sustainable Model Architecture. A research-driven approach to image classification using a Convolution-Free Geometric-Polynomial Ensemble.
 
----
+Impact: 80.14% accuracy on CIFAR-10 with 92.6% less energy consumption than traditional CNNs.
+Status: Core logic is proprietary; benchmarks and demos are public.
+🧠 Technical Philosophy
+Efficiency > Brute Force: I believe the future of AI isn't in larger models, but in smarter architectures.
+Sovereignty: Local-first AI is the only way to ensure privacy and accessibility.
+Autonomous Evolution: Software should not just be written; it should be capable of evolving through TDD and self-correction.
+📈 Skills & Toolbelt
+Languages: Python (Advanced), JavaScript/Node.js, Bash.
+AI/ML: Vector Embeddings, RAG, Prompt Engineering, Model Optimization, Local LLM Deployment.
+DevOps: Docker, Git (Conventional Commits), TDD, CI/CD logic.
+📫 Get in touch
+If you are interested in Green AI, Autonomous Systems, or the future of Edge Intelligence, let's connect.
 
-### 🛠️ Ecosistema y Arsenal Tecnológico
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/ONNX-005CDB?style=for-the-badge&logo=onnx&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
-</p>
+[LinkedIn] | [YouTube - AI Demos] | [Email]
 
-### 🚀 Repositorios de Investigación
-* **🌿 [AgroVive M5 Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard):** Demostrador aplicado de Edge AI para el escaneo offline de cultivos. *(Prueba de Concepto Tecnológica)*
-* **⚡ [AB-GEN Green AI](https://github.com/msrobotika/AB-GEN-Green-AI):** Enjambre matemático libre de convoluciones diseñado para un consumo energético ultra-bajo.
-* **👨‍⚕️ [AB-GEN Medical Demo](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.):** Inferencia asimétrica aplicada al entorno clínico.
-
----
-
-### 📫 Contacto y Demostraciones
-Gran parte del núcleo duro de AB-GEN se mantiene privado por motivos de investigación. Si eres investigador, desarrollador o estás interesado en la arquitectura Edge AI sin convoluciones y quieres **ver demostraciones técnicas más profundas, analizar los resultados o discutir sobre optimización matemática**, no dudes en contactarme:
-
-* 📧 Escríbeme a: **[msarobotika@gmail.com](mailto:msarobotika@gmail.com)**
-* 💼 Conecta conmigo en **[LinkedIn](https://www.linkedin.com/in/abel-moreno-bermejo-71a9a0228)**
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=msrobotika&show_icons=true&theme=radical" alt="Estadísticas de GitHub de Abel" />
-</p>
+"Precision is born from architectural optimization, not from brute force."
