@@ -40,8 +40,8 @@ El futuro de la IA no reside en el aumento indiscriminado de los parámetros, si
 ---
 
 ## 📫 Contacto y Recursos
-- **Demos Técnicas:** [Enlace a YouTube]
-- **Red Profesional:** [Enlace a LinkedIn]
-- **Email:** [Tu Email]
+- **Demos Técnicas:** [http://www.youtube.com/@MSRobotika]
+- **Red Profesional:** [https://www.linkedin.com/feed/]
+- **Email:** [abelilloseven@gmail.com]
 
 *"La precisión es el resultado de la optimización arquitectónica, no de la fuerza bruta."*
