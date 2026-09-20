@@ -1,47 +1,55 @@
 # Abel Moreno Bermejo
 **AI Infrastructure & Sustainable Computing Researcher**
 
- la intersección entre la autonomía de los agentes de IA y la eficiencia energética del hardware. Mi enfoque se centra en el desarrollo de sistemas que maximicen la capacidad de razonamiento reduciendo la huella computacional.
+Trabajo en la intersección entre autonomía de agentes de IA, eficiencia computacional y sistemas capaces de ejecutarse en hardware accesible. Mi enfoque se centra en desarrollar arquitecturas que reduzcan coste, consumo y dependencia de infraestructura sin renunciar a trazabilidad y capacidad técnica.
 
 ---
 
-## 🏗️ Ecosistema de Desarrollo (AB-Suite)
-
-He diseñado una arquitectura vertical que abarca desde la optimización del modelo hasta la ejecución autónoma:
+## 🏗️ Ecosistema de Desarrollo — AB-Suite
 
 ### ⚡ AB-CODE | Autonomous Software Engineering
-Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos. 
-- **Enfoque:** RAG (Retrieval-Augmented Generation) y Tool-Augmented Generation (TAG).
-- **Objetivo:** Autonomía total en la modificación y análisis de bases de código locales.
+Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos.
+- **Enfoque:** RAG (Retrieval-Augmented Generation), herramientas y automatización del ciclo de desarrollo.
+- **Objetivo:** análisis, modificación y validación de bases de código locales con mínima dependencia externa.
 
 ### 🤖 AB-AGENT-Core | Autonomous Reasoning Framework
-Núcleo de orquestación basado en el ciclo *Plan-Execute-Verify*.
-- **Enfoque:** Computación sostenible y ejecución en entornos de recursos limitados (Edge Computing).
-- **Objetivo:** Implementar un razonamiento recursivo eficiente que evite la redundancia de tokens.
+Núcleo de orquestación basado en ciclos de planificación, ejecución y verificación.
+- **Enfoque:** razonamiento autónomo, ejecución local y eficiencia de recursos.
+- **Objetivo:** construir agentes auditables y útiles en entornos reales, incluidos escenarios Edge.
 
 ### 🧬 AB-GEN | Sustainable Model Architecture
-Investigación en arquitecturas de clasificación de imágenes sin convoluciones.
-- **Logro Técnico:** Reducción del 92.6% en el consumo energético manteniendo una precisión del 80.14% en CIFAR-10.
-- **Estado:** Propiedad intelectual reservada; benchmarks y demostraciones disponibles en canales oficiales.
+Línea de investigación en clasificación visual mediante geometría, análisis espectral y meta-aprendizaje polinómico, sin una arquitectura CNN convencional.
+
+**Resultado interno actualmente bajo reproducción:**
+- CIFAR-10 — **80.14%** registrado para **V24 Slow Burn**.
+- El benchmark energético publicado previamente está siendo sometido a una nueva validación reproducible y comparable antes de considerarse resultado confirmado.
+
+**Estado actual:** auditoría de reproducibilidad, leakage, calibración, inferencia end-to-end, benchmark energético y trazabilidad XAI.
+
+- Repositorio: https://github.com/msrobotika/AB-GEN-Green-AI
+- Hitos y estado de validación: https://github.com/msrobotika/AB-GEN-Green-AI/blob/main/MILESTONES.md
 
 ---
 
 ## 🛠️ Stack Técnico & Especialidades
 
-- **Inteligencia Artificial:** Arquitecturas de Agentes, Memoria Vectorial, Optimización de Modelos Locales (Ollama), Prompt Engineering avanzado.
-- **Ingeniería de Software:** Python (Sistemas), JavaScript/Node.js, Docker, TDD, Git Workflow Profesional.
-- **Filosofía de Diseño:** *Sovereign AI* (IA Soberana) y *Green Computing* (Computación Sostenible).
+- **IA y agentes:** arquitecturas de agentes, memoria vectorial, RAG, modelos locales y evaluación.
+- **Machine Learning:** clasificación, ensembles, reducción dimensional, análisis espectral, métricas y reproducibilidad.
+- **Ingeniería de software:** Python, JavaScript/Node.js, Docker, testing y Git.
+- **Automatización industrial:** PLC, comunicaciones industriales, integración OT/IT y Edge Computing.
+- **Principio de diseño:** resultados medibles, reproducibles y eficientes antes que fuerza bruta computacional.
 
 ---
 
-## 📈 Visión Técnica
-El futuro de la IA no reside en el aumento indiscriminado de los parámetros, sino en la optimización de la arquitectura y la eficiencia en el uso de los datos. Mi trabajo busca demostrar que la inteligencia de alto nivel es posible en hardware accesible y sostenible.
+## 📈 Línea de investigación
+
+La hipótesis de trabajo detrás de AB-Suite es que parte del valor de la IA futura vendrá de arquitecturas mejor diseñadas, no únicamente de aumentar parámetros y consumo. Los proyectos se están estructurando para que los resultados puedan auditarse mediante código, versiones, métricas, pruebas y benchmarks reproducibles.
 
 ---
 
 ## 📫 Contacto y Recursos
-- **Demos Técnicas:** [http://www.youtube.com/@MSRobotika]
-- **Red Profesional:** [https://www.linkedin.com/feed/]
-- **Email:** [abelilloseven@gmail.com]
+- **Demos técnicas:** http://www.youtube.com/@MSRobotika
+- **GitHub:** https://github.com/msrobotika
+- **Email:** abelilloseven@gmail.com
 
-*"La precisión es el resultado de la optimización arquitectónica, no de la fuerza bruta."*
+> Los resultados experimentales se distinguen explícitamente entre *reportados* y *reproducidos/validados* hasta completar su evidencia técnica.
