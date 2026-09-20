@@ -28,6 +28,7 @@ Línea de investigación en clasificación visual mediante geometría, análisis
 
 - Repositorio: https://github.com/msrobotika/AB-GEN-Green-AI
 - Hitos y estado de validación: https://github.com/msrobotika/AB-GEN-Green-AI/blob/main/MILESTONES.md
+- Portal público de investigación: https://msrobotikaabgenresearch.wordpress.com/
 
 ---
 
@@ -48,6 +49,7 @@ La hipótesis de trabajo detrás de AB-Suite es que parte del valor de la IA fut
 ---
 
 ## 📫 Contacto y Recursos
+- **Portal de investigación:** https://msrobotikaabgenresearch.wordpress.com/
 - **Demos técnicas:** http://www.youtube.com/@MSRobotika
 - **GitHub:** https://github.com/msrobotika
 - **Email:** abelilloseven@gmail.com
