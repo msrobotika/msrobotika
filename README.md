@@ -10,9 +10,28 @@ Esta es una **rama pública temporal** del perfil MS ROBOTIKA, con código fuent
 
 Aplicación original para inspeccionar imágenes y cámaras locales mediante umbrales, segmentación y componentes conectados. Motor matemático propio en JavaScript sin bibliotecas de visión artificial ni servicios en la nube. El análisis se ejecuta **en el navegador**. El servidor Python solo entrega el frontend y puede obtener bajo autorización explícita fotogramas de cámaras IP privadas.
 
-![AB-Vision Inspector funcionando: cuatro defectos identificados](docs/screenshots/vision-dashboard.png)
+## Capturas reales de la aplicación
 
-[Captura móvil real](docs/screenshots/vision-mobile.png) · [Auditoría de calibración](docs/screenshots/vision-calibracion-auditada.png) · [Bloqueo por pérdida de patrón](docs/screenshots/vision-auditoria-bloqueada.png) · [Publicar en GitHub](PUBLISH_GITHUB.md) · [Hoja de ruta](ROADMAP.md) · [Seguridad](SECURITY.md) · [Licencia MIT](LICENSE)
+**Inspección en escritorio — detección de cuatro defectos**
+
+![AB-Vision Inspector: cuatro defectos identificados en Chromium](docs/screenshots/vision-dashboard.png)
+
+**Calibración dimensional verificada con patrón sintético**
+
+![AB-Vision Inspector: patrón auditado y medición dimensional](docs/screenshots/vision-calibracion-auditada.png)
+
+**Auditoría de cámara: detección de referencia ausente y bloqueo SIN MEDICIÓN**
+
+![AB-Vision Inspector: bloqueo por pérdida del patrón de referencia](docs/screenshots/vision-auditoria-bloqueada.png)
+
+**Adaptación a pantallas móviles**
+
+![AB-Vision Inspector: interfaz móvil real](docs/screenshots/vision-mobile.png)
+
+Las capturas son de la aplicación original funcionando en Chromium con una
+muestra sintética; no constituyen certificación metrológica ni prueban
+exactitud sobre cámaras físicas. [Pruebas reproducibles](tests/smoke_browser.py)
+y [GitHub Actions de capturas](.github/workflows/vision-screenshots.yml). · [Publicar en GitHub](PUBLISH_GITHUB.md) · [Hoja de ruta](ROADMAP.md) · [Seguridad](SECURITY.md) · [Licencia MIT](LICENSE)
 
 ## Abrir sin instalar nada (edición portable HTML)
 
@@ -21,7 +40,7 @@ El archivo [**AB-Vision-Inspector-PORTABLE.html**](AB-Vision-Inspector-PORTABLE.
 ## Arranque sencillo
 
 - Windows: descomprime el proyecto y abre `AB-Vision-Inspector.bat` (requiere Python 3.11 o superior).
-- Linux: `sh AB-Vision-Inspector.sh` o `python3 serve.py`.
+- Linux: `python3 serve.py`.
 - Multiplataforma: `python serve.py`; se abre `http://127.0.0.1:<puerto>/` en el navegador. Con `python serve.py --no-browser` imprime la URL sin abrirla.
 - El **código fuente no es un EXE** ni un instalador. No necesita `pip install` para funcionar; no necesita conexión a Internet.
 - Pulsa **Cargar demostración** y después **Analizar imagen**. La prueba sintética incluida contiene cuatro defectos oscuros y el resultado predeterminado es **NOK**. Si cambias «máximo de defectos permitidos» a `5`, el resultado será **OK**.
