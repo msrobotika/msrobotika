@@ -1,0 +1,42 @@
+name: AB-Vision Inspector - pruebas completas
+
+on:
+  push:
+    branches: [AB-Vision-Inspector-v0.3]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Tests del motor de visión
+        run: node --test tests/core.test.js
+      - name: Test de conexión y seguridad de cámaras IP
+        run: python -m unittest discover -s tests -p 'test_ip_camera.py' -v
+      - name: Dependencia de prueba del navegador (no de ejecución)
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
+      - name: Interfaz, calibración y capturas reales
+        run: python -m unittest discover -s tests -p 'smoke_browser.py' -v
+      - name: Validar que no hay cambios inesperados en portable
+        run: |
+          python tools_build_portable.py
+          git diff --exit-code -- AB-Vision-Inspector-PORTABLE.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AB-Vision-Inspector-verificacion-visual
+          path: docs/screenshots/*.png
+          if-no-files-found: error
