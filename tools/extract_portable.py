@@ -1,27 +1,34 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Extrae los componentes originales del portable, preservando el código exacto."""
+"""Extrae los fuentes exactos del HTML portable (operación reproducible)."""
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-portable = (ROOT / "AB-Vision-Inspector-PORTABLE.html").read_text(encoding="utf-8")
-assert portable.count("<style>") == portable.count("</style>") == 1
-assert portable.count("<script>") == portable.count("</script>") == 1
-style = portable.split("<style>", 1)[1].split("</style>", 1)[0]
-javascript = portable.split("<script>", 1)[1].split("</script>", 1)[0]
-boundary = javascript.find("/* SPDX-License-Identifier: MIT", 3)
-if boundary <= 0 or "window.ABVisionCore" not in javascript:
-    raise ValueError("No se reconoce el formato del portable: abortar extracción.")
-core, app = javascript[:boundary], javascript[boundary:]
-assert "window.ABVisionCore" in core and "ABVisionCore" in app
-ROOT.joinpath("src").mkdir(exist_ok=True)
-(ROOT / "src" / "style.css").write_text(style, encoding="utf-8")
-(ROOT / "src" / "vision-core.js").write_text(core, encoding="utf-8")
-(ROOT / "src" / "app.js").write_text(app, encoding="utf-8")
-html = portable.replace("<style>" + style + "</style>",
-                        '<link rel="stylesheet" href="src/style.css">')
-html = html.replace("<script>" + javascript + "</script>",
-                    '<script src="src/vision-core.js" defer></script>'
-                    '<script src="src/app.js" defer></script>')
-(ROOT / "index.html").write_text(html, encoding="utf-8")
-print("Extraídos index.html, estilos, motor de visión y aplicación JS")
+root = Path(__file__).resolve().parent.parent
+portable = (root / "AB-Vision-Inspector-PORTABLE.html").read_text(encoding="utf-8")
+assert portable.count("<style>\n") == portable.count("\n</style>") == 1
+assert portable.count("<script>\n") == portable.count("\n</script>") == 1
+css = portable.split("<style>\n", 1)[1].split("\n</style>", 1)[0]
+javascript = portable.split("<script>\n", 1)[1].split("\n</script>", 1)[0]
+boundary = javascript.find("\n/* SPDX-License-Identifier: MIT", 30)
+if boundary < 0:
+    raise ValueError("No se pudo separar el motor de la interfaz")
+core, app = javascript[:boundary], javascript[boundary + 1:]
+if "root.ABVisionCore" not in core or "window.ABVisionCore" not in app:
+    raise ValueError("Estructura inesperada del motor: extracción cancelada")
+index = portable.replace("<style>\n" + css + "\n</style>",
+    '<link rel="stylesheet" href="/src/style.css">')
+index = index.replace("<script>\n" + javascript + "\n</script>", "")
+index = index.replace(' — MS ROBOTIKA · Sin instalación</title>',
+    ' — MS ROBOTIKA</title><link rel="icon" href="/favicon.svg">')
+index = index.replace("</head>",
+    '<script src="/src/vision-core.js" defer></script>'
+    '<script src="/src/app.js" defer></script></head>')
+(root / "src").mkdir(exist_ok=True)
+for path, content in [
+    (root / "index.html", index),
+    (root / "src/style.css", css),
+    (root / "src/vision-core.js", core),
+    (root / "src/app.js", app),
+]:
+    path.write_text(content, encoding="utf-8")
+    print("Verificado:", path.relative_to(root), len(content))
