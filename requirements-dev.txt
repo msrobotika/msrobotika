@@ -1,0 +1,2 @@
+# Solo para tests visuales y screenshots. Sin dependencias de runtime.
+playwright>=1.55,<2
