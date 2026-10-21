@@ -1,57 +1,49 @@
-# Abel Moreno Bermejo
-**AI Infrastructure & Sustainable Computing Researcher**
+# AB-Vision Inspector · MS ROBOTIKA
 
-Trabajo en la intersección entre autonomía de agentes de IA, eficiencia computacional y sistemas capaces de ejecutarse en hardware accesible. Mi enfoque se centra en desarrollar arquitecturas que reduzcan coste, consumo y dependencia de infraestructura sin renunciar a trazabilidad y capacidad técnica.
+**Software gratuito y open source · MIT · v0.3 alfa de laboratorio**
 
----
+Aplicación original de inspección visual local en español. Esta **rama de distribución temporal** permite acceder al programa y a sus capturas mientras se crea un repositorio independiente llamado `msrobotika/AB-Vision-Inspector`. No afecta a las ramas principales de otros proyectos.
 
-## 🏗️ Ecosistema de Desarrollo — AB-Suite
+## Ver y descargar el programa
 
-### ⚡ AB-CODE | Autonomous Software Engineering
-Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos.
-- **Enfoque:** RAG (Retrieval-Augmented Generation), herramientas y automatización del ciclo de desarrollo.
-- **Objetivo:** análisis, modificación y validación de bases de código locales con mínima dependencia externa.
+[**AB-Vision Inspector — aplicación HTML portátil**](AB-Vision-Inspector-PORTABLE.html) · [**Descargar toda esta rama como ZIP**](https://github.com/msrobotika/msrobotika/archive/refs/heads/AB-Vision-Inspector-v0.3.zip)
 
-### 🤖 AB-AGENT-Core | Autonomous Reasoning Framework
-Núcleo de orquestación basado en ciclos de planificación, ejecución y verificación.
-- **Enfoque:** razonamiento autónomo, ejecución local y eficiencia de recursos.
-- **Objetivo:** construir agentes auditables y útiles en entornos reales, incluidos escenarios Edge.
+Descarga el HTML y ábrelo con Chrome, Firefox o Edge. No necesita instalar Python. **La edición portátil no admite cámara IP a través del proxy local**; para esa función se necesita la edición de servidor incluida en el paquete de desarrollo completo. Las cámaras USB compatibles con los permisos del navegador sí pueden utilizarse.
 
-### 🧬 AB-GEN | Sustainable Model Architecture
-Línea de investigación en clasificación visual mediante geometría, análisis espectral y meta-aprendizaje polinómico, sin una arquitectura CNN convencional.
+## Capturas reales de Chromium
 
-**Resultado interno actualmente bajo reproducción:**
-- CIFAR-10 — **80.14%** registrado para **V24 Slow Burn**.
-- El benchmark energético publicado previamente está siendo sometido a una nueva validación reproducible y comparable antes de considerarse resultado confirmado.
+Se obtienen con [un script reproducible](tools/capture_real_screenshots.py) que ejecuta el HTML real, comprueba cuatro defectos en una imagen sintética, verifica la calibración y provoca una pérdida de patrón. Se generan y publican por [GitHub Actions](.github/workflows/vision-screenshots.yml). Si una imagen aún no aparece, la generación automática está pendiente o ha fallado; **no son maquetas**.
 
-**Estado actual:** auditoría de reproducibilidad, leakage, calibración, inferencia end-to-end, benchmark energético y trazabilidad XAI.
+### Inspección de piezas — 4 defectos
 
-- Repositorio: https://github.com/msrobotika/AB-GEN-Green-AI
-- Hitos y estado de validación: https://github.com/msrobotika/AB-GEN-Green-AI/blob/main/MILESTONES.md
-- Portal público de investigación: https://msrobotikaabgenresearch.wordpress.com/
+![AB-Vision Inspector: inspección real en escritorio](docs/screenshots/vision-dashboard.png)
 
----
+### Calibración dimensional auditada
 
-## 🛠️ Stack Técnico & Especialidades
+![Auditoría dimensional verificada durante una prueba sintética](docs/screenshots/vision-calibracion-auditada.png)
 
-- **IA y agentes:** arquitecturas de agentes, memoria vectorial, RAG, modelos locales y evaluación.
-- **Machine Learning:** clasificación, ensembles, reducción dimensional, análisis espectral, métricas y reproducibilidad.
-- **Ingeniería de software:** Python, JavaScript/Node.js, Docker, testing y Git.
-- **Automatización industrial:** PLC, comunicaciones industriales, integración OT/IT y Edge Computing.
-- **Principio de diseño:** resultados medibles, reproducibles y eficientes antes que fuerza bruta computacional.
+### Bloqueo preventivo de medición
 
----
+![SIN MEDICIÓN tras pérdida de referencia](docs/screenshots/vision-auditoria-bloqueada.png)
 
-## 📈 Línea de investigación
+### Diseño adaptable a móvil
 
-La hipótesis de trabajo detrás de AB-Suite es que parte del valor de la IA futura vendrá de arquitecturas mejor diseñadas, no únicamente de aumentar parámetros y consumo. Los proyectos se están estructurando para que los resultados puedan auditarse mediante código, versiones, métricas, pruebas y benchmarks reproducibles.
+![Interfaz móvil real de AB-Vision Inspector](docs/screenshots/vision-mobile.png)
 
----
+## Funciones de esta edición
 
-## 📫 Contacto y Recursos
-- **Portal de investigación:** https://msrobotikaabgenresearch.wordpress.com/
-- **Demos técnicas:** http://www.youtube.com/@MSRobotika
-- **GitHub:** https://github.com/msrobotika
-- **Email:** abelilloseven@gmail.com
+- Importación local de imágenes, webcam USB cuando el navegador lo permita, modo demostración.
+- Detección de defectos con segmentación y componentes conectados en JavaScript propio.
+- Clasificación visual OK/NOK, configuraciones y recetas, ROI, modo de inspección repetida.
+- Medición aproximada en mm por referencias física cian y magenta, dimensiones nominales y tolerancias.
+- Revalidación del patrón en cada fotograma; bloqueo `SIN MEDICIÓN` si falla la auditoría.
+- Historial de sesión y exportación de CSV, JSON e imágenes anotadas.
 
-> Los resultados experimentales se distinguen explícitamente entre *reportados* y *reproducidos/validados* hasta completar su evidencia técnica.
+**Metrología:** dos referencias permiten detectar ciertas derivas, pero no compensan por sí mismas distorsión de lente, perspectiva o incertidumbre total. Esta alfa no es un instrumento certificado y no debe controlar mecanismos de rechazo ni funciones de seguridad de maquinaria. Requiere contrastes físicos y validación metrológica antes de usos productivos.
+
+## Autoría, licencia y seguridad
+
+Copyright © 2026 MS ROBOTIKA. [MIT](LICENSE). Los algoritmos, diseño e interfaz se han implementado para este proyecto, sin reutilizar código de aplicaciones comerciales. El código ha sido preparado con asistencia de IA. No se garantiza ausencia de patentes, reclamaciones ni certificación industrial.
+
+Para una publicación completa del proyecto (servidor de cámara IP, pruebas y recursos) se debe migrar el paquete de desarrollo a su futuro repositorio propio. La edición HTML disponible aquí **no contiene el proxy JPEG/MJPEG**.
+
