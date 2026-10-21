@@ -78,7 +78,7 @@ def main():
             raise AssertionError("JavaScript: " + "; ".join(errors))
         browser.close()
     for path in OUT.glob("vision-*.png"):
-        assert path.read_bytes().startswith(b"\\x89PNG\\r\\n\\x1a\\n")
+        assert path.read_bytes().startswith(bytes((137,80,78,71,13,10,26,10)))
         print(f"Captura verificada: {path} ({path.stat().st_size} bytes)")
 
 
