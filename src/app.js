@@ -5,6 +5,9 @@
 'use strict';
 const E=window.ABGrafcet, $=id=>document.getElementById(id), S='http://www.w3.org/2000/svg';
 const PROJECT_KEY='ab-grafcet-studio-project-v1';
+const MAX_UNDO=40,MAX_BACK=200;
+const copy=x=>JSON.parse(JSON.stringify(x));
+let undoStack=[],redoStack=[],simHistory=[];
 let model=E.sample(),state=E.initialState(model),chosen={type:'stage',id:'E1'},events=[],timer=null,drag=null;
 const stamp=()=>new Date().toLocaleTimeString('es-ES',{hour12:false});
 function notify(message,kind='info'){$('notice').textContent=message;$('notice').classList.toggle('error',kind==='error');}
@@ -13,9 +16,29 @@ function log(message,kind='info',detail=''){
 }
 function persist(){try{localStorage.setItem(PROJECT_KEY,JSON.stringify(model));}catch(_){/* almacenamiento deshabilitado */}}
 function stop(){if(timer){clearInterval(timer);timer=null;$('run').textContent='▷ Auto · 1s';$('run').classList.remove('primary');}}
-function replaceModel(next,notice){stop();E.validateModel(next);model=JSON.parse(JSON.stringify(next));state=E.initialState(model);chosen={type:'stage',id:model.stages[0].id};persist();renderAll();log('Proyecto inicializado','info',notice);notify(notice);}
+function replaceModel(next,notice){stop();E.validateModel(next);undoStack=[];redoStack=[];simHistory=[];model=copy(next);state=E.initialState(model);chosen={type:'stage',id:model.stages[0].id};persist();renderAll();log('Proyecto inicializado','info',notice);notify(notice);}
 function saveEdited(next,message){
-  try{E.validateModel(next);model=next;state=E.initialState(model);persist();renderAll();log(message,'info','La simulación se reinicia después de modificar el esquema.');notify(message);}catch(ex){notify(ex.message,'error');}
+  try{E.validateModel(next);stop();undoStack.push(copy(model));if(undoStack.length>MAX_UNDO)undoStack.shift();redoStack=[];simHistory=[];model=next;state=E.initialState(model);persist();renderAll();log(message,'info','La simulación se reinicia después de modificar el esquema.');notify(message);}catch(ex){notify(ex.message,'error');}
+}
+function undoEdit(direction){
+  stop();const source=direction==='undo'?undoStack:redoStack;
+  const dest=direction==='undo'?redoStack:undoStack;
+  if(!source.length){notify('No quedan modificaciones que '+(direction==='undo'?'deshacer.':'rehacer.'));return;}
+  dest.push(copy(model));if(dest.length>MAX_UNDO)dest.shift();
+  model=source.pop();state=E.initialState(model);simHistory=[];
+  chosen={type:'stage',id:model.stages[0].id};persist();renderAll();
+  $('sim-message').textContent='Esquema restaurado; simulación reiniciada.';
+  log(direction==='undo'?'Modificación deshecha':'Modificación rehecha');
+  notify(direction==='undo'?'Se restauró la versión anterior del esquema.':'Modificación rehecha correctamente.');
+}
+function backStep(){
+  stop();if(!simHistory.length){notify('No hay más ciclos que retroceder.');return;}
+  const snapshot=simHistory.pop();state=snapshot.state;model.inputs=snapshot.inputs;
+  persist();renderDiagram();renderMetrics();renderOutputs();renderInputs();renderTransitionTable();
+  $('sim-message').textContent='Restaurado el estado anterior al último avance.';
+  $('sim-message').classList.remove('warn');
+  log('Ciclo anterior recuperado','info','Marcado: '+state.active.join(', '));
+  notify('Simulación retrocedida un ciclo, con sus entradas anteriores.');
 }
 function node(tag,attrs={},txt){const x=document.createElementNS(S,tag);for(const [k,v] of Object.entries(attrs))x.setAttribute(k,String(v));if(txt!==undefined)x.textContent=String(txt);return x;}
 function html(tag,txt,cls){const x=document.createElement(tag);if(txt!==undefined)x.textContent=String(txt);if(cls)x.className=cls;return x;}
@@ -85,8 +108,9 @@ function onDrag(event){if(!drag)return;const svg=$('diagram'),m=svg.getScreenCTM
 }
 function endDrag(event){if(!drag)return;const d=drag;drag=null;if(!d.moved)return;const svg=$('diagram'),m=svg.getScreenCTM();if(!m)return;
   const dx=(event.clientX-d.mouseX)/(m.a||1),dy=(event.clientY-d.mouseY)/(m.d||1);
+  undoStack.push(copy(model));if(undoStack.length>MAX_UNDO)undoStack.shift();redoStack=[];simHistory=[];
   const s=byId(d.id);s.x=Math.round(Math.max(70,Math.min(800,d.x0+dx))/10)*10;s.y=Math.round(Math.max(65,Math.min(2750,d.y0+dy))/10)*10;
-  persist();renderDiagram();log('Etapa recolocada','info',`${d.id} → (${s.x}, ${s.y})`);
+  persist();renderDiagram();renderTransitionTable();log('Etapa recolocada','info',`${d.id} → (${s.x}, ${s.y})`);
 }
 function select(type,id){chosen={type,id};renderDiagram();renderInspector();}
 function field(label,id,value,help='',opts={}){const l=html('label',label);l.htmlFor=id;const f=opts.textarea?html('textarea'):html('input');f.id=id;f.value=value;if(!opts.textarea)f.type='text';f.maxLength=opts.maxLength||256;l.append(f);if(help)l.append(html('small',help,'field-hint'));return l;}
@@ -130,13 +154,28 @@ function renderInputs(){const target=$('inputs');target.replaceChildren();
   const names=Object.keys(model.inputs).sort();if(!names.length)target.append(html('div','Este proyecto no utiliza entradas.','empty'));
   for(const name of names){const btn=html('button',undefined,'signal-row'+(model.inputs[name]?' on':''));btn.type='button';btn.setAttribute('aria-pressed',String(model.inputs[name]));btn.setAttribute('aria-label',`${name}: ${model.inputs[name]?'activo':'inactivo'}`);
     btn.append(html('span',name,'signal-label'),html('span',model.inputs[name]?'ON':'OFF','state'),html('span',undefined,'switch'));
-    btn.addEventListener('click',()=>{model.inputs[name]=!model.inputs[name];persist();renderInputs();renderDiagram();log('Entrada modificada','info',name+' = '+(model.inputs[name]?'1':'0'));notify(`${name}: ${model.inputs[name]?'ACTIVADA':'DESACTIVADA'}. Pulsa avanzar para evaluar las transiciones.`);});
+    btn.addEventListener('click',()=>{model.inputs[name]=!model.inputs[name];persist();renderInputs();renderDiagram();renderTransitionTable();log('Entrada modificada','info',name+' = '+(model.inputs[name]?'1':'0'));notify(`${name}: ${model.inputs[name]?'ACTIVADA':'DESACTIVADA'}. Pulsa avanzar para evaluar las transiciones.`);});
     target.append(btn);
   }
 }
 function renderOutputs(){const target=$('outputs');target.replaceChildren();const all=[...new Set(model.stages.flatMap(s=>s.actions))].sort();
   if(!all.length)target.append(html('div','No hay salidas asociadas a las etapas.','empty'));
   for(const name of all){const on=state.outputs.includes(name);target.append(html('span',`${on?'●':'○'} ${name}`,'output'+(on?' on':'')));}
+}
+function renderTransitionTable(){
+  const target=$('transition-table');if(!target)return;target.replaceChildren();
+  const entries=E.explain(model,state);
+  for(const item of entries){
+    const row=html('div',undefined,'reason-row'+(item.enabled?' ready':''));
+    const main=html('div',undefined,'reason-main');
+    main.append(html('b',item.id+' · '+item.name),html('small',item.from.join(' + ')+' → '+item.to.join(' + ')));
+    const reason=html('div',undefined,'reason-explain');
+    reason.append(html('span',item.condition,'reason-expression'));
+    reason.append(html('span',item.enabled?'LISTA':item.missing.length?'FALTAN: '+item.missing.join(', '):'CONDICIÓN FALSA',
+      'reason-state'+(item.enabled?' green':'')));
+    row.append(main,reason);target.append(row);
+  }
+  if(!entries.length)target.append(html('div','Aún no hay transiciones.','empty'));
 }
 function renderHistory(){const target=$('history');target.replaceChildren();
   if(!events.length){target.append(html('div','Todavía no hay eventos.','empty'));return;}
@@ -159,15 +198,15 @@ function renderMetrics(){const status=state.status==='conflict'?'CONFLICTO':stat
   $('metric-status').textContent=status;$('metric-status').classList.toggle('error',state.status==='conflict');
   $('metric-cycles').textContent=`Ciclo ${state.cycle} · ${state.status==='conflict'?'simulación bloqueada':'simulación local'}`;
 }
-function renderAll(){renderDiagram();renderInspector();renderInputs();renderOutputs();renderHistory();renderDiagnostic();renderMetrics();
+function renderAll(){renderDiagram();renderInspector();renderInputs();renderOutputs();renderHistory();renderDiagnostic();renderMetrics();renderTransitionTable();
   $('project-name').value=model.name;$('project-desc').value=model.description||'';}
-function advance(){try{const next=E.advance(model,state);state=next;renderDiagram();renderMetrics();renderOutputs();
+function advance(){try{const next=E.advance(model,state);simHistory.push({state:copy(state),inputs:copy(model.inputs)});if(simHistory.length>MAX_BACK)simHistory.shift();state=next;renderDiagram();renderMetrics();renderOutputs();renderTransitionTable();
   const m=$('sim-message');m.classList.toggle('warn',state.status==='conflict');
   if(state.status==='fired'){m.textContent=`Transición(es) ${state.last.join(', ')} disparada(s). Etapas activas: ${state.active.join(', ')}.`;log('Evolución de etapas','info',`${state.last.join(', ')} → ${state.active.join(', ')} · salidas: ${state.outputs.join(', ')||'ninguna'}`);notify('Simulación actualizada sin comunicaciones físicas.');}
   else if(state.status==='conflict'){m.textContent='CONFLICTO: transiciones '+state.conflict.join(', ')+' compiten por una misma etapa. Cambia las receptividades.';log('Conflicto entre transiciones','warning',m.textContent);notify(m.textContent,'error');stop();}
   else{m.textContent='No hay transiciones habilitadas con las entradas actuales.';if(!timer)log('Sin evolución','info','Comprueba receptividades y señales de entrada.');}
 }catch(ex){stop();notify(ex.message,'error');log('Error de simulación','warning',ex.message);}}
-function reset(){stop();state=E.initialState(model);renderDiagram();renderMetrics();renderOutputs();$('sim-message').textContent='Estado inicial restaurado';$('sim-message').classList.remove('warn');log('Secuencia reiniciada','info','Activas: '+state.active.join(', '));notify('GRAFCET reiniciado; las entradas se mantienen.');}
+function reset(){stop();simHistory=[];state=E.initialState(model);renderDiagram();renderMetrics();renderOutputs();renderTransitionTable();$('sim-message').textContent='Estado inicial restaurado';$('sim-message').classList.remove('warn');log('Secuencia reiniciada','info','Activas: '+state.active.join(', '));notify('GRAFCET reiniciado; las entradas se mantienen.');}
 function nextId(items,prefix){let i=0;while(items.some(x=>x.id===prefix+i))i++;return prefix+i;}
 function addStage(){const copy=JSON.parse(JSON.stringify(model));if(copy.stages.length>=40){notify('Máximo 40 etapas.','error');return;}
  const id=nextId(copy.stages,'E'),last=copy.stages[copy.stages.length-1];let y=Math.min(2700,last.y+160);if(copy.stages.some(s=>s.x===340&&s.y===y))y=Math.min(2700,y+60);
@@ -179,11 +218,36 @@ function addTransition(){const copy=JSON.parse(JSON.stringify(model));if(copy.tr
 function download(name,content,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob),a=html('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}
 function safeFilename(){return model.name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9_-]+/g,'-').replace(/^-|-$/g,'').slice(0,45)||'AB-GRAFCET';}
 function exportSvg(){const orig=$('diagram');const clone=orig.cloneNode(true);clone.setAttribute('xmlns',S);clone.removeAttribute('style');clone.setAttribute('width','850');clone.setAttribute('height',orig.viewBox.baseVal.height);const xml=new XMLSerializer().serializeToString(clone);download(safeFilename()+'.svg',xml,'image/svg+xml;charset=utf-8');notify('SVG del esquema exportado.');}
+function technicalReport(){
+  const escape=x=>String(x??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  const row=values=>'<tr>'+values.map(v=>'<td>'+escape(v)+'</td>').join('')+'</tr>';
+  const issues=E.diagnostics(model);
+  const stages=model.stages.map(s=>row([s.id,s.name,s.initial?'SÍ':'NO',s.actions.join(', ')||'—'])).join('');
+  const transitions=model.transitions.map(t=>row([t.id,t.name,t.from.join(' + '),t.condition,t.to.join(' + ')])).join('');
+  const inputs=Object.entries(model.inputs).map(([key,v])=>row([key,v?'1':'0'])).join('');
+  const notes=issues.length?issues.map(x=>'<li>'+escape(x)+'</li>').join(''):'<li>Sin advertencias estructurales detectadas.</li>';
+  const htmlDoc=`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Informe GRAFCET · ${escape(model.name)}</title>
+  <style>body{font:15px/1.6 system-ui,sans-serif;color:#203443;max-width:1020px;margin:auto;padding:35px}h1{color:#147b66}h2{border-bottom:2px solid #d9eee6;padding-bottom:6px}table{width:100%;border-collapse:collapse;margin:14px 0 28px}th,td{padding:10px;border:1px solid #dce7e9;text-align:left;vertical-align:top}th{background:#eaf5f1}code{overflow-wrap:anywhere}aside{background:#fff5df;padding:17px;border-radius:8px}footer{color:#768a96;font-size:12px;margin-top:40px}@media print{body{padding:0}h2,table{break-inside:avoid}}</style></head><body>
+  <h1>AB-GRAFCET Studio · informe de especificación</h1><p><b>Proyecto:</b> ${escape(model.name)}</p><p>${escape(model.description||'')}</p>
+  <p><b>Fecha:</b> ${escape(new Date().toISOString())} · <b>Formato:</b> esquema 1 · <b>Versión del programa:</b> 0.2</p>
+  <aside><strong>SOLO ESPECIFICACIÓN Y SIMULACIÓN.</strong> No es un KOP, SFC ni código PLC ejecutable. Verifica en hardware real las funciones de seguridad, enclavamientos, temporizaciones y arquitectura.</aside>
+  <h2>Etapas / acciones virtuales</h2><table><thead><tr><th>ID</th><th>Descripción</th><th>Inicial</th><th>Acciones</th></tr></thead><tbody>${stages}</tbody></table>
+  <h2>Transiciones / receptividades</h2><table><thead><tr><th>ID</th><th>Nombre</th><th>Origen</th><th>Condición</th><th>Destino</th></tr></thead><tbody>${transitions}</tbody></table>
+  <h2>Entradas virtuales</h2><table><thead><tr><th>Identificador</th><th>Valor actual</th></tr></thead><tbody>${inputs}</tbody></table>
+  <h2>Diagnóstico estructural</h2><ul>${notes}</ul>
+  <footer>© 2026 MS ROBOTIKA · Licencia MIT · Generado localmente sin transmisión de datos.</footer></body></html>`;
+  download(safeFilename()+'-informe.html',htmlDoc,'text/html;charset=utf-8');
+  log('Informe técnico exportado','info','Incluye etapas, transiciones, E/S y diagnóstico estructural.');
+  notify('Informe técnico HTML generado. Solo simulación y especificación.');
+}
 function exportCsv(){const lines=[['timestamp_iso','tipo','evento','detalle'].join(',')];const q=x=>'"'+String(x??'').replaceAll('"','""')+'"';for(const e of [...events].reverse())lines.push([e.date,e.kind,e.message,e.detail].map(q).join(','));download(safeFilename()+'-simulacion.csv',lines.join('\r\n')+'\r\n','text/csv;charset=utf-8');}
 function init(){try{const raw=localStorage.getItem(PROJECT_KEY);if(raw){const candidate=JSON.parse(raw);E.validateModel(candidate);model=candidate;state=E.initialState(model);}}catch(_){model=E.sample();state=E.initialState(model);}
   renderAll();log('Aplicación iniciada','info',model.name+' · simulación local');
   $('diagram').addEventListener('pointermove',onDrag);window.addEventListener('pointerup',endDrag);
   $('step').addEventListener('click',advance);$('reset').addEventListener('click',reset);
+  $('back').addEventListener('click',backStep);
+  $('undo-edit').addEventListener('click',()=>undoEdit('undo'));
+  $('redo-edit').addEventListener('click',()=>undoEdit('redo'));
   $('run').addEventListener('click',()=>{if(timer){stop();notify('Ejecución automática detenida.');return;}
     timer=setInterval(advance,1000);$('run').textContent='■ Detener auto';$('run').classList.add('primary');log('Automático iniciado','info','Intervalo de simulación: 1000 ms');advance();});
   $('add-stage').addEventListener('click',addStage);$('add-transition').addEventListener('click',addTransition);
@@ -192,14 +256,18 @@ function init(){try{const raw=localStorage.getItem(PROJECT_KEY);if(raw){const ca
   $('export-log').addEventListener('click',exportCsv);
   $('save-project').addEventListener('click',()=>{download(safeFilename()+'.json',JSON.stringify(model,null,2),'application/json;charset=utf-8');notify('Proyecto JSON exportado.');});
   $('export-svg').addEventListener('click',exportSvg);
+  $('export-report').addEventListener('click',technicalReport);
   $('project-name').addEventListener('change',()=>{const next=JSON.parse(JSON.stringify(model));next.name=$('project-name').value.trim();saveEdited(next,'Nombre de proyecto actualizado.');});
-  $('project-desc').addEventListener('change',()=>{model.description=$('project-desc').value;persist();notify('Descripción guardada localmente.');});
+  $('project-desc').addEventListener('change',()=>{const next=copy(model);next.description=$('project-desc').value;saveEdited(next,'Descripción del proyecto actualizada.');});
   $('load-demo').addEventListener('click',()=>replaceModel(E.sample(),'Ejemplo de envasado restaurado.'));
   $('import-project').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>200000)throw Error('Archivo supera 200 KB.');replaceModel(JSON.parse(await f.text()),'Proyecto importado y validado.');}catch(ex){notify('Importación rechazada: '+ex.message,'error');}finally{e.target.value='';}});
   $('help').addEventListener('click',()=>{$('help-dialog').hidden=false;$('close-help').focus();});
   $('close-help').addEventListener('click',()=>{$('help-dialog').hidden=true;});
   $('help-dialog').addEventListener('click',e=>{if(e.target===$('help-dialog'))$('help-dialog').hidden=true;});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')$('help-dialog').hidden=true;});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')$('help-dialog').hidden=true;
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){e.preventDefault();undoEdit(e.shiftKey?'redo':'undo');}
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){e.preventDefault();undoEdit('redo');}
+  });
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
   window.addEventListener('pagehide',stop);
 }

@@ -11,6 +11,7 @@
   const ident = /^[A-Za-z_][A-Za-z0-9_]*$/;
   const stageId = /^[A-Z][A-Z0-9_]*$/;
   const MAX_STAGES = 40, MAX_TRANSITIONS = 80;
+  const forbidden = new Set(['__proto__','prototype','constructor']);
   const tokensOf = expr => {
     if (typeof expr !== 'string' || expr.length > 256) throw Error('La receptividad debe tener entre 1 y 256 caracteres.');
     const tokens = []; let i = 0;
@@ -38,7 +39,7 @@
       if (x === '(') { const n = orExpr(); if (tok[i++] !== ')') throw Error('Paréntesis sin cerrar.'); return n; }
       if (x === '1' || x === 'TRUE') return {op:'const',v:true};
       if (x === '0' || x === 'FALSE') return {op:'const',v:false};
-      if (ident.test(x) && !['AND','OR','NOT'].includes(x)) return {op:'var',key:x};
+      if (ident.test(x) && !['AND','OR','NOT'].includes(x) && !forbidden.has(x)) return {op:'var',key:x};
       throw Error('Token inesperado: '+x);
     }
     function andExpr() {let left=primary();while(tok[i]==='AND'){i++;left={op:'and',left,right:primary()};}return left;}
@@ -62,7 +63,7 @@
   }
   const parseNames = text => [...new Set(String(text||'').split(',').map(s=>s.trim()).filter(Boolean))];
   const collectInputs = model => {
-    const next={};
+    const next=Object.create(null);
     for(const transition of model.transitions) for(const name of variables(parseCondition(transition.condition)))
       next[name]=model.inputs && model.inputs[name]===true;
     return next;
@@ -79,12 +80,13 @@
       if(typeof s.initial!=='boolean')throw Error('Estado inicial inválido en '+s.id);
       if(s.initial)initial++;
       if(!Number.isFinite(s.x)||!Number.isFinite(s.y)||s.x<40||s.x>1900||s.y<40||s.y>2800)throw Error('Coordenadas de etapa inválidas.');
-      if(!Array.isArray(s.actions)||s.actions.length>15||s.actions.some(a=>typeof a!=='string'||!stageId.test(a)))throw Error('Salidas inválidas en '+s.id);
+      if(!Array.isArray(s.actions)||s.actions.length>15||s.actions.some(a=>typeof a!=='string'||!stageId.test(a)||forbidden.has(a)))throw Error('Salidas inválidas en '+s.id);
     }
     if(!initial)throw Error('El proyecto requiere alguna etapa inicial.');
+    if(typeof model.description!=='undefined'&&(typeof model.description!=='string'||model.description.length>300))throw Error('Descripción de proyecto inválida.');
     const tids=new Set();const iMap=model.inputs;
     if(!iMap||typeof iMap!=='object'||Array.isArray(iMap)||Object.keys(iMap).length>60)throw Error('Entradas digitales inválidas.');
-    for(const [name,value] of Object.entries(iMap))if(!ident.test(name)||typeof value!=='boolean')throw Error('Entrada inválida: '+name);
+    for(const [name,value] of Object.entries(iMap))if(!ident.test(name)||forbidden.has(name)||typeof value!=='boolean')throw Error('Entrada inválida: '+name);
     for(const t of model.transitions){
       if(!t||typeof t.id!=='string'||!stageId.test(t.id)||tids.has(t.id))throw Error('Identificador de transición duplicado o inválido.');tids.add(t.id);
       if(typeof t.name!=='string'||t.name.length>100)throw Error('Nombre de transición inválido.');
@@ -105,6 +107,47 @@
       receptivity:evalCondition(parseCondition(t.condition),model.inputs),
       enabled:t.from.every(s=>current.has(s)) && evalCondition(parseCondition(t.condition),model.inputs)}));
   }
+  function explain(model,state){
+    const status=preview(model,state);
+    return model.transitions.map((t,i)=>({
+      id:t.id, name:t.name, condition:t.condition,
+      from:t.from.slice(), to:t.to.slice(),
+      missing:t.from.filter(id=>!state.active.includes(id)),
+      structural:status[i].structural, receptivity:status[i].receptivity,
+      enabled:status[i].enabled,
+      verdict:status[i].enabled?'HABILITADA':status[i].structural?'RECEPTIVIDAD FALSA':'ETAPAS PRECEDENTES INACTIVAS'
+    }));
+  }
+  // Prueba determinista y sin efectos secundarios: útil para verificar ciclos.
+  function runScenario(model,steps,initialInputs){
+    validateModel(model);
+    if(!Array.isArray(steps)||steps.length>200)throw Error('El escenario admite como máximo 200 pasos.');
+    let copy=JSON.parse(JSON.stringify(model));
+    if(initialInputs!==undefined){
+      if(!initialInputs||typeof initialInputs!=='object'||Array.isArray(initialInputs))throw Error('Entradas iniciales inválidas.');
+      for(const [name,value] of Object.entries(initialInputs)){
+        if(!Object.prototype.hasOwnProperty.call(copy.inputs,name)||typeof value!=='boolean')throw Error('Entrada de escenario inválida: '+name);
+        copy.inputs[name]=value;
+      }
+    }
+    let current=initialState(copy),results=[];
+    for(const [i,step] of steps.entries()){
+      if(!step||typeof step!=='object'||Array.isArray(step)||!step.inputs||typeof step.inputs!=='object'||Array.isArray(step.inputs))
+        throw Error('Paso '+(i+1)+' inválido.');
+      for(const [name,value] of Object.entries(step.inputs)){
+        if(!Object.prototype.hasOwnProperty.call(copy.inputs,name)||typeof value!=='boolean')throw Error('Entrada de escenario inválida: '+name);
+        copy.inputs[name]=value;
+      }
+      const before=current.active.slice();current=advance(copy,current);
+      const expected=step.expectActive;
+      if(expected!==undefined&&(!Array.isArray(expected)||expected.some(x=>typeof x!=='string')))throw Error('Expectativa inválida en paso '+(i+1));
+      const ok=expected===undefined||JSON.stringify(current.active.slice().sort())===JSON.stringify(expected.slice().sort());
+      results.push({step:i+1,before,active:current.active.slice(),outputs:current.outputs.slice(),
+        fired:current.last.slice(),status:current.status,ok});
+      if(current.status==='conflict')break;
+    }
+    return {ok:results.every(r=>r.ok&&r.status!=='conflict'),results,final:current};
+  }
   function advance(model,state){
     const entries=preview(model,state);const enabled=entries.filter(e=>e.enabled).map(e=>e.id);
     if(!enabled.length)return {...state,last:[],conflict:[],status:'waiting',cycle:state.cycle+1};
@@ -124,6 +167,15 @@
     while(changed){changed=false;for(const t of model.transitions)if(t.from.every(id=>found.has(id))){for(const id of t.to)if(!found.has(id)){found.add(id);changed=true;}}}
     const issues=[];for(const s of model.stages)if(!found.has(s.id))issues.push(`Etapa ${s.id} inaccesible desde el estado inicial (análisis estructural).`);
     for(const s of model.stages)if(!model.transitions.some(t=>t.from.includes(s.id)))issues.push(`${s.id} no tiene transición de salida.`);
+    for(const t of model.transitions){
+      if(t.from.length===t.to.length && t.from.every(id=>t.to.includes(id)))
+        issues.push(`${t.id} devuelve exactamente las mismas etapas; comprueba el bucle.`);
+      if(t.condition.trim()==='0'||t.condition.trim().toUpperCase()==='FALSE')
+        issues.push(`${t.id} tiene receptividad constante falsa (0): nunca se disparará.`);
+    }
+    for(const [i,t] of model.transitions.entries())for(const other of model.transitions.slice(i+1)){
+      if(t.from.some(id=>other.from.includes(id)))issues.push(`${t.id} y ${other.id} comparten etapa(s) precedente(s): comprueba la exclusividad de sus receptividades.`);
+    }
     return issues;
   }
   const sample = () => ({
@@ -142,6 +194,6 @@
     ],
     inputs:{marcha:false,seguridad:true,carga_terminada:false,sellado_terminado:false,caja_fuera:false}
   });
-  return Object.freeze({VERSION,parseCondition,variables,evalCondition,parseNames,collectInputs,validateModel,outputState,initialState,preview,advance,diagnostics,sample});
+  return Object.freeze({VERSION,parseCondition,variables,evalCondition,parseNames,collectInputs,validateModel,outputState,initialState,preview,explain,runScenario,advance,diagnostics,sample});
 });
 
