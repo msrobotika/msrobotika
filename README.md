@@ -1,49 +1,82 @@
-# AB-GRAFCET Studio · MS ROBOTIKA
+# AB-GRAFCET Studio 0.2 · MS ROBOTIKA
 
-**v0.1 alfa · Editor y simulador GRAFCET en español · MIT · 100% local**
+**Editor y simulador GRAFCET original · Código abierto MIT · En español · Windows/Linux/macOS · 100 % local**
 
-Esta es una **rama pública provisional** del programa independiente, mientras se crea el repositorio `msrobotika/AB-GRAFCET-Studio`. No se ha modificado la rama principal del perfil.
+Versión mejorada de nuestro editor didáctico de secuencias industriales, basado en conceptos de GRAFCET. Permite construir etapas, receptividades y acciones virtuales, comprender por qué una transición no avanza y comprobar ciclos sin accionar maquinaria.
 
-## Abrir la aplicación
+**Publicación provisional:** este proyecto está en una [rama propia del perfil de MS ROBOTIKA](https://github.com/msrobotika/msrobotika/tree/AB-GRAFCET-Studio-v0.2) y **no** en un repositorio independiente, que aún no existe. La rama principal del perfil no se modifica.
 
-- **[AB-GRAFCET-Studio-PORTABLE.html](AB-GRAFCET-Studio-PORTABLE.html)**: descarga y abre el archivo HTML con Chrome, Edge o Firefox. No requiere instalación ni internet.
-- O descarga [toda esta rama como ZIP](https://github.com/msrobotika/msrobotika/archive/refs/heads/AB-GRAFCET-Studio-v0.1.zip) y abre `index.html` o el portable.
-- El ejemplo es un **ciclo de envasado simulado**: habilita `marcha`, pulsa **Avanzar 1 ciclo**, habilita `carga_terminada` y avanza de nuevo.
+## Abrir y descargar
 
-## Capturas reales de la aplicación
+[**Descargar HTML portátil (sin instalación)**](AB-GRAFCET-Studio-PORTABLE.html) · [**Descargar código completo en ZIP**](https://github.com/msrobotika/msrobotika/archive/refs/heads/AB-GRAFCET-Studio-v0.2.zip)
 
-Capturadas con Chromium ejecutando **el código real del editor** y el motor GRAFCET. No son maquetas. El workflow [capturas reales](.github/workflows/grafcet-ci.yml) las genera y publica. Si una imagen aún no se muestra, la ejecución automática está pendiente o ha fallado.
+Guarda `AB-GRAFCET-Studio-PORTABLE.html` y ábrelo con Edge, Chrome o Firefox. Funciona sin Python, PLC, internet o CDNs. Para desarrollar, usa `index.html` junto a `src/` y abre el proyecto desde un servidor estático local.
 
-![AB-GRAFCET Studio · escritorio](docs/screenshots/grafcet-escritorio.png)
+### Uso inicial paso a paso
 
-### Editor gráfico
+1. Se carga el proyecto de demostración **Ciclo de envasado**, con E0 como etapa inicial.
+2. Activa la entrada `marcha` y deja `seguridad` en ON; pulsa **Avanzar 1 ciclo** para ir a E1.
+3. Activa `carga_terminada` y pulsa **Avanzar** para ir a E2, con la salida virtual `RESISTENCIA_SELLO`.
+4. Revisa **Diagnóstico dinámico**: verás las transiciones habilitadas, las etapas faltantes y las condiciones falsas.
+5. Utiliza **Ciclo anterior** para retroceder un avance. **Deshacer/Rehacer** recupera cambios del esquema, no el estado de entradas.
+6. Exporta tu proyecto como JSON, esquema SVG, registro CSV o **Informe HTML** imprimible.
 
-![AB-GRAFCET Studio · esquema y etapas](docs/screenshots/grafcet-editor.png)
+## Capturas reales del programa
+
+Las cinco imágenes proceden de **Chromium ejecutando esta aplicación real**, mediante [captura automatizada](tools/capture_screenshots.py) en [GitHub Actions](.github/workflows/grafcet-ci.yml). Se verifica el ciclo de E0 a E2 antes de guardar PNG. No se utilizan mockups ni pantallas dibujadas por separado.
+
+### Escritorio y simulación
+
+![Captura auténtica del editor AB-GRAFCET Studio en escritorio](docs/screenshots/grafcet-escritorio.png)
+
+### Diagnóstico de receptividades y etapas faltantes (nuevo)
+
+![Captura auténtica del diagnóstico dinámico de AB-GRAFCET Studio 0.2](docs/screenshots/grafcet-diagnostico.png)
+
+### Editor de etapas y transiciones
+
+![Captura auténtica del editor GRAFCET](docs/screenshots/grafcet-editor.png)
 
 ### Interfaz móvil
 
-![AB-GRAFCET Studio · móvil](docs/screenshots/grafcet-movil.png)
+![Captura auténtica de AB-GRAFCET Studio en móvil](docs/screenshots/grafcet-movil.png)
 
-[Ver la vista larga del proyecto](docs/screenshots/grafcet-proyecto-completo.png).
+[Ver captura de toda la página](docs/screenshots/grafcet-proyecto-completo.png).
 
-## Características
+## Novedades de la versión 0.2
 
-- Editor de etapas con salidas asociadas, posición editable arrastrando y marca de etapa inicial.
-- Transiciones con receptividades booleanas **AND, OR, NOT**, paréntesis y constantes 0/1. Parser propio, **sin `eval`**.
-- Transiciones con múltiples etapas de origen y destino; disparos independientes simultáneos.
-- Bloqueo de divergencias con condiciones activas conflictivas en vez de elegir una rama al azar.
-- Simulación manual o automática a un ciclo por segundo; entradas booleanas manuales y salidas **virtuales**.
-- Diagnóstico estructural básico, eventos, exportación/importación JSON, esquemas SVG e historial CSV.
-- Sin dependencias, sin telemetría ni conexión a PLC físicos.
+- **Diagnóstico dinámico**: para cada transición muestra etapas de origen/destino, condición, marcado faltante, receptividad falsa o habilitación.
+- **Deshacer/Rehacer**: conserva los últimos 40 cambios del esquema en memoria. Los cambios estructurales reinician la simulación; las entradas pueden modificarse independientemente.
+- **Ciclo anterior**: hasta 200 estados anteriores, con su fotografía de entradas.
+- **Informe HTML imprimible**: etapas, acciones, transiciones, condiciones, E/S virtuales y advertencias estructurales; los datos del usuario se codifican como texto.
+- **Motor determinista de escenarios**: `runScenario(model, steps, initialInputs)` comprueba evoluciones y expectativas sin modificar el proyecto.
+- **Diagnósticos adicionales**: condiciones constantemente falsas, transiciones con etapas de origen compartidas y autorretornos; estas alertas no son una prueba formal.
+- **Compatibilidad** con proyectos JSON `schema: 1` de la v0.1.
 
-## Limitaciones y seguridad
+### Alcance técnico y límites de seguridad
 
-**No es un compilador SFC, KOP ni un programa certificado conforme a IEC 60848.** Esta versión es un simulador parcial de especificación GRAFCET para estudio y laboratorio. No implementa aún temporizadores, flancos, macros, prioridades de ramas, análisis formal ni semántica completa de PLC. Las salidas virtuales **no gobiernan maquinaria**. Se exige revisión independiente antes de cualquier implementación física.
+Este es un **simulador parcial GRAFCET**: etapas con acciones booleanas continuas, receptividades `AND`, `OR`, `NOT`, `0`, `1`, `TRUE`, `FALSE`; disparo simultáneo independiente; conflictos al intentar consumir la misma etapa. Evalúa **un paso por iteración** y no simula la semántica de exploración de un PLC real.
 
-GRAFCET IEC 60848:2013 es un lenguaje de especificación del comportamiento; SFC IEC 61131-3:2025 es parte de la programación de controladores. Referencias: https://webstore.iec.ch/en/publication/3684 y https://webstore.iec.ch/en/publication/68533.
+No implementa aún temporizadores normalizados, flancos, acciones almacenadas, macroetapas, semántica IEC completa, prioridades verificadas, exportación automática de KOP/ST/SFC ni comunicación con PLC. **No es un sistema de seguridad, programa ejecutable de Omron ni herramienta certificada conforme a IEC 60848**. Las salidas virtuales no accionan dispositivos. El ejemplo de `seguridad` es una entrada simulada, no una parada de emergencia.
 
-## Pruebas y contribuciones
+## Pruebas
 
-Con Node.js: `node --test tests/engine.test.js`. Para las capturas automáticas: Python 3.11+, `pip install playwright`, `python -m playwright install chromium`, `python tools/capture_screenshots.py`.
+Para desarrollo, Node.js 20+ y Python 3.11+ con Playwright/Chromium:
 
-Proyecto original, copyright © 2026 MS ROBOTIKA, licencia [MIT](LICENSE). Asistencia de IA en el desarrollo.
+```bash
+node --check src/engine.js
+node --check src/app.js
+node --test tests/*.test.js
+python -m pip install "playwright>=1.55,<2"
+python -m playwright install chromium
+python -m unittest discover -s tests -p 'test_browser*.py' -v
+python tools/capture_screenshots.py
+```
+
+Consulta [la CI](.github/workflows/grafcet-ci.yml) para ver las pruebas y las capturas reproducibles. La edición de ejecución no requiere dependencias externas.
+
+## Estructura, derechos y próximos pasos
+
+`src/engine.js` contiene parser, simulación, diagnóstico y escenarios; `src/app.js` el editor, exportaciones y UI; `src/style.css` el diseño adaptativo; `tests/` las pruebas; `docs/screenshots/` los PNG reales.
+
+Copyright © 2026 **MS ROBOTIKA** · [MIT](LICENSE) · [Hoja de ruta](ROADMAP.md) · [Seguridad](SECURITY.md) · [Cambios](CHANGELOG.md). Desarrollo propio asistido por IA, sin copiar código de herramientas comerciales.
