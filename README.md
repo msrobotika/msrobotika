@@ -1,57 +1,49 @@
-# Abel Moreno Bermejo
-**AI Infrastructure & Sustainable Computing Researcher**
+# AB-GRAFCET Studio · MS ROBOTIKA
 
-Trabajo en la intersección entre autonomía de agentes de IA, eficiencia computacional y sistemas capaces de ejecutarse en hardware accesible. Mi enfoque se centra en desarrollar arquitecturas que reduzcan coste, consumo y dependencia de infraestructura sin renunciar a trazabilidad y capacidad técnica.
+**v0.1 alfa · Editor y simulador GRAFCET en español · MIT · 100% local**
 
----
+Esta es una **rama pública provisional** del programa independiente, mientras se crea el repositorio `msrobotika/AB-GRAFCET-Studio`. No se ha modificado la rama principal del perfil.
 
-## 🏗️ Ecosistema de Desarrollo — AB-Suite
+## Abrir la aplicación
 
-### ⚡ AB-CODE | Autonomous Software Engineering
-Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos.
-- **Enfoque:** RAG (Retrieval-Augmented Generation), herramientas y automatización del ciclo de desarrollo.
-- **Objetivo:** análisis, modificación y validación de bases de código locales con mínima dependencia externa.
+- **[AB-GRAFCET-Studio-PORTABLE.html](AB-GRAFCET-Studio-PORTABLE.html)**: descarga y abre el archivo HTML con Chrome, Edge o Firefox. No requiere instalación ni internet.
+- O descarga [toda esta rama como ZIP](https://github.com/msrobotika/msrobotika/archive/refs/heads/AB-GRAFCET-Studio-v0.1.zip) y abre `index.html` o el portable.
+- El ejemplo es un **ciclo de envasado simulado**: habilita `marcha`, pulsa **Avanzar 1 ciclo**, habilita `carga_terminada` y avanza de nuevo.
 
-### 🤖 AB-AGENT-Core | Autonomous Reasoning Framework
-Núcleo de orquestación basado en ciclos de planificación, ejecución y verificación.
-- **Enfoque:** razonamiento autónomo, ejecución local y eficiencia de recursos.
-- **Objetivo:** construir agentes auditables y útiles en entornos reales, incluidos escenarios Edge.
+## Capturas reales de la aplicación
 
-### 🧬 AB-GEN | Sustainable Model Architecture
-Línea de investigación en clasificación visual mediante geometría, análisis espectral y meta-aprendizaje polinómico, sin una arquitectura CNN convencional.
+Capturadas con Chromium ejecutando **el código real del editor** y el motor GRAFCET. No son maquetas. El workflow [capturas reales](.github/workflows/grafcet-ci.yml) las genera y publica. Si una imagen aún no se muestra, la ejecución automática está pendiente o ha fallado.
 
-**Resultado interno actualmente bajo reproducción:**
-- CIFAR-10 — **80.14%** registrado para **V24 Slow Burn**.
-- El benchmark energético publicado previamente está siendo sometido a una nueva validación reproducible y comparable antes de considerarse resultado confirmado.
+![AB-GRAFCET Studio · escritorio](docs/screenshots/grafcet-escritorio.png)
 
-**Estado actual:** auditoría de reproducibilidad, leakage, calibración, inferencia end-to-end, benchmark energético y trazabilidad XAI.
+### Editor gráfico
 
-- Repositorio: https://github.com/msrobotika/AB-GEN-Green-AI
-- Hitos y estado de validación: https://github.com/msrobotika/AB-GEN-Green-AI/blob/main/MILESTONES.md
-- Portal público de investigación: https://msrobotikaabgenresearch.wordpress.com/
+![AB-GRAFCET Studio · esquema y etapas](docs/screenshots/grafcet-editor.png)
 
----
+### Interfaz móvil
 
-## 🛠️ Stack Técnico & Especialidades
+![AB-GRAFCET Studio · móvil](docs/screenshots/grafcet-movil.png)
 
-- **IA y agentes:** arquitecturas de agentes, memoria vectorial, RAG, modelos locales y evaluación.
-- **Machine Learning:** clasificación, ensembles, reducción dimensional, análisis espectral, métricas y reproducibilidad.
-- **Ingeniería de software:** Python, JavaScript/Node.js, Docker, testing y Git.
-- **Automatización industrial:** PLC, comunicaciones industriales, integración OT/IT y Edge Computing.
-- **Principio de diseño:** resultados medibles, reproducibles y eficientes antes que fuerza bruta computacional.
+[Ver la vista larga del proyecto](docs/screenshots/grafcet-proyecto-completo.png).
 
----
+## Características
 
-## 📈 Línea de investigación
+- Editor de etapas con salidas asociadas, posición editable arrastrando y marca de etapa inicial.
+- Transiciones con receptividades booleanas **AND, OR, NOT**, paréntesis y constantes 0/1. Parser propio, **sin `eval`**.
+- Transiciones con múltiples etapas de origen y destino; disparos independientes simultáneos.
+- Bloqueo de divergencias con condiciones activas conflictivas en vez de elegir una rama al azar.
+- Simulación manual o automática a un ciclo por segundo; entradas booleanas manuales y salidas **virtuales**.
+- Diagnóstico estructural básico, eventos, exportación/importación JSON, esquemas SVG e historial CSV.
+- Sin dependencias, sin telemetría ni conexión a PLC físicos.
 
-La hipótesis de trabajo detrás de AB-Suite es que parte del valor de la IA futura vendrá de arquitecturas mejor diseñadas, no únicamente de aumentar parámetros y consumo. Los proyectos se están estructurando para que los resultados puedan auditarse mediante código, versiones, métricas, pruebas y benchmarks reproducibles.
+## Limitaciones y seguridad
 
----
+**No es un compilador SFC, KOP ni un programa certificado conforme a IEC 60848.** Esta versión es un simulador parcial de especificación GRAFCET para estudio y laboratorio. No implementa aún temporizadores, flancos, macros, prioridades de ramas, análisis formal ni semántica completa de PLC. Las salidas virtuales **no gobiernan maquinaria**. Se exige revisión independiente antes de cualquier implementación física.
 
-## 📫 Contacto y Recursos
-- **Portal de investigación:** https://msrobotikaabgenresearch.wordpress.com/
-- **Demos técnicas:** http://www.youtube.com/@MSRobotika
-- **GitHub:** https://github.com/msrobotika
-- **Email:** abelilloseven@gmail.com
+GRAFCET IEC 60848:2013 es un lenguaje de especificación del comportamiento; SFC IEC 61131-3:2025 es parte de la programación de controladores. Referencias: https://webstore.iec.ch/en/publication/3684 y https://webstore.iec.ch/en/publication/68533.
 
-> Los resultados experimentales se distinguen explícitamente entre *reportados* y *reproducidos/validados* hasta completar su evidencia técnica.
+## Pruebas y contribuciones
+
+Con Node.js: `node --test tests/engine.test.js`. Para las capturas automáticas: Python 3.11+, `pip install playwright`, `python -m playwright install chromium`, `python tools/capture_screenshots.py`.
+
+Proyecto original, copyright © 2026 MS ROBOTIKA, licencia [MIT](LICENSE). Asistencia de IA en el desarrollo.
