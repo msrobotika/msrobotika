@@ -24,6 +24,8 @@ def capture():
         assert page.locator('#active-label').inner_text()=='E2'
         page.screenshot(path=str(OUT/'grafcet-escritorio.png'),full_page=False,animations='disabled')
         page.screenshot(path=str(OUT/'grafcet-proyecto-completo.png'),full_page=True,animations='disabled')
+        assert page.locator('.reason-row').count()==4
+        page.locator('#decisions').screenshot(path=str(OUT/'grafcet-diagnostico.png'),animations='disabled')
         page.locator('.transition[data-id="T2"]').click()
         page.locator('.canvas-panel').screenshot(path=str(OUT/'grafcet-editor.png'),animations='disabled')
         mob=browser.new_page(viewport={'width':390,'height':844},device_scale_factor=1)
