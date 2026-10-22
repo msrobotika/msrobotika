@@ -1,91 +1,67 @@
-<div align="center">
+# MS ROBOTIKA
 
-# MS ROBOTIKA · Software abierto e investigación aplicada
+**Software libre para automatización industrial, instrumentación, datos e inteligencia artificial local.**
 
-**Automatización industrial · Visión artificial · Electrónica · IA reproducible**
+Diseñamos herramientas para analizar, simular y comprender sistemas técnicos sin depender de licencias comerciales. Cada proyecto tiene su propio repositorio, código fuente e indicaciones de uso. Indicamos de forma expresa qué está **verificado**, qué es una **demostración** y qué necesita pruebas en equipos reales.
 
-[**Catálogo de 17 repositorios**](PROJECTS.md) · [**Guía para contribuir**](CONTRIBUTING.md) · [**Política de seguridad**](SECURITY.md)
+**[Software industrial](#software-industrial)** · **[Hardware y seguridad](#hardware-y-seguridad)** · **[IA e investigación](#inteligencia-artificial-e-investigación)** · **[Política de calidad](docs/REPO_STANDARD.md)** · **[Auditoría del portafolio](docs/PORTFOLIO_AUDIT_2026-10-22.md)**
 
-</div>
+---
 
-> **Criterio editorial:** las capturas documentan software real cuando su procedencia está verificada; los resultados de investigación se distinguen de las reproducciones independientes; una ejecución de CI correcta no implica certificación industrial, médica ni validación física.
+## Software industrial
 
-### Herramientas industriales
-
-| Aplicación | Función principal | Evidencias |
+| Proyecto | Para qué sirve | Estado / evidencias |
 |---|---|---|
-| [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | Análisis ST/SCL → KOP booleano | [CI](https://github.com/msrobotika/AB-SCL-Studio/actions) · [Capturas](https://github.com/msrobotika/AB-SCL-Studio/tree/main/docs/screenshots) |
-| [AB-KOP Studio](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Editor y simulador Ladder/KOP | [CI](https://github.com/msrobotika/AB-KOP-Studio-v0.1/actions) · [Capturas](https://github.com/msrobotika/AB-KOP-Studio-v0.1/tree/main/docs/screenshots) |
-| [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | GRAFCET, simulación y diagnóstico | [CI](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/actions) · repo privado |
-| [AB-Serial Analyzer](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Monitor serie y Modbus RTU | [CI](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions) · [Capturas](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/tree/main/docs/screenshots) |
-| [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | Inspección y calibración vigilada | [CI](https://github.com/msrobotika/-AB-Vision-Inspector/actions) · [Capturas](https://github.com/msrobotika/-AB-Vision-Inspector/tree/main/docs/screenshots) |
-| [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Diagnóstico y herramientas Modbus | [CI](https://github.com/msrobotika/AB-Modbus-Studio/actions) · [Capturas](https://github.com/msrobotika/AB-Modbus-Studio/tree/main/docs/screenshots) |
-| [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | Informes y visualización de datos | [CI](https://github.com/msrobotika/AB-BI-Studio/actions) · [Galería](https://github.com/msrobotika/AB-BI-Studio/tree/main/docs) |
+| [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | Analizador ST/SCL y conversor del subconjunto booleano compatible a KOP | v0.1 · pruebas y 4 capturas |
+| [AB-KOP Studio](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Editor y simulador Ladder, contactos, bobinas y TON por ciclos | v0.1 · pruebas y 5 capturas |
+| AB-GRAFCET Studio | Editor y simulador de etapas y receptividades; repositorio actualmente **privado** | v0.2 · no accesible públicamente |
+| [AB-Serial Analyzer](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Diagnóstico serie y Modbus RTU, CRC, monitor y laboratorio local | v0.1 · pruebas y 3 capturas |
+| [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Cliente Modbus TCP de lectura, simulador y monitor | v0.1 · pruebas y 3 capturas |
+| [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | Inspección visual y metrología experimental con auditoría de cámara | v0.3 alfa · pruebas y 4 capturas |
+| [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | Visualización, modelo semántico y análisis de datos | v0.4 · aplicación con capturas y CI |
 
-**No se declara compatibilidad certificada de PLC, seguridad de maquinaria ni precisión metrológica trazable.** Cada programa documenta el alcance realmente implementado.
+<table>
+  <tr>
+    <td width="50%"><a href="https://github.com/msrobotika/AB-SCL-Studio"><img src="https://raw.githubusercontent.com/msrobotika/AB-SCL-Studio/main/docs/screenshots/scl-escritorio.png" alt="AB-SCL Studio: editor real con conversión KOP" width="100%"></a><br><sub>AB-SCL Studio · aplicación en Chromium</sub></td>
+    <td width="50%"><a href="https://github.com/msrobotika/AB-KOP-Studio-v0.1"><img src="https://raw.githubusercontent.com/msrobotika/AB-KOP-Studio-v0.1/main/docs/screenshots/kop-escritorio.png" alt="AB-KOP Studio: monitor Ladder real" width="100%"></a><br><sub>AB-KOP Studio · lógica Ladder simulada</sub></td>
+  </tr>
+</table>
 
----
+Las salidas y mediciones de estas aplicaciones no equivalen a certificación ni a control industrial seguro. La validación en PLC y hardware físico se documentará por separado.
 
-## Investigación y otros proyectos
+## Hardware y seguridad
 
-El perfil original con la investigación de AB-GEN se conserva a continuación. Consulta primero el [catálogo general](PROJECTS.md) para versiones, visibilidad, licencias y próximos trabajos.
+| Proyecto | Función principal | Estado declarado |
+|---|---|---|
+| [MSA BLE Scout](https://github.com/msrobotika/MSA-BLE-Scout) | Inspector portátil Bluetooth LE de lectura y evidencias | Prototipo experimental, capturas de framebuffer |
+| [MSA WiFi Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | Observación pasiva Wi-Fi 2,4 GHz en ESP32 | Prueba física descrita, capturas del dispositivo |
+| [MSA ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | Auditoría e integridad de firmware de placas propias | Prototipo inicial |
+| [MSA RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | Observación de redes autorizadas y alertas indicativas | Prototipo, interfaz de demostración |
+| [MSA CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | Herramientas Android de inspección y documentación | APK de desarrollo; `main` no corresponde necesariamente a la última APK |
 
----
+Estas herramientas están destinadas a equipos propios o autorizados; las alertas observadas no prueban automáticamente una intrusión.
 
-# Abel Moreno Bermejo
-**AI Infrastructure & Sustainable Computing Researcher**
+## Inteligencia artificial e investigación
 
-Trabajo en la intersección entre autonomía de agentes de IA, eficiencia computacional y sistemas capaces de ejecutarse en hardware accesible. Mi enfoque se centra en desarrollar arquitecturas que reduzcan coste, consumo y dependencia de infraestructura sin renunciar a trazabilidad y capacidad técnica.
-
----
-
-## 🏗️ Ecosistema de Desarrollo — AB-Suite
-
-### ⚡ AB-CODE | Autonomous Software Engineering
-Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos.
-- **Enfoque:** RAG (Retrieval-Augmented Generation), herramientas y automatización del ciclo de desarrollo.
-- **Objetivo:** análisis, modificación y validación de bases de código locales con mínima dependencia externa.
-
-### 🤖 AB-AGENT-Core | Autonomous Reasoning Framework
-Núcleo de orquestación basado en ciclos de planificación, ejecución y verificación.
-- **Enfoque:** razonamiento autónomo, ejecución local y eficiencia de recursos.
-- **Objetivo:** construir agentes auditables y útiles en entornos reales, incluidos escenarios Edge.
-
-### 🧬 AB-GEN | Sustainable Model Architecture
-Línea de investigación en clasificación visual mediante geometría, análisis espectral y meta-aprendizaje polinómico, sin una arquitectura CNN convencional.
-
-**Resultado interno actualmente bajo reproducción:**
-- CIFAR-10 — **80.14%** registrado para **V24 Slow Burn**.
-- El benchmark energético publicado previamente está siendo sometido a una nueva validación reproducible y comparable antes de considerarse resultado confirmado.
-
-**Estado actual:** auditoría de reproducibilidad, leakage, calibración, inferencia end-to-end, benchmark energético y trazabilidad XAI.
-
-- Repositorio: https://github.com/msrobotika/AB-GEN-Green-AI
-- Hitos y estado de validación: https://github.com/msrobotika/AB-GEN-Green-AI/blob/main/MILESTONES.md
-- Portal público de investigación: https://msrobotikaabgenresearch.wordpress.com/
+| Proyecto | Objetivo | Estado y límites |
+|---|---|---|
+| [AB-GEN Green AI](https://github.com/msrobotika/AB-GEN-Green-AI) | Arquitectura experimental de clasificación visual eficiente | **Auditoría de reproducibilidad abierta**: resultados históricos no se consideran validados |
+| [AB-GEN Medical Demo](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | Demostración de clasificación y explicabilidad sobre imágenes hematológicas | **No es diagnóstico clínico**, no validado para pacientes |
+| [AgroVive M5 Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | Exploración de visión artificial agrícola | Cifras históricas de rendimiento/energía pendientes de verificación independiente |
+| [Offscreen](https://github.com/msrobotika/Offscreen) | Experiencias al aire libre sugeridas mediante embeddings locales en navegador | Prototipo web; descarga inicial de modelo y runtime |
 
 ---
 
-## 🛠️ Stack Técnico & Especialidades
+## Cómo evaluamos cada proyecto
 
-- **IA y agentes:** arquitecturas de agentes, memoria vectorial, RAG, modelos locales y evaluación.
-- **Machine Learning:** clasificación, ensembles, reducción dimensional, análisis espectral, métricas y reproducibilidad.
-- **Ingeniería de software:** Python, JavaScript/Node.js, Docker, testing y Git.
-- **Automatización industrial:** PLC, comunicaciones industriales, integración OT/IT y Edge Computing.
-- **Principio de diseño:** resultados medibles, reproducibles y eficientes antes que fuerza bruta computacional.
+**Código comprobable.** README con instrucciones claras y enlaces a sus fuentes. Las pruebas y CI se anuncian solo cuando existen y han sido ejecutadas; no se confunde una insignia con evidencia.
 
----
+**Capturas auténticas.** Se enlazan fotografías, framebuffer o pantallas ejecutadas realmente, etiquetadas según su procedencia. Una maqueta se identifica como tal. Los proyectos sin capturas quedan explícitamente pendientes.
 
-## 📈 Línea de investigación
+**Licencias claras.** Solo se declara software libre con un archivo de licencia y titularidad apropiada. Algunas investigaciones antiguas requieren aclarar la licencia antes de redistribuirse.
 
-La hipótesis de trabajo detrás de AB-Suite es que parte del valor de la IA futura vendrá de arquitecturas mejor diseñadas, no únicamente de aumentar parámetros y consumo. Los proyectos se están estructurando para que los resultados puedan auditarse mediante código, versiones, métricas, pruebas y benchmarks reproducibles.
+**Seguridad y alcance.** Los simuladores no programan PLC físicos ni sustituyen sistemas de seguridad. Los clasificadores agrícolas/médicos experimentales no deben utilizarse para decisiones de alto riesgo sin validación.
 
----
+**Contribuciones.** Las incidencias, propuestas y pull requests están abiertas en cada repositorio según sus permisos. Consulta el [estándar de mantenimiento](docs/REPO_STANDARD.md) y la [auditoría por proyecto](docs/PORTFOLIO_AUDIT_2026-10-22.md).
 
-## 📫 Contacto y Recursos
-- **Portal de investigación:** https://msrobotikaabgenresearch.wordpress.com/
-- **Demos técnicas:** http://www.youtube.com/@MSRobotika
-- **GitHub:** https://github.com/msrobotika
-- **Email:** abelilloseven@gmail.com
-
-> Los resultados experimentales se distinguen explícitamente entre *reportados* y *reproducidos/validados* hasta completar su evidencia técnica.
+<sub>© 2026 MS ROBOTIKA · Portafolio mantenido por proyecto · última revisión documental: 22 de octubre de 2026.</sub>
