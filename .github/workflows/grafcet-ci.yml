@@ -9,6 +9,9 @@ on:
       - 'tools/**'
       - '.github/workflows/grafcet-ci.yml'
   workflow_dispatch:
+concurrency:
+  group: AB-GRAFCET-Studio-v0.2-capturas
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:
@@ -51,5 +54,7 @@ jobs:
           git add docs/screenshots/*.png
           if ! git diff --cached --quiet; then
             git commit -m 'docs: publish real Chromium screenshots of AB-GRAFCET Studio'
+            git fetch origin AB-GRAFCET-Studio-v0.2
+            git rebase origin/AB-GRAFCET-Studio-v0.2
             git push origin HEAD:AB-GRAFCET-Studio-v0.2
           fi
