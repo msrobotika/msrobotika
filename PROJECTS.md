@@ -19,10 +19,10 @@
 | Repositorio | Enfoque | Estado de evidencia / siguiente mejora |
 |---|---|---|
 | [AB-GEN-Green-AI](https://github.com/msrobotika/AB-GEN-Green-AI) | Visión eficiente, investigación | **Auditoría en curso:** distinguir métricas reportadas, recuperadas y reproducidas; no presentar 80,14 % como una ruta reconstruida |
-| [AB-GEN-MEDICAL-DEMO.](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | Demostración de IA para células sanguíneas | Investigación/prototipo: evitar afirmaciones clínicas sin validación; **sin LICENSE** en el árbol revisado |
-| [AgroVive-M5-Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | Demo agrícola | Métricas y consumo energético necesitan protocolo reproducible; README indica AGPL-3.0 pero **no hay LICENSE** en la raíz revisada. Revisar imágenes/datos de entrenamiento versionados y permisos |
-| [Offscreen](https://github.com/msrobotika/Offscreen) | Misiones exteriores con embeddings locales | README técnicamente documentado y LICENSE; agregar gobernanza y CI apropiada para Next.js |
-| [MSA-CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | Herramienta Android experimental | El README diferencia la APK 0.37 del `main` 0.1: mantener esa distinción y enlazar las validaciones de hardware |
+| [AB-GEN-MEDICAL-DEMO.](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | Demostración de IA para células sanguíneas | Investigación/prototipo: evitar afirmaciones clínicas sin validación; [LICENSE MIT](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./blob/main/LICENSE) incorporada; sin validación clínica independiente |
+| [AgroVive-M5-Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | Demo agrícola | Métricas y consumo energético necesitan protocolo reproducible; [LICENSE AGPL-3.0](https://github.com/msrobotika/AgroVive-M5-Dashboard/blob/main/LICENSE) incorporada; métricas históricas no validadas. Revisar derechos de datos y modelos |
+| [Offscreen](https://github.com/msrobotika/Offscreen) | Misiones exteriores con embeddings locales | [CI unitaria](https://github.com/msrobotika/Offscreen/actions/runs/39811701040) aprobada; la compilación/despliegue no están cubiertos por esa CI |
+| [MSA-CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | Herramienta Android experimental | El README diferencia APK 0.37 de `main` 0.1; [CI estática aprobada](https://github.com/msrobotika/MSA-CyberDeck/actions/runs/39811788438), sin ensamblaje de APK |
 
 ## Dispositivos experimentales
 
@@ -30,9 +30,18 @@
 |---|---|---|
 | [MSA-BLE-Scout](https://github.com/msrobotika/MSA-BLE-Scout) | Exploración BLE autorizada | Evidencia de firmware y capturas; plantilla para incidencias y contribución |
 | [MSA-WiFi-Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | Observación Wi-Fi | CI/capturas presentes; protocolo de contribuciones y límites de falsos positivos |
-| [MSA-ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | Herramienta experimental para chips | Captura e instrucciones; faltan CI y política de seguridad |
-| [MSA-RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | Observación pasiva Wi-Fi | **1726 archivos versionados**, incluidos muchos dentro de `firmware/.pio/build/`; se requiere limpieza del índice después de inventario y verificación de compilación |
+| [MSA-ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | Herramienta experimental para chips | Captura y [CI estática](https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39811780585) aprobada; falta verificación física |
+| [MSA-RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | Observación pasiva Wi-Fi | **Limpieza realizada:** retirados 1696 archivos generados (≈135 MB) de la rama principal, conservando su historial y fuentes; [CI de limpieza aprobada](https://github.com/msrobotika/MSA-RogueWatch/actions/runs/39811791527). Firmware físico pendiente |
 | [msrobotika](https://github.com/msrobotika/msrobotika) | Perfil público y documentación | Esta misma portada y este inventario |
+
+
+## Mejoras de gobernanza aplicadas
+
+- Los **17 repositorios** tienen plantilla de pull request para obligar a documentar reproducción, evidencias, riesgos y resultados pendientes.
+- Todos disponen ya de `CONTRIBUTING.md` y `SECURITY.md`, salvo las políticas preexistentes, que se han conservado.
+- Los repositorios **Offscreen, Medical Demo, AgroVive, ChipSafe, RogueWatch y CyberDeck** incorporan verificaciones CI con alcances explícitos, aprobadas el 22 de octubre de 2026.
+- La edición publicada de RogueWatch ya no versiona su carpeta de compilación `firmware/.pio`; los archivos siguen recuperables por historial Git.
+- Los resultados científicos o médicos no se presentan como validados sin un protocolo repetible.
 
 ## Criterios de publicación profesional
 
