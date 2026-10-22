@@ -1,57 +1,39 @@
-# Abel Moreno Bermejo
-**AI Infrastructure & Sustainable Computing Researcher**
+# AB-Serial Analyzer · MS ROBOTIKA
 
-Trabajo en la intersección entre autonomía de agentes de IA, eficiencia computacional y sistemas capaces de ejecutarse en hardware accesible. Mi enfoque se centra en desarrollar arquitecturas que reduzcan coste, consumo y dependencia de infraestructura sin renunciar a trazabilidad y capacidad técnica.
+**v0.1.0 · MIT · Windows/Linux · español · recepción de diagnóstico**
 
----
+Analizador serie y Modbus RTU con motor propio CRC16, monitor hexadecimal, tráfico de demostración, decodificación de funciones y errores, gráficos, filtros, exportación CSV y JSON y captura RX opcional mediante pySerial.
 
-## 🏗️ Ecosistema de Desarrollo — AB-Suite
+**Esta es una [rama pública provisional](https://github.com/msrobotika/msrobotika/tree/AB-Serial-Analyzer-v0.1)** hasta que aparezca el repositorio independiente `msrobotika/AB-Serial-Analyzer`. La rama principal del perfil permanece intacta.
 
-### ⚡ AB-CODE | Autonomous Software Engineering
-Agente de codificación local con memoria semántica vectorial y enrutamiento dinámico de modelos.
-- **Enfoque:** RAG (Retrieval-Augmented Generation), herramientas y automatización del ciclo de desarrollo.
-- **Objetivo:** análisis, modificación y validación de bases de código locales con mínima dependencia externa.
+## Capturas reales (laboratorio Modbus RTU)
 
-### 🤖 AB-AGENT-Core | Autonomous Reasoning Framework
-Núcleo de orquestación basado en ciclos de planificación, ejecución y verificación.
-- **Enfoque:** razonamiento autónomo, ejecución local y eficiencia de recursos.
-- **Objetivo:** construir agentes auditables y útiles en entornos reales, incluidos escenarios Edge.
+Capturas de [GitHub Actions](.github/workflows/serial-ci.yml), ejecutando el servidor local con tramas generadas por el motor Python y fotografiadas por Chromium. Si no aparecen aún, la ejecución automática no se ha completado; no son mockups.
 
-### 🧬 AB-GEN | Sustainable Model Architecture
-Línea de investigación en clasificación visual mediante geometría, análisis espectral y meta-aprendizaje polinómico, sin una arquitectura CNN convencional.
+![AB-Serial Analyzer, monitor de escritorio](docs/screenshots/serial-escritorio.png)
 
-**Resultado interno actualmente bajo reproducción:**
-- CIFAR-10 — **80.14%** registrado para **V24 Slow Burn**.
-- El benchmark energético publicado previamente está siendo sometido a una nueva validación reproducible y comparable antes de considerarse resultado confirmado.
+**Decodificador RTU y registros:** 
 
-**Estado actual:** auditoría de reproducibilidad, leakage, calibración, inferencia end-to-end, benchmark energético y trazabilidad XAI.
+![AB-Serial Analyzer, detalle del decodificador](docs/screenshots/serial-decodificador.png)
 
-- Repositorio: https://github.com/msrobotika/AB-GEN-Green-AI
-- Hitos y estado de validación: https://github.com/msrobotika/AB-GEN-Green-AI/blob/main/MILESTONES.md
-- Portal público de investigación: https://msrobotikaabgenresearch.wordpress.com/
+**Interfaz móvil:**
 
----
+![AB-Serial Analyzer en móvil](docs/screenshots/serial-movil.png)
 
-## 🛠️ Stack Técnico & Especialidades
+## Descargar y ejecutar
 
-- **IA y agentes:** arquitecturas de agentes, memoria vectorial, RAG, modelos locales y evaluación.
-- **Machine Learning:** clasificación, ensembles, reducción dimensional, análisis espectral, métricas y reproducibilidad.
-- **Ingeniería de software:** Python, JavaScript/Node.js, Docker, testing y Git.
-- **Automatización industrial:** PLC, comunicaciones industriales, integración OT/IT y Edge Computing.
-- **Principio de diseño:** resultados medibles, reproducibles y eficientes antes que fuerza bruta computacional.
+[**Descargar proyecto en ZIP**](https://github.com/msrobotika/msrobotika/archive/refs/heads/AB-Serial-Analyzer-v0.1.zip)
 
----
+Requiere Python 3.11 o posterior. Desde la carpeta extraída, ejecuta `python -m ab_serial` (en Linux `python3 -m ab_serial`), o `AB-Serial-Analyzer.bat` en Windows / `sh AB-Serial-Analyzer.sh` en Linux. Para probarlo pulsa **Iniciar captura** en **Laboratorio**. No necesita hardware.
 
-## 📈 Línea de investigación
+Para puerto físico: `python -m pip install "pyserial>=3.5,<4"`. Elige un puerto detectado por el sistema, velocidad, paridad y bits; autoriza expresamente su apertura. Ninguna API transmite datos al bus. **Aviso:** abrir un adaptador puede alterar DTR/RTS; el software RX no garantiza escucha RS-485 pasiva ni temporización de calidad industrial.
 
-La hipótesis de trabajo detrás de AB-Suite es que parte del valor de la IA futura vendrá de arquitecturas mejor diseñadas, no únicamente de aumentar parámetros y consumo. Los proyectos se están estructurando para que los resultados puedan auditarse mediante código, versiones, métricas, pruebas y benchmarks reproducibles.
+## Arquitectura y pruebas
 
----
+`ab_serial/protocol.py` es un decodificador RTU sin bibliotecas Modbus; `engine.py` gestiona adquisición y simulador; `server.py` expone una API protegida solo en 127.0.0.1; `web/` es una interfaz propia sin CDN.
 
-## 📫 Contacto y Recursos
-- **Portal de investigación:** https://msrobotikaabgenresearch.wordpress.com/
-- **Demos técnicas:** http://www.youtube.com/@MSRobotika
-- **GitHub:** https://github.com/msrobotika
-- **Email:** abelilloseven@gmail.com
+Ejecuta `python -m unittest discover -s tests -v` y `node --check ab_serial/web/app.js`. La captura E2E emplea Playwright/Chromium opcionales y un servidor real, sin generar valores de interfaz ficticios.
 
-> Los resultados experimentales se distinguen explícitamente entre *reportados* y *reproducidos/validados* hasta completar su evidencia técnica.
+Límites: 500 eventos en memoria, lectura de FC01–04 y observación de funciones de escritura (FC05/06/15/16), CRC erróneos y excepciones, sin envío de comandos ni nube. No usar en protección, seguridad o control de máquinas. No existe certificación ni validación sobre hardware físico.
+
+Copyright © 2026 MS ROBOTIKA · [MIT](LICENSE). Código original desarrollado con asistencia de IA. [Seguridad](SECURITY.md) · [Hoja de ruta](ROADMAP.md) · [Dependencias](DEPENDENCIES.md).
