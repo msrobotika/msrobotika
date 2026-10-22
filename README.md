@@ -1,3 +1,37 @@
+<div align="center">
+
+# MS ROBOTIKA · Software abierto e investigación aplicada
+
+**Automatización industrial · Visión artificial · Electrónica · IA reproducible**
+
+[**Catálogo de 17 repositorios**](PROJECTS.md) · [**Guía para contribuir**](CONTRIBUTING.md) · [**Política de seguridad**](SECURITY.md)
+
+</div>
+
+> **Criterio editorial:** las capturas documentan software real cuando su procedencia está verificada; los resultados de investigación se distinguen de las reproducciones independientes; una ejecución de CI correcta no implica certificación industrial, médica ni validación física.
+
+### Herramientas industriales
+
+| Aplicación | Función principal | Evidencias |
+|---|---|---|
+| [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | Análisis ST/SCL → KOP booleano | [CI](https://github.com/msrobotika/AB-SCL-Studio/actions) · [Capturas](https://github.com/msrobotika/AB-SCL-Studio/tree/main/docs/screenshots) |
+| [AB-KOP Studio](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Editor y simulador Ladder/KOP | [CI](https://github.com/msrobotika/AB-KOP-Studio-v0.1/actions) · [Capturas](https://github.com/msrobotika/AB-KOP-Studio-v0.1/tree/main/docs/screenshots) |
+| [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | GRAFCET, simulación y diagnóstico | [CI](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/actions) · repo privado |
+| [AB-Serial Analyzer](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Monitor serie y Modbus RTU | [CI](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions) · [Capturas](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/tree/main/docs/screenshots) |
+| [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | Inspección y calibración vigilada | [CI](https://github.com/msrobotika/-AB-Vision-Inspector/actions) · [Capturas](https://github.com/msrobotika/-AB-Vision-Inspector/tree/main/docs/screenshots) |
+| [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Diagnóstico y herramientas Modbus | [CI](https://github.com/msrobotika/AB-Modbus-Studio/actions) · [Capturas](https://github.com/msrobotika/AB-Modbus-Studio/tree/main/docs/screenshots) |
+| [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | Informes y visualización de datos | [CI](https://github.com/msrobotika/AB-BI-Studio/actions) · [Galería](https://github.com/msrobotika/AB-BI-Studio/tree/main/docs) |
+
+**No se declara compatibilidad certificada de PLC, seguridad de maquinaria ni precisión metrológica trazable.** Cada programa documenta el alcance realmente implementado.
+
+---
+
+## Investigación y otros proyectos
+
+El perfil original con la investigación de AB-GEN se conserva a continuación. Consulta primero el [catálogo general](PROJECTS.md) para versiones, visibilidad, licencias y próximos trabajos.
+
+---
+
 # Abel Moreno Bermejo
 **AI Infrastructure & Sustainable Computing Researcher**
 
