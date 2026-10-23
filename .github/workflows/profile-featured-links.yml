@@ -1,0 +1,40 @@
+name: Featured profile links QA
+on:
+  push:
+    branches:
+      - profile/featured-proofs-and-stars-20261023
+  pull_request:
+    branches:
+      - improve/discoverability-oct-2026
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Check profile entrypoints, screenshots and real releases
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Record environment and exact revision
+        run: |
+          python --version
+          git rev-parse HEAD
+      - name: Syntax and link audit from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python -m py_compile tools/check_featured_profile.py
+          python tools/check_featured_profile.py
+      - name: Attach reproducible link evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: msrobotika-profile-featured-links-evidence
+          path: reports/PROFILE_FEATURED_LINK_QA.md
+          if-no-files-found: warn
+          retention-days: 30
