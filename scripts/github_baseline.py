@@ -243,7 +243,7 @@ def make_report(rows):
     for r in rows:
         tags = "0" if r["topics"] == [] else render(r["topics"])
         lines.append(f"| [{r['repository']}]({r['url']}) | {r['classification']} | "
-                     f"{r['visibility']} | \`{r['head_sha'][:10]}\` | {r['stars']} | {r['forks']} | "
+                     f"{r['visibility']} | {chr(96)}{r['head_sha'][:10]}{chr(96)} | {r['stars']} | {r['forks']} | "
                      f"{tags} | {r['homepage']} | {r['ci_at_current_head']} | {r['release_count']} |")
     lines += ["", "## Fichas: cobertura, arranque, riesgos y documentación", ""]
     for r in rows:
