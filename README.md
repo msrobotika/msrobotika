@@ -2,6 +2,21 @@
 
 **Software libre para automatización industrial, instrumentación, datos e inteligencia artificial local.**
 
+**Open-source tools for PLC simulation, industrial automation, data analysis, Modbus diagnostics and local computer vision.** Research prototypes and laboratory simulators are clearly distinguished from hardware-validated systems.
+
+## Empieza aquí · Start here
+
+| Quiero… / I want to… | Proyecto | Primera prueba / First step |
+|---|---|---|
+| **Simular un PLC y una línea virtual** / simulate a PLC | [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | [Ver capturas](https://github.com/msrobotika/AB-PLC-Simulator#capturas-de-la-aplicaci%C3%B3n-real) · requiere Node.js 20+ |
+| **Aprender GRAFCET sin instalar software** / try SFC | [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | [HTML portátil](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/blob/main/AB-GRAFCET-Studio-PORTABLE.html) · descargar y abrir localmente |
+| **Convertir un subconjunto SCL/ST a KOP** / try ST-to-Ladder | [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | [HTML portátil](https://github.com/msrobotika/AB-SCL-Studio/blob/main/AB-SCL-Studio-PORTABLE.html) · no es compilador PLC |
+| **Probar inspección de imágenes** / try vision inspection | [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | [HTML portátil](https://github.com/msrobotika/-AB-Vision-Inspector/blob/main/AB-Vision-Inspector-PORTABLE.html) · demo de laboratorio |
+| **Preparar datos y gráficos** / explore local BI | [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | [Descarga v0.4](https://github.com/msrobotika/AB-BI-Studio/releases/tag/v0.4.0) · requiere Python |
+| **Leer registros Modbus TCP** / inspect Modbus | [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | [Descarga v0.1](https://github.com/msrobotika/AB-Modbus-Studio/releases/tag/v0.1.0) · cliente de solo lectura |
+
+**¿Te resulta útil un proyecto? / Found something useful?** Abre una incidencia reproducible, propón un caso de prueba o deja una estrella en el repositorio correspondiente. [Cómo contribuir](CONTRIBUTING.md) · [Plan de visibilidad y comunidad](docs/DISCOVERABILITY_PLAN_2026-10-23.md).
+
 Diseñamos herramientas para analizar, simular y comprender sistemas técnicos sin depender de licencias comerciales. Cada proyecto tiene su propio repositorio, código fuente e indicaciones de uso. Indicamos de forma expresa qué está **verificado**, qué es una **demostración** y qué necesita pruebas en equipos reales.
 
 **[Software industrial](#software-industrial)** · **[Hardware y seguridad](#hardware-y-seguridad)** · **[IA e investigación](#inteligencia-artificial-e-investigación)** · **[Política de calidad](docs/REPO_STANDARD.md)** · **[Auditoría del portafolio](docs/PORTFOLIO_AUDIT_2026-10-23.md)** · **[Estado automático](reports/portfolio-status.md)**
