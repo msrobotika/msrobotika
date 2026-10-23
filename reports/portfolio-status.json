@@ -1,0 +1,402 @@
+{
+  "schema": 1,
+  "timestamp_utc": "2026-10-23T00:18:06+00:00",
+  "owner": "msrobotika",
+  "count": 18,
+  "repositories": [
+    {
+      "repository": "-AB-Vision-Inspector",
+      "url": "https://github.com/msrobotika/-AB-Vision-Inspector",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/vision-auditoria-bloqueada.png",
+        "docs/screenshots/vision-calibracion-auditada.png",
+        "docs/screenshots/vision-dashboard.png",
+        "docs/screenshots/vision-mobile.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/-AB-Vision-Inspector/actions/runs/39812149340",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-BI-Studio",
+      "url": "https://github.com/msrobotika/AB-BI-Studio",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "docs/ABBI_03_dashboard.png",
+        "docs/ABBI_03_dax.png",
+        "docs/ABBI_03_modelo.png",
+        "docs/ABBI_03_movil.png",
+        "docs/ABBI_04_claro.png",
+        "docs/ABBI_04_limpieza.png",
+        "docs/ABBI_04_limpieza_movil.png",
+        "docs/ABBI_04_movil.png",
+        "docs/ABBI_04_oscuro.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-BI-Studio/actions/runs/39812159548",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-GEN-Green-AI",
+      "url": "https://github.com/msrobotika/AB-GEN-Green-AI",
+      "branch": "main",
+      "readme": true,
+      "license_file": false,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-GEN-Green-AI/actions/runs/39813240309",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-GEN-MEDICAL-DEMO.",
+      "url": "https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./actions/runs/39813254506",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-GRAFCET-Studio-v0.1-c",
+      "url": "https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/grafcet-ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/grafcet-diagnostico.png",
+        "docs/screenshots/grafcet-editor.png",
+        "docs/screenshots/grafcet-escritorio.png",
+        "docs/screenshots/grafcet-movil.png",
+        "docs/screenshots/grafcet-proyecto-completo.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/actions/runs/39725433586",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-KOP-Studio-v0.1",
+      "url": "https://github.com/msrobotika/AB-KOP-Studio-v0.1",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/kop-editor.png",
+        "docs/screenshots/kop-enclavamiento.png",
+        "docs/screenshots/kop-escritorio.png",
+        "docs/screenshots/kop-movil.png",
+        "docs/screenshots/kop-paro.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-KOP-Studio-v0.1/actions/runs/39784636094",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-Modbus-Studio",
+      "url": "https://github.com/msrobotika/AB-Modbus-Studio",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/screenshots.yml"
+      ],
+      "assets": [
+        "docs/screenshots/escritorio.png",
+        "docs/screenshots/monitor-tramas.png",
+        "docs/screenshots/movil.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/39851208684",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-PLC-Simulator",
+      "url": "https://github.com/msrobotika/AB-PLC-Simulator",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/pages.yml",
+        ".github/workflows/screenshots.yml",
+        ".github/workflows/verify.yml"
+      ],
+      "assets": [
+        "docs/screenshots/dashboard.png",
+        "docs/screenshots/kop-editor.png",
+        "docs/screenshots/lab-conveyor.png",
+        "docs/screenshots/lab-fault.png",
+        "docs/screenshots/lab-suite-import.png",
+        "docs/screenshots/lab-suite-live.png",
+        "docs/screenshots/lab-tank.png",
+        "docs/screenshots/program.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/39852774469",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-SCL-Studio",
+      "url": "https://github.com/msrobotika/AB-SCL-Studio",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/scl-conversor-kop.png",
+        "docs/screenshots/scl-escritorio.png",
+        "docs/screenshots/scl-movil.png",
+        "docs/screenshots/scl-rechazo-seguro.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-SCL-Studio/actions/runs/39814813857",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AB-Serial-Analyzer-v0.1-",
+      "url": "https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/serial-ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/serial-decodificador.png",
+        "docs/screenshots/serial-escritorio.png",
+        "docs/screenshots/serial-movil.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/39814187106",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "AgroVive-M5-Dashboard",
+      "url": "https://github.com/msrobotika/AgroVive-M5-Dashboard",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/repository-quality.yml"
+      ],
+      "assets": [],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/39813013129",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "MSA-BLE-Scout",
+      "url": "https://github.com/msrobotika/MSA-BLE-Scout",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/checks.yml"
+      ],
+      "assets": [
+        "docs/01-Radar.png",
+        "docs/02-Dispositivos.png",
+        "docs/03-Detalle.png",
+        "docs/04-GATT.png",
+        "docs/05-Evidencias.png",
+        "docs/pantallas.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/MSA-BLE-Scout/actions/runs/39812074400",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "MSA-ChipSafe",
+      "url": "https://github.com/msrobotika/MSA-ChipSafe",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/repository-quality.yml"
+      ],
+      "assets": [
+        "docs/screenshots/chipsafe.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39813005483",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "MSA-CyberDeck",
+      "url": "https://github.com/msrobotika/MSA-CyberDeck",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/ciberdeck-answer-036.png",
+        "docs/screenshots/ciberdeck-followup-036.png",
+        "docs/screenshots/ciberdeck-network-037.png",
+        "docs/screenshots/cyberdeck-dashboard.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/MSA-CyberDeck/actions/runs/39811788438",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "MSA-RogueWatch",
+      "url": "https://github.com/msrobotika/MSA-RogueWatch",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "ui/captures/alertas.png",
+        "ui/captures/alertas.svg",
+        "ui/captures/connected.svg",
+        "ui/captures/evidencias.png",
+        "ui/captures/evidencias.svg",
+        "ui/captures/huellas.png",
+        "ui/captures/huellas.svg",
+        "ui/captures/paused.svg",
+        "ui/captures/radar.png",
+        "ui/captures/radar.svg"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/MSA-RogueWatch/actions/runs/39813265871",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "MSA-WiFi-Sentinel",
+      "url": "https://github.com/msrobotika/MSA-WiFi-Sentinel",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml"
+      ],
+      "assets": [
+        "docs/screenshots/alerts.png",
+        "docs/screenshots/contact-sheet.png",
+        "docs/screenshots/evidence.png",
+        "docs/screenshots/fingerprint.png",
+        "docs/screenshots/networks.png",
+        "docs/screenshots/spectrum.png"
+      ],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/39812066234",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "msrobotika",
+      "url": "https://github.com/msrobotika/msrobotika",
+      "branch": "main",
+      "readme": true,
+      "license_file": false,
+      "security": true,
+      "project_status": false,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/portfolio-quality.yml"
+      ],
+      "assets": [],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/msrobotika/actions/runs/39721828252",
+      "broken_local_readme_links": []
+    },
+    {
+      "repository": "Offscreen",
+      "url": "https://github.com/msrobotika/Offscreen",
+      "branch": "main",
+      "readme": true,
+      "license_file": true,
+      "security": true,
+      "project_status": true,
+      "contributing": true,
+      "workflows": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/repository-quality.yml"
+      ],
+      "assets": [],
+      "ci_conclusion": "success",
+      "ci_url": "https://github.com/msrobotika/Offscreen/actions/runs/39812995097",
+      "broken_local_readme_links": []
+    }
+  ],
+  "errors": []
+}
