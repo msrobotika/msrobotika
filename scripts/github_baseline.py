@@ -286,10 +286,10 @@ def make_report(rows):
     return "\n".join(lines) + "\n"
 
 def main():
-    listing = api("/users/" + OWNER + "/repos?per_page=100&type=public")
+    listing = api("/users/" + OWNER + "/repos?per_page=100")
     if not isinstance(listing, list):
         raise SystemExit("ERROR: no se pudo verificar el inventario público en GitHub; no se crean cifras inventadas")
-    provided = {r["name"]: r for r in listing if isinstance(r, dict) and
+    provided = {r["name"]: r for r in listing if isinstance(r, dict) and r.get("private") is False and
                 r.get("owner", {}).get("login", "").lower() == OWNER.lower()}
     if set(provided) != set(STATUS):
         print("WARN: discrepancia entre listado y clasificación: ",
