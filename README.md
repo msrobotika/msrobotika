@@ -8,14 +8,29 @@
 
 | Quiero… / I want to… | Proyecto | Primera prueba / First step |
 |---|---|---|
-| **Simular un PLC y una línea virtual** / simulate a PLC | [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | [Ver capturas](https://github.com/msrobotika/AB-PLC-Simulator#capturas-de-la-aplicaci%C3%B3n-real) · requiere Node.js 20+ |
+| **Simular un PLC y una línea virtual** / simulate a PLC | [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | [Ejemplo reproducible: 150 ciclos y atasco simulado](https://github.com/msrobotika/AB-PLC-Simulator/blob/main/examples/conveyor-with-fault.json) · Node.js 20+ · ejecución local; **sin demo Pages activa** |
 | **Aprender GRAFCET sin instalar software** / try SFC | [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | [HTML portátil](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/blob/main/AB-GRAFCET-Studio-PORTABLE.html) · descargar y abrir localmente |
 | **Convertir un subconjunto SCL/ST a KOP** / try ST-to-Ladder | [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | [HTML portátil](https://github.com/msrobotika/AB-SCL-Studio/blob/main/AB-SCL-Studio-PORTABLE.html) · no es compilador PLC |
 | **Probar inspección de imágenes** / try vision inspection | [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | [HTML portátil](https://github.com/msrobotika/-AB-Vision-Inspector/blob/main/AB-Vision-Inspector-PORTABLE.html) · demo de laboratorio |
 | **Preparar datos y gráficos** / explore local BI | [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | [Descarga v0.4](https://github.com/msrobotika/AB-BI-Studio/releases/tag/v0.4.0) · requiere Python |
 | **Leer registros Modbus TCP** / inspect Modbus | [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | [Descarga v0.1](https://github.com/msrobotika/AB-Modbus-Studio/releases/tag/v0.1.0) · cliente de solo lectura |
 
-**¿Te resulta útil un proyecto? / Found something useful?** Abre una incidencia reproducible, propón un caso de prueba o deja una estrella en el repositorio correspondiente. [Cómo contribuir](CONTRIBUTING.md) · [Plan de visibilidad y comunidad](docs/DISCOVERABILITY_PLAN_2026-10-23.md).
+### Tres proyectos para empezar · Three tested entry points
+
+| Simulación PLC · PLC simulation | Diagnóstico TCP · Modbus read-only | Análisis de datos · Local BI |
+| :---: | :---: | :---: |
+| [![AB-PLC Simulator: transportador y CPU virtual capturados en Chromium](https://raw.githubusercontent.com/msrobotika/AB-PLC-Simulator/main/docs/screenshots/lab-conveyor.png)](https://github.com/msrobotika/AB-PLC-Simulator) | [![AB-Modbus Studio: lectura FC03 real de simulador local en Chromium](https://raw.githubusercontent.com/msrobotika/AB-Modbus-Studio/main/docs/screenshots/escritorio.png)](https://github.com/msrobotika/AB-Modbus-Studio) | [![AB-BI Studio v0.4: informe con datos de demostración](https://raw.githubusercontent.com/msrobotika/AB-BI-Studio/main/docs/ABBI_04_oscuro.png)](https://github.com/msrobotika/AB-BI-Studio) |
+| **[Ejecutar PLC / Run locally](https://github.com/msrobotika/AB-PLC-Simulator#inicio-r%C3%A1pido)** · Node.js ≥20, CPU y transportador virtual | **[Probar FC03 / Try local FC03](https://github.com/msrobotika/AB-Modbus-Studio#primera-prueba-en-menos-de-un-minuto)** · Python ≥3.11, simulador TCP | **[Instalar y abrir / Install locally](https://github.com/msrobotika/AB-BI-Studio/blob/main/docs/INSTALACION.md)** · [ZIP oficial v0.4.0](https://github.com/msrobotika/AB-BI-Studio/releases/tag/v0.4.0), requiere Python ≥3.11 |
+
+<sub>Capturas originales guardadas en los repositorios, realizadas en navegador/laboratorio o con datos sintéticos. / Real screenshots from the projects; laboratory or synthetic data, **not physical industrial systems**. La captura de BI no es una medida de fábrica. [Evidencia y pasos reproducibles / Verification details](docs/FEATURED_DEMOS.md).</sub>
+
+**La prueba más interesante / The connected demo:** [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) → Modbus TCP **FC01/FC03** → [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio). La coincidencia de señales sobre **una única CPU virtual** y un atasco simulado se ha [probado con los dos programas reales en CI](https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/39987456005). La integración integral PLC → Suite Core → SCADA → BI continúa en validación: **no es una planta conectada**.
+
+**Distribución honesta / Release status:** el [ZIP v0.1.0 de Modbus](https://github.com/msrobotika/AB-Modbus-Studio/releases/tag/v0.1.0) ejecuta el cliente de laboratorio, **pero todavía no incorpora AB-Modbus SCADA**. El módulo SCADA está en código fuente y dispone de [candidatas de QA](https://github.com/msrobotika/AB-Modbus-Studio/pull/1), no de una nueva Release pública. [AB-SCADA Studio](https://github.com/msrobotika/AB-SCADA-Studio) permanece **EN DESARROLLO / IN DEVELOPMENT**, no es un producto industrial terminado.
+
+**⭐ ¿Te ha resultado útil? / Was a tool useful?** Deja una estrella **en el repositorio de esa herramienta**, y si puedes, comparte un caso de prueba reproducible o una incidencia. / **Star the specific project** you tried and tell us what worked or what needs improving. [Cómo contribuir / Contributing](CONTRIBUTING.md) · [Primeras pruebas / First-run evidence](docs/FEATURED_DEMOS.md).
+
+
 
 Diseñamos herramientas para analizar, simular y comprender sistemas técnicos sin depender de licencias comerciales. Cada proyecto tiene su propio repositorio, código fuente e indicaciones de uso. Indicamos de forma expresa qué está **verificado**, qué es una **demostración** y qué necesita pruebas en equipos reales.
 
