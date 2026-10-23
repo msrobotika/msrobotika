@@ -1,0 +1,75 @@
+name: Reproducible 20-repo GitHub baseline
+on:
+  push:
+    branches:
+      - audit/baseline-20-repos-2026-10-23
+    paths-ignore:
+      - reports/GITHUB_BASELINE_2026-10-23.md
+      - reports/portfolio-baseline-2026-10-23.csv
+      - reports/portfolio-baseline-2026-10-23.json
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    name: GitHub REST inventory (read-only collection)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate script syntax
+        run: python -m py_compile scripts/github_baseline.py
+      - name: Collect GitHub metadata and generate baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/github_baseline.py
+      - name: Verify data contract / 20 distinct repos / safe classification
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          p = Path('reports/portfolio-baseline-2026-10-23.json')
+          d = json.loads(p.read_text(encoding='utf-8'))
+          rows = d['repositories']
+          assert d['schema']=='msrobotika.github.baseline.v1'
+          assert len(rows)==20
+          assert len(set(r['repository'] for r in rows))==20
+          scada = next(r for r in rows if r['repository']=='AB-SCADA-Studio')
+          assert scada['classification']=='IN_DEVELOPMENT'
+          abgen = next(r for r in rows if r['repository']=='AB-GEN-Green-AI')
+          assert abgen['classification']=='RESEARCH-AUDIT'
+          assert all(r['url'].startswith('https://github.com/msrobotika/') for r in rows)
+          with open('reports/portfolio-baseline-2026-10-23.csv', encoding='utf-8') as f:
+              assert len(list(csv.DictReader(f)))==20
+          md=Path('reports/GITHUB_BASELINE_2026-10-23.md').read_text(encoding='utf-8')
+          assert 'NO_VERIFICADO' in md and 'AB-SCADA-Studio' in md
+          print('PASS: 20 unique repos; honest categories, JSON, CSV and Markdown')
+          PY
+      - name: Upload baseline evidence for PR reviewers
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-baseline-20-repos
+          path: |
+            reports/GITHUB_BASELINE_2026-10-23.md
+            reports/portfolio-baseline-2026-10-23.csv
+            reports/portfolio-baseline-2026-10-23.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Store results only on dedicated audit branch
+        if: github.event_name == 'push' && github.ref_name == 'audit/baseline-20-repos-2026-10-23'
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add reports/GITHUB_BASELINE_2026-10-23.md reports/portfolio-baseline-2026-10-23.csv reports/portfolio-baseline-2026-10-23.json
+          if ! git diff --cached --quiet; then
+            git commit -m "audit: store measured 20-repository baseline [skip ci]"
+            git push origin HEAD:audit/baseline-20-repos-2026-10-23
+          fi
