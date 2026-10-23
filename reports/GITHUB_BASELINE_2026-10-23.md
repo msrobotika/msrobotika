@@ -1,6 +1,6 @@
 # Línea base GitHub MS ROBOTIKA — 23/10/2026
 
-**Captura UTC:** 2026-10-23T15:38:02+00:00. **Fuente:** GitHub REST API, consulta READ-ONLY desde GitHub Actions.
+**Captura UTC:** 2026-10-23T15:41:52+00:00. **Fuente:** GitHub REST API, consulta READ-ONLY desde GitHub Actions.
 **Repositorios inventariados:** 20; **públicos confirmados:** 20.
 **Estrellas por repositorio (suma, NO personas únicas):** 14. **Forks:** 0.
 **Sin Topics:** 20 (de 20); **sin Homepage:** 20 (de 20).
@@ -13,40 +13,40 @@
 
 | Repositorio | Clasificación | Público | Último SHA | Stars | Forks | Topics | Homepage | CI en SHA | Release(s) |
 |---|---|---|---|---:|---:|---|---|---|---|
-| [msrobotika](https://github.com/msrobotika/msrobotika) | USABLE | public | \`c113be3e51\` | 0 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-PLC-Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | EXPERIMENTAL | public | \`b48095cd99\` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-BI-Studio](https://github.com/msrobotika/AB-BI-Studio) | EXPERIMENTAL | public | \`d239062077\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
-| [AB-Modbus-Studio](https://github.com/msrobotika/AB-Modbus-Studio) | EXPERIMENTAL | public | \`1ffa406394\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
-| [-AB-Vision-Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | EXPERIMENTAL | public | \`07e9109d8e\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [AB-GRAFCET-Studio-v0.1-c](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | EXPERIMENTAL | public | \`e3586b7414\` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-KOP-Studio-v0.1](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | EXPERIMENTAL | public | \`4e62f21e23\` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-SCL-Studio](https://github.com/msrobotika/AB-SCL-Studio) | EXPERIMENTAL | public | \`56fc68216e\` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-Serial-Analyzer-v0.1-](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | EXPERIMENTAL | public | \`18ca3a2dad\` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-Suite-Core-arquitectura-de-integraci-n](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n) | EXPERIMENTAL | public | \`1563cdb561\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [AB-SCADA-Studio](https://github.com/msrobotika/AB-SCADA-Studio) | IN_DEVELOPMENT | public | \`82a8195ea0\` | 0 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
-| [AB-GEN-Green-AI](https://github.com/msrobotika/AB-GEN-Green-AI) | RESEARCH-AUDIT | public | \`c781395ee9\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [AB-GEN-MEDICAL-DEMO.](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | RESEARCH-AUDIT | public | \`871da234b4\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [AgroVive-M5-Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | RESEARCH-AUDIT | public | \`f12cae9326\` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [Offscreen](https://github.com/msrobotika/Offscreen) | EXPERIMENTAL | public | \`36ba352181\` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [MSA-BLE-Scout](https://github.com/msrobotika/MSA-BLE-Scout) | EXPERIMENTAL | public | \`0c602bc80d\` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
-| [MSA-WiFi-Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | EXPERIMENTAL | public | \`d0928ee191\` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
-| [MSA-ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | EXPERIMENTAL | public | \`539933cd87\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [MSA-RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | EXPERIMENTAL | public | \`73e213a918\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
-| [MSA-CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | EXPERIMENTAL | public | \`ebcf93e356\` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
+| [msrobotika](https://github.com/msrobotika/msrobotika) | USABLE | public | `c113be3e51` | 0 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-PLC-Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | EXPERIMENTAL | public | `b48095cd99` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-BI-Studio](https://github.com/msrobotika/AB-BI-Studio) | EXPERIMENTAL | public | `d239062077` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
+| [AB-Modbus-Studio](https://github.com/msrobotika/AB-Modbus-Studio) | EXPERIMENTAL | public | `1ffa406394` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
+| [-AB-Vision-Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | EXPERIMENTAL | public | `07e9109d8e` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [AB-GRAFCET-Studio-v0.1-c](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | EXPERIMENTAL | public | `e3586b7414` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-KOP-Studio-v0.1](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | EXPERIMENTAL | public | `4e62f21e23` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-SCL-Studio](https://github.com/msrobotika/AB-SCL-Studio) | EXPERIMENTAL | public | `56fc68216e` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-Serial-Analyzer-v0.1-](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | EXPERIMENTAL | public | `18ca3a2dad` | 1 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-Suite-Core-arquitectura-de-integraci-n](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n) | EXPERIMENTAL | public | `1563cdb561` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [AB-SCADA-Studio](https://github.com/msrobotika/AB-SCADA-Studio) | IN_DEVELOPMENT | public | `82a8195ea0` | 0 | 0 | 0 | SIN_CONFIGURAR | NO_VERIFICADO | 0 |
+| [AB-GEN-Green-AI](https://github.com/msrobotika/AB-GEN-Green-AI) | RESEARCH-AUDIT | public | `c781395ee9` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [AB-GEN-MEDICAL-DEMO.](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | RESEARCH-AUDIT | public | `871da234b4` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [AgroVive-M5-Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | RESEARCH-AUDIT | public | `f12cae9326` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [Offscreen](https://github.com/msrobotika/Offscreen) | EXPERIMENTAL | public | `36ba352181` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [MSA-BLE-Scout](https://github.com/msrobotika/MSA-BLE-Scout) | EXPERIMENTAL | public | `0c602bc80d` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
+| [MSA-WiFi-Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | EXPERIMENTAL | public | `d0928ee191` | 0 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
+| [MSA-ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | EXPERIMENTAL | public | `539933cd87` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [MSA-RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | EXPERIMENTAL | public | `73e213a918` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 0 |
+| [MSA-CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | EXPERIMENTAL | public | `ebcf93e356` | 1 | 0 | 0 | SIN_CONFIGURAR | success | 1 |
 
 ## Fichas: cobertura, arranque, riesgos y documentación
 
 ### [msrobotika](https://github.com/msrobotika/msrobotika) — USABLE
 
 **Motivo de clasificación:** Repositorio de documentación/perfil; producto no ejecutable.
-**Fecha creada:** 2026-04-07T18:40:30Z; **actualizada:** 2026-10-23T00:19:06Z; **último push:** 2026-10-23T15:37:54Z. Rama main / SHA c113be3e5179e551055e5090ff0b5e2b1425eb26.
+**Fecha creada:** 2026-04-07T18:40:30Z; **actualizada:** 2026-10-23T00:19:06Z; **último push:** 2026-10-23T15:41:44Z. Rama main / SHA c113be3e5179e551055e5090ff0b5e2b1425eb26.
 **Descripción:** AI Infrastructure & Sustainable Computing Researcher. **Topics:** []. **Homepage:** SIN_CONFIGURAR.
 **Licencia:** SIN_ARCHIVO. **Runtime detectado por archivos:** Python. **Indicadores de dependencias:** NO_VERIFICADO.
 **Arranque/test declarados en package.json:** NO_VERIFICADO. **Smoke test ejecutado para esta auditoría:** NO_VERIFICADO.
 **CI configurada:** 1 ([".github/workflows/portfolio-quality.yml"]); **última terminada:** success @ 2bda4a1b3c2ad0d0b2f528061435fd039da25614; **CI en SHA actual:** NO_VERIFICADO (NO_VERIFICADO).
 **Documentos:** README SI, SECURITY SI, CONTRIBUTING SI, PROJECT_STATUS NO.
 **Imágenes localizadas:** 0; **captura genuina en SHA actual:** NO_VERIFICADO_AUTOMATICAMENTE. **Demo:** NO_VERIFICADO.
-**Releases y activos:** []; **issues abiertas (no exclusivas de terceros):** 1.
+**Releases y activos:** []; **issues abiertas (no exclusivas de terceros):** 2.
 **Riesgos/pendientes:** Repositorio de documentación/perfil; producto no ejecutable..
 **Traffic (14 días, no acumular únicos entre repos):** {"views":"NO_DISPONIBLE","clones":"NO_DISPONIBLE","popular_referrers":"NO_DISPONIBLE","popular_paths":"NO_DISPONIBLE"}.
 
@@ -57,7 +57,7 @@
 **Descripción:** Laboratorio de PLC virtual . **Topics:** []. **Homepage:** SIN_CONFIGURAR.
 **Licencia:** MIT (LICENSE). **Runtime detectado por archivos:** Node.js/JavaScript. **Indicadores de dependencias:** NO_VERIFICADO.
 **Arranque/test declarados en package.json:** npm run start, npm run dev, npm run test, npm run check. **Smoke test ejecutado para esta auditoría:** NO_VERIFICADO.
-**CI configurada:** 3 ([".github/workflows/screenshots.yml",".github/workflows/verify.yml",".github/workflows/pages.yml"]); **última terminada:** failure @ bd437c51c5a4534139ac77563edd5c0083efbd96; **CI en SHA actual:** NO_VERIFICADO (NO_VERIFICADO).
+**CI configurada:** 3 ([".github/workflows/screenshots.yml",".github/workflows/pages.yml",".github/workflows/verify.yml"]); **última terminada:** failure @ bd437c51c5a4534139ac77563edd5c0083efbd96; **CI en SHA actual:** NO_VERIFICADO (NO_VERIFICADO).
 **Documentos:** README SI, SECURITY SI, CONTRIBUTING SI, PROJECT_STATUS SI.
 **Imágenes localizadas:** 8; **captura genuina en SHA actual:** NO_VERIFICADO_AUTOMATICAMENTE. **Demo:** NO_VERIFICADO.
 **Releases y activos:** []; **issues abiertas (no exclusivas de terceros):** 11.
@@ -113,7 +113,7 @@
 **Descripción:** Editor y simulador GRAFCET original · Código abierto MIT · En español · Windows/Linux/macOS · 100 % local. **Topics:** []. **Homepage:** SIN_CONFIGURAR.
 **Licencia:** MIT (LICENSE). **Runtime detectado por archivos:** Python. **Indicadores de dependencias:** NO_VERIFICADO.
 **Arranque/test declarados en package.json:** NO_VERIFICADO. **Smoke test ejecutado para esta auditoría:** NO_VERIFICADO.
-**CI configurada:** 2 ([".github/workflows/grafcet-ci.yml",".github/workflows/suite-bridge.yml"]); **última terminada:** success @ ddc80554efd3a32932beae9342da27ef223c5f96; **CI en SHA actual:** NO_VERIFICADO (NO_VERIFICADO).
+**CI configurada:** 2 ([".github/workflows/suite-bridge.yml",".github/workflows/grafcet-ci.yml"]); **última terminada:** success @ ddc80554efd3a32932beae9342da27ef223c5f96; **CI en SHA actual:** NO_VERIFICADO (NO_VERIFICADO).
 **Documentos:** README SI, SECURITY SI, CONTRIBUTING SI, PROJECT_STATUS SI.
 **Imágenes localizadas:** 5; **captura genuina en SHA actual:** NO_VERIFICADO_AUTOMATICAMENTE. **Demo:** NO_VERIFICADO.
 **Releases y activos:** []; **issues abiertas (no exclusivas de terceros):** 0.
@@ -239,7 +239,7 @@
 **Descripción:** Three small outdoor missions, selected by an open embedding model on your device. Built by MS ROBOTIKA for the Hacktoberfest Open-Source AI Challenge, Week 1 (Touch Grass), starting 6 October 2026.. **Topics:** []. **Homepage:** SIN_CONFIGURAR.
 **Licencia:** NOASSERTION (LICENSE). **Runtime detectado por archivos:** Node.js/JavaScript. **Indicadores de dependencias:** pnpm-lock.yaml.
 **Arranque/test declarados en package.json:** npm run start, npm run dev. **Smoke test ejecutado para esta auditoría:** NO_VERIFICADO.
-**CI configurada:** 2 ([".github/workflows/ci.yml",".github/workflows/repository-quality.yml"]); **última terminada:** success @ 36ba35218177c123afa964e61bea88c40de86883; **CI en SHA actual:** success (https://github.com/msrobotika/Offscreen/actions/runs/39877732427).
+**CI configurada:** 2 ([".github/workflows/repository-quality.yml",".github/workflows/ci.yml"]); **última terminada:** success @ 36ba35218177c123afa964e61bea88c40de86883; **CI en SHA actual:** success (https://github.com/msrobotika/Offscreen/actions/runs/39877732427).
 **Documentos:** README SI, SECURITY SI, CONTRIBUTING SI, PROJECT_STATUS SI.
 **Imágenes localizadas:** 0; **captura genuina en SHA actual:** NO_VERIFICADO_AUTOMATICAMENTE. **Demo:** NO_VERIFICADO.
 **Releases y activos:** []; **issues abiertas (no exclusivas de terceros):** 0.
@@ -281,7 +281,7 @@
 **Descripción:** Portable ESP32 firmware integrity lab with safe audit UI. **Topics:** []. **Homepage:** SIN_CONFIGURAR.
 **Licencia:** MIT (LICENSE). **Runtime detectado por archivos:** Python. **Indicadores de dependencias:** NO_VERIFICADO.
 **Arranque/test declarados en package.json:** NO_VERIFICADO. **Smoke test ejecutado para esta auditoría:** NO_VERIFICADO.
-**CI configurada:** 2 ([".github/workflows/ci.yml",".github/workflows/repository-quality.yml"]); **última terminada:** success @ 539933cd87e43ad978e59db725dd68d7b20b51f3; **CI en SHA actual:** success (https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39877739563).
+**CI configurada:** 2 ([".github/workflows/repository-quality.yml",".github/workflows/ci.yml"]); **última terminada:** success @ 539933cd87e43ad978e59db725dd68d7b20b51f3; **CI en SHA actual:** success (https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39877739563).
 **Documentos:** README SI, SECURITY SI, CONTRIBUTING SI, PROJECT_STATUS SI.
 **Imágenes localizadas:** 1; **captura genuina en SHA actual:** NO_VERIFICADO_AUTOMATICAMENTE. **Demo:** NO_VERIFICADO.
 **Releases y activos:** []; **issues abiertas (no exclusivas de terceros):** 0.
