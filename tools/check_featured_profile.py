@@ -50,8 +50,13 @@ def main():
                 info=request(url)
                 assert info.get("type")=="file" and info.get("sha"),"Not a file"
                 if path.endswith(".png"):
-                    assert info.get("encoding")=="base64","Image inaccessible"
-                    blob=base64.b64decode(info["content"])
+                    # GitHub Contents omits inline base64 for large media files.
+                    # Fall back to Git Blobs by the exact SHA, never weaken PNG check.
+                    content=info
+                    if info.get("encoding")!="base64":
+                        content=request(f"/repos/{OWNER}/{quote(repo,safe='')}/git/blobs/{info['sha']}")
+                    assert content.get("encoding")=="base64","Image bytes unavailable"
+                    blob=base64.b64decode(content["content"])
                     assert blob.startswith(b"\x89PNG\r\n\x1a\n") and len(blob)>=10000, "Bad PNG signature"
                 rows.append((repo,path,"PASS",info.get("sha","")[:12]))
             except (HTTPError,URLError,AssertionError,KeyError,ValueError) as exc:
