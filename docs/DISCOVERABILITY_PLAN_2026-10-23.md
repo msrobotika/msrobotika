@@ -16,6 +16,10 @@ A review of the 20 public repositories visible to the linked account found:
 
 This is a repository metadata and documentation audit, **not verified visitor traffic**. GitHub Traffic (views, unique visitors, clone counts and referrers) requires owner access in Insights → Traffic and is not inferred from stars.
 
+## Mandatory UX and user-value acceptance gate
+
+The full mandatory product standard is [MS ROBOTIKA UX & Product Standard](UX_PRODUCT_STANDARD_2026-10-23.md). A project is **not ready for promotion** merely because README, screenshots and CI exist. The maintainer must demonstrate its main task end to end, verify mobile and keyboard use, present errors and recovery clearly, and mark missing checks **UNVERIFIED** rather than passing them by assumption.
+
 ## Priority 1: make projects findable
 
 GitHub repository **About → Topics** should be populated manually by a maintainer with accurate, discoverable tags. Suggested *starting* tags (do not claim functionality beyond the source code):
