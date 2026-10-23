@@ -1,0 +1,47 @@
+name: Auditoría del portafolio MS ROBOTIKA
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/portfolio_quality.py
+      - .github/workflows/portfolio-quality.yml
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+concurrency:
+  group: ms-robotika-portfolio-quality
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  audit-public-repositories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Comprobar portafolio y referencias
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/portfolio_quality.py --strict-links
+      - name: Adjuntar informes verificables
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MS-ROBOTIKA-portfolio-audit
+          path: reports/portfolio-status.*
+          if-no-files-found: warn
+      - name: Publicar estado para visitantes
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/portfolio-status.md reports/portfolio-status.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: refresh portfolio quality inventory'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
