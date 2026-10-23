@@ -30,3 +30,12 @@ Aplicable al código actual y a las futuras publicaciones. Se distingue entre **
 5. Registro de cambios y comprobación de enlaces del README.
 
 Revisión inicial del portafolio: **2026-10-22**. Esto es una política de calidad, no una certificación universal de los 16 proyectos.
+
+
+## Control periódico automatizado
+
+- El [workflow de calidad del portafolio](../.github/workflows/portfolio-quality.yml) revisa semanalmente los repositorios públicos a través de GitHub API.
+- Su script reproducible está en [tools/portfolio_quality.py](../tools/portfolio_quality.py) y usa solo la biblioteca estándar de Python.
+- El informe público versionado vive en [reports/portfolio-status.md](../reports/portfolio-status.md), con JSON para reanalizarlo.
+- Una ejecución de CI satisfactoria verifica que el *control documental* se ejecutó; **no certifica el software de los proyectos**.
+- Los resultados de investigación se siguen auditando en cada proyecto por sus propios protocolos.

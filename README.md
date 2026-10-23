@@ -4,7 +4,7 @@
 
 Diseñamos herramientas para analizar, simular y comprender sistemas técnicos sin depender de licencias comerciales. Cada proyecto tiene su propio repositorio, código fuente e indicaciones de uso. Indicamos de forma expresa qué está **verificado**, qué es una **demostración** y qué necesita pruebas en equipos reales.
 
-**[Software industrial](#software-industrial)** · **[Hardware y seguridad](#hardware-y-seguridad)** · **[IA e investigación](#inteligencia-artificial-e-investigación)** · **[Política de calidad](docs/REPO_STANDARD.md)** · **[Auditoría del portafolio](docs/PORTFOLIO_AUDIT_2026-10-22.md)**
+**[Software industrial](#software-industrial)** · **[Hardware y seguridad](#hardware-y-seguridad)** · **[IA e investigación](#inteligencia-artificial-e-investigación)** · **[Política de calidad](docs/REPO_STANDARD.md)** · **[Auditoría del portafolio](docs/PORTFOLIO_AUDIT_2026-10-23.md)** · **[Estado automático](reports/portfolio-status.md)**
 
 ---
 
@@ -13,8 +13,9 @@ Diseñamos herramientas para analizar, simular y comprender sistemas técnicos s
 | Proyecto | Para qué sirve | Estado / evidencias |
 |---|---|---|
 | [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | Analizador ST/SCL y conversor del subconjunto booleano compatible a KOP | v0.1 · pruebas y 4 capturas |
+| [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | Laboratorio de CPU PLC virtual, bastidor E/S y procesos simulados; admite proyectos AB-KOP compatibles | v0.4 de laboratorio · CI, pruebas y capturas |
 | [AB-KOP Studio](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Editor y simulador Ladder, contactos, bobinas y TON por ciclos | v0.1 · pruebas y 5 capturas |
-| AB-GRAFCET Studio | Editor y simulador de etapas y receptividades; repositorio actualmente **privado** | v0.2 · no accesible públicamente |
+| [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | Editor y simulador de etapas, receptividades y diagnóstico | v0.2 · repositorio público; pruebas y 5 capturas |
 | [AB-Serial Analyzer](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Diagnóstico serie y Modbus RTU, CRC, monitor y laboratorio local | v0.1 · pruebas y 3 capturas |
 | [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Cliente Modbus TCP de lectura, simulador y monitor | v0.1 · pruebas y 3 capturas |
 | [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | Inspección visual y metrología experimental con auditoría de cámara | v0.3 alfa · pruebas y 4 capturas |
@@ -62,6 +63,6 @@ Estas herramientas están destinadas a equipos propios o autorizados; las alerta
 
 **Seguridad y alcance.** Los simuladores no programan PLC físicos ni sustituyen sistemas de seguridad. Los clasificadores agrícolas/médicos experimentales no deben utilizarse para decisiones de alto riesgo sin validación.
 
-**Contribuciones.** Las incidencias, propuestas y pull requests están abiertas en cada repositorio según sus permisos. Consulta el [estándar de mantenimiento](docs/REPO_STANDARD.md) y la [auditoría por proyecto](docs/PORTFOLIO_AUDIT_2026-10-22.md).
+**Contribuciones.** Las incidencias, propuestas y pull requests están abiertas en cada repositorio según sus permisos. Consulta el [estándar de mantenimiento](docs/REPO_STANDARD.md) y la [auditoría por proyecto](docs/PORTFOLIO_AUDIT_2026-10-23.md).
 
-<sub>© 2026 MS ROBOTIKA · Portafolio mantenido por proyecto · última revisión documental: 22 de octubre de 2026.</sub>
+<sub>© 2026 MS ROBOTIKA · Portafolio mantenido por proyecto · última revisión documental: 23 de octubre de 2026.</sub>
