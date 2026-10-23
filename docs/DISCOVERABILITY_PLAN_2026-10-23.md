@@ -16,6 +16,10 @@ A review of the 20 public repositories visible to the linked account found:
 
 This is a repository metadata and documentation audit, **not verified visitor traffic**. GitHub Traffic (views, unique visitors, clone counts and referrers) requires owner access in Insights → Traffic and is not inferred from stars.
 
+## Mandatory product UX gate (applies to all repositories)
+
+**A repository is not user-ready merely because its README, screenshots and CI exist.** The detailed acceptance criteria are in [UX_PRODUCT_STANDARD_2026-10-23.md](UX_PRODUCT_STANDARD_2026-10-23.md). Before marketing a project, the constructor must demonstrate its primary user task end to end, readable and accessible UI, actionable failure states, small-screen and keyboard use, real output/export where advertised, and explicitly classify unverified checks. AB-SCADA remains a project under development, not an abandoned repo.
+
 ## Priority 1: make projects findable
 
 GitHub repository **About → Topics** should be populated manually by a maintainer with accurate, discoverable tags. Suggested *starting* tags (do not claim functionality beyond the source code):
