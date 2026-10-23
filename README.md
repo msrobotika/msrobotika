@@ -95,4 +95,6 @@ Estas herramientas están destinadas a equipos propios o autorizados; las alerta
 
 **Contribuciones.** Las incidencias, propuestas y pull requests están abiertas en cada repositorio según sus permisos. Consulta el [estándar de mantenimiento](docs/REPO_STANDARD.md) y la [auditoría por proyecto](docs/PORTFOLIO_AUDIT_2026-10-23.md).
 
+**Mantenimiento del perfil.** [Pasos exactos para fijar seis proyectos y añadir Topics](docs/PROFILE_VISIBILITY_ACTIONS.md) (requieren la cuenta propietaria; no se aplican automáticamente).
+
 <sub>© 2026 MS ROBOTIKA · Portafolio mantenido por proyecto · última revisión documental: 23 de octubre de 2026.</sub>
