@@ -1,66 +1,66 @@
-# MS ROBOTIKA
+# MS ROBOTIKA · AB Suite
 
-**Software libre para automatización industrial, instrumentación, datos e inteligencia artificial local.**
+**Tu espacio para practicar programación y automatización.**
 
-**Open-source tools for PLC simulation, industrial automation, data analysis, Modbus diagnostics and local computer vision.** Research prototypes and laboratory simulators are clearly distinguished from hardware-validated systems.
+**Your workspace for programming and automation practice.**
 
-## Empieza aquí · Start here
+Nueve herramientas, un lanzador y una instalación. Elige las que necesites y crea tus propios proyectos.
 
-| Quiero… / I want to… | Proyecto | Primera prueba / First step |
-|---|---|---|
-| **Simular un PLC y una línea virtual** / simulate a PLC | [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | [Ejemplo reproducible: 150 ciclos y atasco simulado](https://github.com/msrobotika/AB-PLC-Simulator/blob/main/examples/conveyor-with-fault.json) · Node.js 20+ · ejecución local; **sin demo Pages activa** |
-| **Aprender GRAFCET sin instalar software** / try SFC | [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | [HTML portátil](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/blob/main/AB-GRAFCET-Studio-PORTABLE.html) · descargar y abrir localmente |
-| **Convertir un subconjunto SCL/ST a KOP** / try ST-to-Ladder | [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | [HTML portátil](https://github.com/msrobotika/AB-SCL-Studio/blob/main/AB-SCL-Studio-PORTABLE.html) · no es compilador PLC |
-| **Probar inspección de imágenes** / try vision inspection | [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | [HTML portátil](https://github.com/msrobotika/-AB-Vision-Inspector/blob/main/AB-Vision-Inspector-PORTABLE.html) · demo de laboratorio |
-| **Preparar datos y gráficos** / explore local BI | [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | [Descarga v0.4](https://github.com/msrobotika/AB-BI-Studio/releases/tag/v0.4.0) · requiere Python |
-| **Leer registros Modbus TCP** / inspect Modbus | [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | [Descarga v0.1](https://github.com/msrobotika/AB-Modbus-Studio/releases/tag/v0.1.0) · cliente de solo lectura |
+Nine tools, one launcher, one installation. Choose the tools you need and build your own projects.
 
-### Tres proyectos para empezar · Three tested entry points
+**[Descargar e instalar / Download & install](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n#descargar-e-instalar)** · [Ver las nueve herramientas / Explore the suite](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n) · [Guía / First project](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/NEW_USER_WORKFLOW.md)
 
-| Simulación PLC · PLC simulation | Diagnóstico TCP · Modbus read-only | Análisis de datos · Local BI |
-| :---: | :---: | :---: |
-| [![AB-PLC Simulator: transportador y CPU virtual capturados en Chromium](https://raw.githubusercontent.com/msrobotika/AB-PLC-Simulator/main/docs/screenshots/lab-conveyor.png)](https://github.com/msrobotika/AB-PLC-Simulator) | [![AB-Modbus Studio: lectura FC03 real de simulador local en Chromium](https://raw.githubusercontent.com/msrobotika/AB-Modbus-Studio/main/docs/screenshots/escritorio.png)](https://github.com/msrobotika/AB-Modbus-Studio) | [![AB-BI Studio v0.4: informe con datos de demostración](https://raw.githubusercontent.com/msrobotika/AB-BI-Studio/main/docs/ABBI_04_oscuro.png)](https://github.com/msrobotika/AB-BI-Studio) |
-| **[Ejecutar PLC / Run locally](https://github.com/msrobotika/AB-PLC-Simulator#ejecutar-en-windows-linux-o-macos)** · Node.js ≥20, CPU y transportador virtual | **[Probar FC03 / Try local FC03](https://github.com/msrobotika/AB-Modbus-Studio#primera-prueba-en-menos-de-un-minuto)** · Python ≥3.11, simulador TCP | **[Instalar y abrir / Install locally](https://github.com/msrobotika/AB-BI-Studio/blob/main/docs/INSTALACION.md)** · [ZIP oficial v0.4.0](https://github.com/msrobotika/AB-BI-Studio/releases/tag/v0.4.0), requiere Python ≥3.11 |
+[![AB Suite: lanzador actual con sus nueve herramientas / Current launcher with all nine tools](https://raw.githubusercontent.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/main/docs/screenshots/suite.png)](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n)
 
-<sub>Capturas originales guardadas en los repositorios, realizadas en navegador/laboratorio o con datos sintéticos. / Real screenshots from the projects; laboratory or synthetic data, **not physical industrial systems**. La captura de BI no es una medida de fábrica. [Evidencia y pasos reproducibles / Verification details](docs/FEATURED_DEMOS.md).</sub>
+## Una suite, tu forma de trabajar · One suite, your workflow
 
-**La prueba más interesante / The connected demo:** [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) → Modbus TCP **FC01/FC03** → [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio). La coincidencia de señales sobre **una única CPU virtual** y un atasco simulado se ha [probado con los dos programas reales en CI](https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/39987456005). La integración integral PLC → Suite Core → SCADA → BI continúa en validación: **no es una planta conectada**.
+Todas las aplicaciones se abren desde el mismo catálogo. Puedes usar una sola o combinar varias; los ejemplos son opcionales. **＋ Nuevo** crea un trabajo propio, con recuperación del proyecto anterior desde **Proyectos**.
 
-**Distribución honesta / Release status:** el [ZIP v0.1.0 de Modbus](https://github.com/msrobotika/AB-Modbus-Studio/releases/tag/v0.1.0) ejecuta el cliente de laboratorio, **pero todavía no incorpora AB-Modbus SCADA**. El módulo SCADA está en código fuente y dispone de [candidatas de QA](https://github.com/msrobotika/AB-Modbus-Studio/pull/1), no de una nueva Release pública. [AB-SCADA Studio](https://github.com/msrobotika/AB-SCADA-Studio) permanece **EN DESARROLLO / IN DEVELOPMENT**, no es un producto industrial terminado.
+Every application opens from the same catalogue. Use one tool or combine several; examples are optional. **＋ New** starts your own work, while **Projects** keeps the previous project available.
 
-**⭐ ¿Te ha resultado útil? / Was a tool useful?** Deja una estrella **en el repositorio de esa herramienta**, y si puedes, comparte un caso de prueba reproducible o una incidencia. / **Star the specific project** you tried and tell us what worked or what needs improving. [Cómo contribuir / Contributing](CONTRIBUTING.md) · [Primeras pruebas / First-run evidence](docs/FEATURED_DEMOS.md).
+| Herramienta / Tool | Qué puedes practicar / What you can practise |
+| --- | --- |
+| [PLC Simulator](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/plc) | CPU virtual, entradas/salidas y diagnóstico · Virtual CPU, I/O and diagnostics |
+| [KOP Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/kop) | Editar y simular lógica Ladder · Edit and simulate Ladder logic |
+| [SCL Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/scl) | Practicar expresiones BOOL y convertir a KOP · Practise BOOL expressions and convert to Ladder |
+| [GRAFCET Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/grafcet) | Diseñar etapas, transiciones y acciones · Design steps, transitions and actions |
+| [SCADA Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/scada) | Crear pantallas HMI con figuras y señales · Build HMI screens with shapes and signals |
+| [Modbus Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/modbus) | Leer registros TCP y examinar tramas · Read TCP registers and inspect frames |
+| [Serial Analyzer](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/serial) | Analizar capturas RTU, CRC y filtros · Analyse RTU captures, CRC and filters |
+| [Vision Inspector](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/vision) | Inspeccionar imágenes y capturas de cámara · Inspect images and camera captures |
+| [AB BI](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/bi) | Importar datos y crear análisis propios · Import data and build your own analysis |
 
+## Instalar y empezar · Install and start
 
+1. **Windows:** [descarga la distribución de revisión](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n#descargar-e-instalar), extrae el ZIP y elige **Setup.exe** o **Portable.zip**. Incluye los motores. GitHub requiere iniciar sesión para descargar el artefacto. / Download the review distribution, extract it and choose Setup or Portable. Runtimes are included; artifact download requires GitHub sign-in.
+2. Abre **AB Suite** y selecciona una herramienta del lanzador. / Open AB Suite and choose a tool in the launcher.
+3. Pulsa **＋ Nuevo**, nombra tu proyecto y empieza a practicar. / Select **＋ New**, name your project and start practising.
 
-Diseñamos herramientas para analizar, simular y comprender sistemas técnicos sin depender de licencias comerciales. Cada proyecto tiene su propio repositorio, código fuente e indicaciones de uso. Indicamos de forma expresa qué está **verificado**, qué es una **demostración** y qué necesita pruebas en equipos reales.
+[Código fuente completo / Full source](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/archive/refs/heads/main.zip) · [Instalación ES/EN / Installation](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/LOCALIZATION_AND_INSTALLATION.md) · [Documentación / Documentation](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/README.md)
 
-**[Software industrial](#software-industrial)** · **[Hardware y seguridad](#hardware-y-seguridad)** · **[IA e investigación](#inteligencia-artificial-e-investigación)** · **[Política de calidad](docs/REPO_STANDARD.md) · [Experiencia de usuario](docs/UX_PRODUCT_STANDARD_2026-10-23.md)** · **[Auditoría del portafolio](docs/PORTFOLIO_AUDIT_2026-10-23.md)** · **[Estado automático](reports/portfolio-status.md)**
+La instalación desde fuentes requiere Node.js 20+ y Python 3.11+. / Running from source requires Node.js 20+ and Python 3.11+.
 
----
+## Dentro del espacio de trabajo · Inside the workspace
 
-## Software industrial
+| KOP · Lógica y monitorización / Logic and monitoring | Vision · Imagen, rango y máscara / Image, range and mask |
+| :---: | :---: |
+| [![KOP Studio actual: red activa en el editor integrado](https://raw.githubusercontent.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/main/docs/screenshots/kop.png)](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/kop) | [![Vision Inspector actual: rango de detección en una imagen sintética](https://raw.githubusercontent.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/main/docs/screenshots/vision.png)](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/vision) |
 
-| Proyecto | Para qué sirve | Estado / evidencias |
-|---|---|---|
-| [AB-SCL Studio](https://github.com/msrobotika/AB-SCL-Studio) | Analizador ST/SCL y conversor del subconjunto booleano compatible a KOP | v0.1 · pruebas y 4 capturas |
-| [AB-PLC Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | Laboratorio de CPU PLC virtual, bastidor E/S y procesos simulados; admite proyectos AB-KOP compatibles | v0.4 de laboratorio · CI, pruebas y capturas |
-| [AB-KOP Studio](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Editor y simulador Ladder, contactos, bobinas y TON por ciclos | v0.1 · pruebas y 5 capturas |
-| [AB-GRAFCET Studio](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | Editor y simulador de etapas, receptividades y diagnóstico | v0.2 · repositorio público; pruebas y 5 capturas |
-| [AB-Serial Analyzer](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Diagnóstico serie y Modbus RTU, CRC, monitor y laboratorio local | v0.1 · pruebas y 3 capturas |
-| [AB-Modbus Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Cliente Modbus TCP de lectura, simulador y monitor | v0.1 · pruebas y 3 capturas |
-| [AB-Vision Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | Inspección visual y metrología experimental con auditoría de cámara | v0.3 alfa · pruebas y 4 capturas |
-| [AB-BI Studio](https://github.com/msrobotika/AB-BI-Studio) | Visualización, modelo semántico y análisis de datos | v0.4 · aplicación con capturas y CI |
+[Galería actual de las nueve aplicaciones / Current nine-tool gallery](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/SCREENSHOTS.md) · [Primer recorrido / First-run guide](docs/FEATURED_DEMOS.md)
 
-<table>
-  <tr>
-    <td width="50%"><a href="https://github.com/msrobotika/AB-SCL-Studio"><img src="https://raw.githubusercontent.com/msrobotika/AB-SCL-Studio/main/docs/screenshots/scl-escritorio.png" alt="AB-SCL Studio: editor real con conversión KOP" width="100%"></a><br><sub>AB-SCL Studio · aplicación en Chromium</sub></td>
-    <td width="50%"><a href="https://github.com/msrobotika/AB-KOP-Studio-v0.1"><img src="https://raw.githubusercontent.com/msrobotika/AB-KOP-Studio-v0.1/main/docs/screenshots/kop-escritorio.png" alt="AB-KOP Studio: monitor Ladder real" width="100%"></a><br><sub>AB-KOP Studio · lógica Ladder simulada</sub></td>
-  </tr>
-</table>
+**Estado / Status:** versión de revisión **0.6.1**, español e inglés, código de la suite bajo MIT. Instalador Windows sin firma digital; aún no hay versión pública estable. Las capturas proceden de la aplicación ejecutada con datos de laboratorio. [Pruebas y límites / Validation and limits](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/VALIDATION.md).
 
-Las salidas y mediciones de estas aplicaciones no equivalen a certificación ni a control industrial seguro. La validación en PLC y hardware físico se documentará por separado.
+Review version **0.6.1**, Spanish and English, MIT suite source. Windows installer is unsigned; a stable public release is still pending. Screenshots show the running application with laboratory data. Physical hardware validation remains separate.
 
-## Hardware y seguridad
+## Otros proyectos · Other projects
+
+<details>
+<summary>Hardware, seguridad e investigación / Hardware, security and research</summary>
+
+Estos proyectos tienen un alcance independiente de AB Suite. / These projects are independent of AB Suite.
+
+### Hardware y seguridad
+
 
 | Proyecto | Función principal | Estado declarado |
 |---|---|---|
@@ -81,20 +81,9 @@ Estas herramientas están destinadas a equipos propios o autorizados; las alerta
 | [AgroVive M5 Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | Exploración de visión artificial agrícola | Cifras históricas de rendimiento/energía pendientes de verificación independiente |
 | [Offscreen](https://github.com/msrobotika/Offscreen) | Experiencias al aire libre sugeridas mediante embeddings locales en navegador | Prototipo web; descarga inicial de modelo y runtime |
 
----
 
-## Cómo evaluamos cada proyecto
+</details>
 
-**Código comprobable.** README con instrucciones claras y enlaces a sus fuentes. Las pruebas y CI se anuncian solo cuando existen y han sido ejecutadas; no se confunde una insignia con evidencia.
+[Catálogo y mantenimiento / Catalogue](PROJECTS.md) · [Contribuir / Contribute](CONTRIBUTING.md) · [Seguridad / Security](SECURITY.md) · [Estándar de repositorios / Repository standard](docs/REPO_STANDARD.md)
 
-**Capturas auténticas.** Se enlazan fotografías, framebuffer o pantallas ejecutadas realmente, etiquetadas según su procedencia. Una maqueta se identifica como tal. Los proyectos sin capturas quedan explícitamente pendientes.
-
-**Licencias claras.** Solo se declara software libre con un archivo de licencia y titularidad apropiada. Algunas investigaciones antiguas requieren aclarar la licencia antes de redistribuirse.
-
-**Seguridad y alcance.** Los simuladores no programan PLC físicos ni sustituyen sistemas de seguridad. Los clasificadores agrícolas/médicos experimentales no deben utilizarse para decisiones de alto riesgo sin validación.
-
-**Contribuciones.** Las incidencias, propuestas y pull requests están abiertas en cada repositorio según sus permisos. Consulta el [estándar de mantenimiento](docs/REPO_STANDARD.md) y la [auditoría por proyecto](docs/PORTFOLIO_AUDIT_2026-10-23.md).
-
-**Mantenimiento del perfil.** [Pasos exactos para fijar seis proyectos y añadir Topics](docs/PROFILE_VISIBILITY_ACTIONS.md) (requieren la cuenta propietaria; no se aplican automáticamente).
-
-<sub>© 2026 MS ROBOTIKA · Portafolio mantenido por proyecto · última revisión documental: 23 de octubre de 2026.</sub>
+<sub>MS ROBOTIKA · Perfil revisado el 24 de octubre de 2026 / Profile reviewed 24 October 2026.</sub>

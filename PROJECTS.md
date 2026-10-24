@@ -1,56 +1,52 @@
-# MS ROBOTIKA — Catálogo y auditoría de repositorios
+# Catálogo actual · Current catalogue
 
-**Revisión:** 22 de octubre de 2026 · **Alcance:** 17 repositorios del usuario `msrobotika`. Esta tabla refleja una inspección puntual de ramas `main`; algunos proyectos mantienen prototipos y trabajo experimental.
+Revisión / Reviewed: 24/10/2026.
 
-## Software industrial y productividad
+## AB Suite
 
-| Repositorio | Área | Evidencia comprobable | Advertencia de alcance |
-|---|---|---|---|
-| [AB-SCL-Studio](https://github.com/msrobotika/AB-SCL-Studio) | Structured Text → Ladder | [CI aprobada](https://github.com/msrobotika/AB-SCL-Studio/actions/runs/39789383735) · [4 capturas](https://github.com/msrobotika/AB-SCL-Studio/tree/main/docs/screenshots) | Conversión booleana restringida, no compilador ST completo |
-| [AB-KOP-Studio-v0.1](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Simulador KOP/Ladder | [CI aprobada](https://github.com/msrobotika/AB-KOP-Studio-v0.1/actions/runs/39784636094) · [5 capturas](https://github.com/msrobotika/AB-KOP-Studio-v0.1/tree/main/docs/screenshots) | Sin comunicación física con PLC |
-| [AB-GRAFCET-Studio-v0.1-c](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | Editor GRAFCET v0.2 | [CI aprobada](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/actions/runs/39725433586) · 5 capturas | **Privado**; las capturas no son accesibles públicamente hasta cambiar la visibilidad |
-| [AB-Serial-Analyzer-v0.1-](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Análisis RX y Modbus RTU | [CI aprobada](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/39716975341) · [3 capturas](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/tree/main/docs/screenshots) | Hardware RS-485 pendiente de validación física |
-| [-AB-Vision-Inspector](https://github.com/msrobotika/-AB-Vision-Inspector) | Visión y auditoría de medidas | [CI aprobada](https://github.com/msrobotika/-AB-Vision-Inspector/actions/runs/39686572602) · [4 capturas](https://github.com/msrobotika/-AB-Vision-Inspector/tree/main/docs/screenshots) | No certificado para metrología ni seguridad |
-| [AB-Modbus-Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Diagnóstico Modbus | [CI aprobada](https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/39669247580) · [capturas](https://github.com/msrobotika/AB-Modbus-Studio/tree/main/docs/screenshots) | No sustituye pruebas con hardware |
-| [AB-BI-Studio](https://github.com/msrobotika/AB-BI-Studio) | BI y dashboards | [CI aprobada](https://github.com/msrobotika/AB-BI-Studio/actions/runs/39645487285) · [galería](https://github.com/msrobotika/AB-BI-Studio/tree/main/docs) | Ver restricciones del motor y formatos |
+El producto mantenido reúne las nueve herramientas en [un único repositorio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n), con lanzador, distribución e instrucciones comunes. / The maintained product brings all nine tools into one repository with a shared launcher, distribution and instructions.
 
-## Investigación, IA y aplicaciones
+[Descargar e instalar / Download and install](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n#descargar-e-instalar) · [Galería actual / Current screenshots](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/SCREENSHOTS.md)
 
-| Repositorio | Enfoque | Estado de evidencia / siguiente mejora |
+| Herramienta / Tool | Qué puedes practicar / What you can practise |
+| --- | --- |
+| [PLC Simulator](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/plc) | CPU virtual, entradas/salidas y diagnóstico · Virtual CPU, I/O and diagnostics |
+| [KOP Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/kop) | Editar y simular lógica Ladder · Edit and simulate Ladder logic |
+| [SCL Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/scl) | Practicar expresiones BOOL y convertir a KOP · Practise BOOL expressions and convert to Ladder |
+| [GRAFCET Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/grafcet) | Diseñar etapas, transiciones y acciones · Design steps, transitions and actions |
+| [SCADA Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/scada) | Crear pantallas HMI con figuras y señales · Build HMI screens with shapes and signals |
+| [Modbus Studio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/modbus) | Leer registros TCP y examinar tramas · Read TCP registers and inspect frames |
+| [Serial Analyzer](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/serial) | Analizar capturas RTU, CRC y filtros · Analyse RTU captures, CRC and filters |
+| [Vision Inspector](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/vision) | Inspeccionar imágenes y capturas de cámara · Inspect images and camera captures |
+| [AB BI](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/bi) | Importar datos y crear análisis propios · Import data and build your own analysis |
+
+Los repositorios originales se conservan como antecedentes, con enlaces a la versión integrada. Sus antiguas capturas, versiones e instrucciones no describen la distribución actual de AB Suite. / Original repositories remain as historical sources and point to the integrated version. Their older screenshots, versions and instructions do not describe the current suite distribution.
+
+## Proyectos independientes · Independent projects
+
+
+| Proyecto | Función principal | Estado declarado |
 |---|---|---|
-| [AB-GEN-Green-AI](https://github.com/msrobotika/AB-GEN-Green-AI) | Visión eficiente, investigación | **Auditoría en curso:** distinguir métricas reportadas, recuperadas y reproducidas; no presentar 80,14 % como una ruta reconstruida |
-| [AB-GEN-MEDICAL-DEMO.](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | Demostración de IA para células sanguíneas | Investigación/prototipo: evitar afirmaciones clínicas sin validación; [LICENSE MIT](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./blob/main/LICENSE) incorporada; sin validación clínica independiente |
-| [AgroVive-M5-Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | Demo agrícola | Métricas y consumo energético necesitan protocolo reproducible; [LICENSE AGPL-3.0](https://github.com/msrobotika/AgroVive-M5-Dashboard/blob/main/LICENSE) incorporada; métricas históricas no validadas. Revisar derechos de datos y modelos |
-| [Offscreen](https://github.com/msrobotika/Offscreen) | Misiones exteriores con embeddings locales | [CI unitaria](https://github.com/msrobotika/Offscreen/actions/runs/39811701040) aprobada; la compilación/despliegue no están cubiertos por esa CI |
-| [MSA-CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | Herramienta Android experimental | El README diferencia APK 0.37 de `main` 0.1; [CI estática aprobada](https://github.com/msrobotika/MSA-CyberDeck/actions/runs/39811788438), sin ensamblaje de APK |
+| [MSA BLE Scout](https://github.com/msrobotika/MSA-BLE-Scout) | Inspector portátil Bluetooth LE de lectura y evidencias | Prototipo experimental, capturas de framebuffer |
+| [MSA WiFi Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | Observación pasiva Wi-Fi 2,4 GHz en ESP32 | Prueba física descrita, capturas del dispositivo |
+| [MSA ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | Auditoría e integridad de firmware de placas propias | Prototipo inicial |
+| [MSA RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | Observación de redes autorizadas y alertas indicativas | Prototipo, interfaz de demostración |
+| [MSA CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | Herramientas Android de inspección y documentación | APK de desarrollo; `main` no corresponde necesariamente a la última APK |
 
-## Dispositivos experimentales
+Estas herramientas están destinadas a equipos propios o autorizados; las alertas observadas no prueban automáticamente una intrusión.
 
-| Repositorio | Enfoque | Mejoras prioritarias |
+## Inteligencia artificial e investigación
+
+| Proyecto | Objetivo | Estado y límites |
 |---|---|---|
-| [MSA-BLE-Scout](https://github.com/msrobotika/MSA-BLE-Scout) | Exploración BLE autorizada | Evidencia de firmware y capturas; plantilla para incidencias y contribución |
-| [MSA-WiFi-Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | Observación Wi-Fi | CI/capturas presentes; protocolo de contribuciones y límites de falsos positivos |
-| [MSA-ChipSafe](https://github.com/msrobotika/MSA-ChipSafe) | Herramienta experimental para chips | Captura y [CI estática](https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39811780585) aprobada; falta verificación física |
-| [MSA-RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | Observación pasiva Wi-Fi | **Limpieza realizada:** retirados 1696 archivos generados (≈135 MB) de la rama principal, conservando su historial y fuentes; [CI de limpieza aprobada](https://github.com/msrobotika/MSA-RogueWatch/actions/runs/39811791527). Firmware físico pendiente |
-| [msrobotika](https://github.com/msrobotika/msrobotika) | Perfil público y documentación | Esta misma portada y este inventario |
+| [AB-GEN Green AI](https://github.com/msrobotika/AB-GEN-Green-AI) | Arquitectura experimental de clasificación visual eficiente | **Auditoría de reproducibilidad abierta**: resultados históricos no se consideran validados |
+| [AB-GEN Medical Demo](https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO.) | Demostración de clasificación y explicabilidad sobre imágenes hematológicas | **No es diagnóstico clínico**, no validado para pacientes |
+| [AgroVive M5 Dashboard](https://github.com/msrobotika/AgroVive-M5-Dashboard) | Exploración de visión artificial agrícola | Cifras históricas de rendimiento/energía pendientes de verificación independiente |
+| [Offscreen](https://github.com/msrobotika/Offscreen) | Experiencias al aire libre sugeridas mediante embeddings locales en navegador | Prototipo web; descarga inicial de modelo y runtime |
 
 
-## Mejoras de gobernanza aplicadas
+## Evidencia y mantenimiento · Evidence and maintenance
 
-- Los **17 repositorios** tienen plantilla de pull request para obligar a documentar reproducción, evidencias, riesgos y resultados pendientes.
-- Todos disponen ya de `CONTRIBUTING.md` y `SECURITY.md`, salvo las políticas preexistentes, que se han conservado.
-- Los repositorios **Offscreen, Medical Demo, AgroVive, ChipSafe, RogueWatch y CyberDeck** incorporan verificaciones CI con alcances explícitos, aprobadas el 22 de octubre de 2026.
-- La edición publicada de RogueWatch ya no versiona su carpeta de compilación `firmware/.pio`; los archivos siguen recuperables por historial Git.
-- Los resultados científicos o médicos no se presentan como validados sin un protocolo repetible.
+El [índice de validación de la suite](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/VALIDATION.md) distingue pruebas automatizadas, recorridos de interfaz y validación física pendiente. La [guía de primer uso](docs/FEATURED_DEMOS.md) parte de la instalación común.
 
-## Criterios de publicación profesional
-
-1. **Información correcta antes que publicidad:** estado de validación visible; no presentar pruebas de laboratorio como certificados ni cifras históricas como reproducciones.
-2. **Fuentes editables:** aplicación, instrucciones reproducibles, licencia apropiada, historial de cambios y control de versiones. No publicar únicamente ZIP o capturas.
-3. **Pruebas objetivas:** CI declarada, comandos de reproducción, diferenciación entre test unitario, integración y ensayo físico. No se anuncia CI verde si no lo está.
-4. **Capturas auténticas:** imagen generada por el programa o firmware y documentada; se identifican demos/simulaciones; sin mockups presentados como dispositivos.
-5. **Seguridad:** separación clara entre observar, simular y controlar hardware; reportes de vulnerabilidad privados sin exponer instalaciones.
-6. **Licencias:** un repo sin archivo de licencia no debe anunciarse automáticamente como software abierto bajo MIT/AGPL. Es necesario definir derechos de código, dependencias, modelos y datos.
-7. **Limpieza y releases:** archivos compilados fuera de `git` salvo distribución intencional; paquetes en GitHub Releases, con sumas y versiones, una vez comprobados.
-
-**Importante:** este catálogo no certifica que todas las aplicaciones estén completas o listas para producción. Los estados son los observados durante la revisión y cambian con nuevos commits.
+Las auditorías fechadas de octubre de 2026 y los informes de inventario se conservan como registros históricos; no son el catálogo de versiones actuales. / Dated audits and inventory reports remain historical records rather than the current release catalogue.

@@ -2,7 +2,13 @@ name: Featured profile links QA
 on:
   push:
     branches:
-      - profile/featured-proofs-and-stars-20261023
+      - main
+    paths:
+      - README.md
+      - PROJECTS.md
+      - docs/FEATURED_DEMOS.md
+      - tools/check_featured_profile.py
+      - .github/workflows/profile-featured-links.yml
   pull_request:
     branches:
       - improve/discoverability-oct-2026
@@ -12,7 +18,7 @@ permissions:
   contents: read
 jobs:
   verify:
-    name: Check profile entrypoints, screenshots and real releases
+    name: Verify suite launcher, nine tools and current screenshots
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

@@ -1,56 +1,36 @@
-# Primera prueba · First-run evidence
+# Primer recorrido · First-run guide
 
-**MS ROBOTIKA · 23/10/2026.** Laboratorios de software, sin conexión a máquinas. Las pruebas no acreditan seguridad funcional, certificación industrial ni compatibilidad total con PLC físicos.
+Revisión / Reviewed: 24/10/2026. La entrada mantenida es [AB Suite](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n), con nueve herramientas en el mismo lanzador. / The maintained entry point is AB Suite, with nine tools in one launcher.
 
-**English:** Three reproducible local lab workflows, original screenshots, exact GitHub Actions evidence, and clearly stated limits. Star the specific tool that is useful—not the whole catalogue automatically.
+## Instalar · Install
 
-## 1. AB-PLC Simulator · CPU virtual y atasco de transportador
+[Descarga e instrucciones actuales / Current download instructions](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n#descargar-e-instalar). En Windows, Setup y Portable incluyen los motores; el artefacto de revisión requiere sesión de GitHub y tiene conservación limitada. El instalador no tiene firma digital y todavía no se anuncia una versión estable.
 
-Requisitos: Node.js 20+ y Git. / Requirements: Node.js 20+ and Git.
+Windows Setup and Portable include runtimes. The review artifact requires GitHub sign-in and has limited retention. The installer is unsigned; a stable public release is pending.
 
-    git clone https://github.com/msrobotika/AB-PLC-Simulator.git
-    cd AB-PLC-Simulator
-    node scripts/serve.mjs
+Para desarrollar desde fuentes / For source development:
 
-Abre http://127.0.0.1:4173/ para iniciar CPU RUN y marcha. Ensayo reproducible sin navegador:
+```sh
+git clone https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n.git
+cd AB-Suite-Core-arquitectura-de-integraci-n
+node scripts/setup.mjs
+node scripts/workspace.mjs
+```
 
-    node scripts/run-scenario.mjs --scenario examples/conveyor-with-fault.json --csv conveyor-demo.csv
+Esta modalidad requiere Node.js 20+ y Python 3.11+. Abre la dirección local que muestra la consola. / This mode requires Node.js 20+ and Python 3.11+. Open the local address shown in the console.
 
-Incluye 150 scans, inyección de atasco y recuperación virtual. Captura [transportador real en Chromium](https://github.com/msrobotika/AB-PLC-Simulator/blob/main/docs/screenshots/lab-conveyor.png). Evidencia: [CI de instalación limpia, Linux/Windows/macOS](https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/39983164360), caso de cinta y depósito, controles de acceso HTTP.
+## Elegir y crear · Choose and create
 
-**No hay demo pública Pages verificada:** la URL de GitHub Pages respondió HTTP 404 el 23/10/2026. Se requiere ejecución local. [Repositorio / ⭐ Star](https://github.com/msrobotika/AB-PLC-Simulator).
+1. Abre AB Suite. El lanzador muestra las nueve aplicaciones. / Open AB Suite. The launcher shows all nine applications.
+2. Elige cualquier herramienta y pulsa **＋ Nuevo**. / Choose any tool and select **＋ New**.
+3. Crea tu proyecto; el anterior sigue disponible en **Proyectos**. Los ejemplos son opcionales. / Create your project; the previous one remains available in **Projects**. Examples are optional.
 
-## 2. AB-Modbus Studio · FC03 real contra simulador local
+En KOP puedes eliminar la última red y empezar vacío. En Vision puedes cargar una imagen propia, elegir cámara y configurar el rango de detección. En BI puedes crear un espacio vacío o importar datos a otro espacio. / In KOP, delete the last rung to start empty. In Vision, load your image, choose a camera and set the detection range. In BI, start an empty workspace or import into a new workspace.
 
-Requisitos: Python 3.11+; no se conecta a un PLC físico. / Python 3.11+, localhost only.
+[Pasos por herramienta / Steps for each tool](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/NEW_USER_WORKFLOW.md) · [Ejercicio PLC → Modbus → BI / Connected exercise](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/WORKFLOW_PLC_MODBUS_BI.md)
 
-    git clone https://github.com/msrobotika/AB-Modbus-Studio.git
-    cd AB-Modbus-Studio
-    python -m ab_modbus --self-test
-    python -m ab_modbus
+## Capturas y alcance · Screenshots and scope
 
-Desde la HMI pulsa Iniciar y probar FC03; lee ocho registros sintéticos, empezando por 230, 1500, 42 y 2026. [Captura auténtica del laboratorio](https://github.com/msrobotika/AB-Modbus-Studio/blob/main/docs/screenshots/escritorio.png).
+[Lanzador y nueve herramientas / Launcher and nine tools](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/SCREENSHOTS.md). Las imágenes de portada proceden de `docs/screenshots/suite.png`, `kop.png` y `vision.png` del repositorio integrado. Se capturaron ejecutando la aplicación con datos de laboratorio.
 
-**Suite verificada:** [CI de interoperabilidad PLC ↔ Modbus](https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/39987456005) arrancó AB-PLC Simulator y comparó las salidas y scan de la misma CPU virtual con lecturas FC01/FC03 del cliente real. Inyectó un atasco virtual; no hubo comandos a maquinaria.
-
-**Atención al descargar:** la [Release v0.1.0](https://github.com/msrobotika/AB-Modbus-Studio/releases/tag/v0.1.0) funciona como cliente FC01–04 en Windows/Linux pero **sus ZIP no incorporan AB-Modbus SCADA**. El módulo de supervisión está en el código fuente y en [candidatas de QA](https://github.com/msrobotika/AB-Modbus-Studio/pull/1), no en una Release nueva. [Seguimiento](https://github.com/msrobotika/AB-Modbus-Studio/issues/2) · [Repositorio / ⭐ Star](https://github.com/msrobotika/AB-Modbus-Studio).
-
-## 3. AB-BI Studio · CSV a modelo de datos
-
-Requisitos: Python 3.11+ e Internet para instalar dependencias. Descarga [ZIP oficial v0.4.0 y SHA-256](https://github.com/msrobotika/AB-BI-Studio/releases/tag/v0.4.0), extrae el ZIP completo y ejecuta iniciar.bat (Windows) o iniciar.sh (Linux).
-
-Importa examples/datos_para_limpiar.csv y examina las cuatro filas. La [CI de la Release oficial](https://github.com/msrobotika/AB-BI-Studio/actions/runs/39988774312) verificó en Windows y Ubuntu el hash, el manifiesto, instalación en un venv limpio, HMI y carga real de las cuatro filas. No probó el doble clic en el PC de un usuario. **Es un ZIP de fuentes con lanzadores, NO un EXE autónomo ni un clon completo de Power BI.**
-
-[Captura de informe de demostración](https://github.com/msrobotika/AB-BI-Studio/blob/main/docs/ABBI_04_oscuro.png) · [Guía de instalación](https://github.com/msrobotika/AB-BI-Studio/blob/main/docs/INSTALACION.md) · [Repositorio / ⭐ Star](https://github.com/msrobotika/AB-BI-Studio).
-
-## 4. Conjunto MS ROBOTIKA y límites
-
-AB-PLC Simulator simula la CPU; AB-Modbus Studio inspecciona registros; AB-Suite Core transporta eventos; AB-SCADA Studio supervisa; AB-BI Studio prepara y analiza datos.
-
-**Probado como recorrido entre dos productos:** PLC virtual ↔ Modbus Studio. Las pruebas de Core y SCADA/BI por separado NO demuestran todavía el recorrido conjunto PLC → SCADA → BI en una sola sesión. [AB-SCADA Studio](https://github.com/msrobotika/AB-SCADA-Studio) permanece **IN_DEVELOPMENT / EN DESARROLLO** y no debe confundirse con el módulo AB-Modbus SCADA.
-
-## 5. Apoyo y métricas sin engaños
-
-Una ⭐ ayuda cuando nace de una experiencia real. Lo más útil después de probar el software es [informar de un fallo reproducible o contribuir](../CONTRIBUTING.md). Se registran stars por repo, no seguidores falsos. Visitantes únicos, clones y referidos necesitan datos reales de GitHub Insights; no se deducen de las estrellas.
-
-English: **try a real local demo, inspect the linked test run, and star only the repository that helped you.** Reproducible issues and independent contributions are especially welcome.
+Screenshots show the running suite with laboratory data. The [validation record](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/VALIDATION.md) documents automated checks and remaining limits. Physical cameras and external hardware require separate validation; these laboratories do not certify industrial control systems.

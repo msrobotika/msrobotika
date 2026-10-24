@@ -13,20 +13,17 @@ from urllib.parse import quote
 from urllib.request import urlopen,Request
 
 OWNER="msrobotika"
-REPO_FILES={
- "AB-PLC-Simulator": [
-    "README.md","package.json","scripts/serve.mjs","examples/conveyor-with-fault.json",
-    "docs/screenshots/lab-conveyor.png"],
- "AB-Modbus-Studio": [
-    "README.md","ab_modbus/__main__.py","docs/screenshots/escritorio.png"],
- "AB-BI-Studio": [
-    "README.md","docs/INSTALACION.md","docs/ABBI_04_oscuro.png"],
- "AB-GRAFCET-Studio-v0.1-c":["AB-GRAFCET-Studio-PORTABLE.html"],
- "AB-SCL-Studio":["AB-SCL-Studio-PORTABLE.html","docs/screenshots/scl-escritorio.png"],
- "-AB-Vision-Inspector":["AB-Vision-Inspector-PORTABLE.html"],
- "AB-KOP-Studio-v0.1":["docs/screenshots/kop-escritorio.png"]
-}
-RELEASES={"AB-BI-Studio":"v0.4.0","AB-Modbus-Studio":"v0.1.0"}
+SUITE="AB-Suite-Core-arquitectura-de-integraci-n"
+BASE=f"https://github.com/{OWNER}/{SUITE}"
+TOOLS=("plc","kop","scl","grafcet","scada","modbus","serial","vision","bi")
+REPO_FILES={SUITE: [
+    "README.md", "desktop/README.md", "docs/NEW_USER_WORKFLOW.md",
+    "docs/LOCALIZATION_AND_INSTALLATION.md", "docs/VALIDATION.md",
+    "docs/SCREENSHOTS.md", "docs/WORKFLOW_PLC_MODBUS_BI.md",
+    "scripts/setup.mjs", "scripts/workspace.mjs",
+    *[f"apps/{tool}/README.md" for tool in TOOLS],
+    *[f"docs/screenshots/{image}.png" for image in ("suite","kop","vision")],
+]}
 TOKEN=os.getenv("GITHUB_TOKEN","")
 REPORT=Path("reports/PROFILE_FEATURED_LINK_QA.md")
 
@@ -62,31 +59,28 @@ def main():
             except (HTTPError,URLError,AssertionError,KeyError,ValueError) as exc:
                 errors.append((repo,path,str(exc)[:120]))
                 rows.append((repo,path,"FAIL","—"))
-    for repo,tag in RELEASES.items():
-        name=f"{repo} release {tag}"
-        try:
-            release=request(f"/repos/{OWNER}/{repo}/releases/tags/{tag}")
-            assert release.get("tag_name")==tag and release.get("assets"),"No release assets"
-            rows.append((repo,f"release/{tag}","PASS",str(len(release["assets"]))+" assets"))
-        except (HTTPError,URLError,AssertionError) as exc:
-            errors.append((repo,tag,str(exc)[:120]))
-            rows.append((repo,f"release/{tag}","FAIL","—"))
     for s in (
         "docs/FEATURED_DEMOS.md",
-        "https://github.com/msrobotika/AB-PLC-Simulator",
-        "https://github.com/msrobotika/AB-Modbus-Studio",
-        "https://github.com/msrobotika/AB-BI-Studio",
-        "https://raw.githubusercontent.com/msrobotika/AB-PLC-Simulator/main/docs/screenshots/lab-conveyor.png",
-        "https://raw.githubusercontent.com/msrobotika/AB-Modbus-Studio/main/docs/screenshots/escritorio.png",
-        "https://raw.githubusercontent.com/msrobotika/AB-BI-Studio/main/docs/ABBI_04_oscuro.png",
+        BASE+"#descargar-e-instalar",
+        *[BASE+f"/tree/main/apps/{tool}" for tool in TOOLS],
+        *[f"https://raw.githubusercontent.com/{OWNER}/{SUITE}/main/docs/screenshots/{image}.png"
+          for image in ("suite", "kop", "vision")],
     ):
         if s not in readme:errors.append(("profile",s,"Not referenced in README"))
-    if "github.io/AB-PLC-Simulator/" in readme:
-        errors.append(("profile","Pages","Unverified GitHub Pages link"))
-    if "AB-Modbus SCADA" not in details or "IN_DEVELOPMENT" not in details:
-        errors.append(("docs","safety","Must clearly separate SCADA statuses"))
-    if "scripts/serve.mjs" not in details or "python -m ab_modbus" not in details:
-        errors.append(("docs","onboarding","Missing real first-run commands"))
+    for name in ("README.md", "PROJECTS.md", "docs/FEATURED_DEMOS.md"):
+        content=Path(name).read_text(encoding="utf-8")
+        if re.search(r"PORTABLE\.html|/releases/tag/v0\.[14]\.0|github\.io/AB-PLC|127\.0\.0\.1|localhost",content):
+            errors.append((name,"entrypoint","Obsolete or non-public installation entry"))
+        if BASE not in content:
+            errors.append((name,"suite","Missing maintained suite entry"))
+        # All profile-relative Markdown links must resolve in this checkout.
+        for target in re.findall(r"\]\(([^)]+)\)",content):
+            if "://" not in target and not target.startswith("#"):
+                file=target.split("#",1)[0]
+                if not (Path(name).parent/file).is_file():
+                    errors.append((name,target,"Broken local link"))
+    if "scripts/setup.mjs" not in details or "scripts/workspace.mjs" not in details:
+        errors.append(("docs","onboarding","Missing suite source commands"))
     REPORT.parent.mkdir(exist_ok=True)
     lines=["# MS ROBOTIKA · Featured profile links QA","",
         "Checked UTC: "+datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -102,7 +96,7 @@ def main():
     print(f"Featured profile: {len(rows)} external checks, {len(errors)} errors")
     for e in errors:print("FAIL",repr(e))
     if errors:raise SystemExit(1)
-    print("PASS: release links, downloadable HTML, screenshots (PNG signature), local run docs")
+    print("PASS: suite entry, nine integrated tools, current PNG screenshots, install/source docs")
 
 if __name__=="__main__":
     main()
