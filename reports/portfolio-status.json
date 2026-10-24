@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "timestamp_utc": "2026-10-24T18:30:24+00:00",
+  "timestamp_utc": "2026-10-24T18:37:29+00:00",
   "owner": "msrobotika",
   "count": 20,
   "repositories": [
@@ -23,19 +23,19 @@
         "docs/screenshots/vision-dashboard.png",
         "docs/screenshots/vision-mobile.png"
       ],
-      "head_sha": "9e5aa07a2ac096b6bb71f81911ab7304f49add60",
+      "head_sha": "02e417e6bc8edf7a18b8cc2301ab9899504705b6",
       "workflow_evidence": [
         {
           "name": "AB-Vision Inspector · tiras y capturas reales",
-          "sha": "9e5aa07a2ac096b6bb71f81911ab7304f49add60",
+          "sha": "02e417e6bc8edf7a18b8cc2301ab9899504705b6",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/-AB-Vision-Inspector/actions/runs/40119111322",
+          "url": "https://github.com/msrobotika/-AB-Vision-Inspector/actions/runs/40121031734",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/-AB-Vision-Inspector/actions/runs/40119111322",
+      "ci_url": "https://github.com/msrobotika/-AB-Vision-Inspector/actions/runs/40121031734",
       "broken_local_readme_links": []
     },
     {
@@ -62,19 +62,19 @@
         "docs/ABBI_04_movil.png",
         "docs/ABBI_04_oscuro.png"
       ],
-      "head_sha": "2db13e8665abeeac7b483329e6ad9344adc92b63",
+      "head_sha": "9ef20490cd2b514eb8554c00ec2df1e3c3b8e138",
       "workflow_evidence": [
         {
           "name": "Tests and screenshots",
-          "sha": "2db13e8665abeeac7b483329e6ad9344adc92b63",
+          "sha": "9ef20490cd2b514eb8554c00ec2df1e3c3b8e138",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-BI-Studio/actions/runs/40119116986",
+          "url": "https://github.com/msrobotika/AB-BI-Studio/actions/runs/40121026688",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/AB-BI-Studio/actions/runs/40119116986",
+      "ci_url": "https://github.com/msrobotika/AB-BI-Studio/actions/runs/40121026688",
       "broken_local_readme_links": []
     },
     {
@@ -90,19 +90,19 @@
         ".github/workflows/ci.yml"
       ],
       "assets": [],
-      "head_sha": "c781395ee945be5a2085a20b9987a3835966d3e8",
+      "head_sha": "48f2ded1224e8a42e147e7800674611245faf584",
       "workflow_evidence": [
         {
           "name": "CI",
-          "sha": "c781395ee945be5a2085a20b9987a3835966d3e8",
+          "sha": "48f2ded1224e8a42e147e7800674611245faf584",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-GEN-Green-AI/actions/runs/39813240309",
+          "url": "https://github.com/msrobotika/AB-GEN-Green-AI/actions/runs/40121001168",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/AB-GEN-Green-AI/actions/runs/39813240309",
+      "ci_url": "https://github.com/msrobotika/AB-GEN-Green-AI/actions/runs/40121001168",
       "broken_local_readme_links": []
     },
     {
@@ -118,19 +118,19 @@
         ".github/workflows/ci.yml"
       ],
       "assets": [],
-      "head_sha": "871da234b42e51d139c6942fbe148510da8fc82c",
+      "head_sha": "5c129a038ef2c5fc5e9062d136bc115a6c6701eb",
       "workflow_evidence": [
         {
           "name": "AB-GEN Medical Demo · static integrity",
-          "sha": "871da234b42e51d139c6942fbe148510da8fc82c",
+          "sha": "5c129a038ef2c5fc5e9062d136bc115a6c6701eb",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./actions/runs/39813254506",
+          "url": "https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./actions/runs/40121004341",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./actions/runs/39813254506",
+      "ci_url": "https://github.com/msrobotika/AB-GEN-MEDICAL-DEMO./actions/runs/40121004341",
       "broken_local_readme_links": []
     },
     {
@@ -153,7 +153,7 @@
         "docs/screenshots/grafcet-movil.png",
         "docs/screenshots/grafcet-proyecto-completo.png"
       ],
-      "head_sha": "48179cef5fdda2d4f681ca24f02c3c46eed56969",
+      "head_sha": "fcdda9b1c2cb3e1d7882091ef5e3c966039a1a6e",
       "workflow_evidence": [
         {
           "name": "GRAFCET Suite adapter",
@@ -195,7 +195,7 @@
         "docs/screenshots/kop-movil.png",
         "docs/screenshots/kop-paro.png"
       ],
-      "head_sha": "d58c22c491c14242e121c089ca482ed1ce6a685d",
+      "head_sha": "296a9fa274b1555ef5c2531770ce83d2e2e39934",
       "workflow_evidence": [
         {
           "name": "AB-KOP Studio · pruebas y capturas reales",
@@ -233,14 +233,14 @@
         "docs/screenshots/scada-movil.png",
         "docs/screenshots/scada-tendencias.png"
       ],
-      "head_sha": "8b65cc2ef2469d8e97c09d7b35d484b472a36daf",
+      "head_sha": "8f97d74fc77e9ca4a09cc9d1279e4cb5f71fc4ff",
       "workflow_evidence": [
         {
           "name": "Pruebas y portables",
-          "sha": "8b65cc2ef2469d8e97c09d7b35d484b472a36daf",
+          "sha": "8f97d74fc77e9ca4a09cc9d1279e4cb5f71fc4ff",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/40119113380",
+          "url": "https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/40121029055",
           "current_head": true
         },
         {
@@ -253,7 +253,7 @@
         }
       ],
       "ci_conclusion": "historical / mixed revisions",
-      "ci_url": "https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/40119113380",
+      "ci_url": "https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/40121029055",
       "broken_local_readme_links": []
     },
     {
@@ -280,22 +280,22 @@
         "docs/screenshots/lab-tank.png",
         "docs/screenshots/program.png"
       ],
-      "head_sha": "ab8bf856001dc3549e84318dae617d8732bbd5a7",
+      "head_sha": "5e0e592253e18878b45e9fbe7803be5f28a59b4b",
       "workflow_evidence": [
         {
           "name": "Verify engine",
-          "sha": "f5b6d4798a88367dfd057875b68bedae87983af6",
+          "sha": "0d60410013097a22db97ab2cc04836ebd1fafd80",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40119104728",
+          "url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40121045652",
           "current_head": false
         },
         {
           "name": "Capture screenshots",
-          "sha": "f5b6d4798a88367dfd057875b68bedae87983af6",
+          "sha": "0d60410013097a22db97ab2cc04836ebd1fafd80",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40119104796",
+          "url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40121045635",
           "current_head": false
         },
         {
@@ -308,7 +308,7 @@
         }
       ],
       "ci_conclusion": "failure recorded",
-      "ci_url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40119104728",
+      "ci_url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40121045652",
       "broken_local_readme_links": []
     },
     {
@@ -329,27 +329,27 @@
         "docs/screenshots/scada-overview.png",
         "docs/screenshots/scada-suite-core.png"
       ],
-      "head_sha": "46563f0ad6ded6c50001ebdb8bd80aa39a50e366",
+      "head_sha": "a5f6b56be43001d18dc93bf5159bfa69cbc49704",
       "workflow_evidence": [
         {
           "name": "Verify SCADA",
-          "sha": "58adbfb84e5262f4f87ef8b5d687001ab44a9240",
+          "sha": "642853e9e7d0dd5b9deec1fa70635301febd840d",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40119110283",
+          "url": "https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40121047814",
           "current_head": false
         },
         {
           "name": "Real SCADA screenshots",
-          "sha": "58adbfb84e5262f4f87ef8b5d687001ab44a9240",
+          "sha": "642853e9e7d0dd5b9deec1fa70635301febd840d",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40119110293",
+          "url": "https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40121047823",
           "current_head": false
         }
       ],
       "ci_conclusion": "historical / mixed revisions",
-      "ci_url": "https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40119110283",
+      "ci_url": "https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40121047814",
       "broken_local_readme_links": []
     },
     {
@@ -370,7 +370,7 @@
         "docs/screenshots/scl-movil.png",
         "docs/screenshots/scl-rechazo-seguro.png"
       ],
-      "head_sha": "29a12df1742f1a2d3558c725ee44847813f93e2c",
+      "head_sha": "3e02ecf886306aecf6f00b8d2f48d72b0a47cb27",
       "workflow_evidence": [
         {
           "name": "AB-SCL Studio · tests y capturas reales",
@@ -402,19 +402,19 @@
         "docs/screenshots/serial-escritorio.png",
         "docs/screenshots/serial-movil.png"
       ],
-      "head_sha": "8f0a2cc8585a4b0324d8d39e2b8ee80fb5588475",
+      "head_sha": "f32e182f1d0a19f28533026ecdcec505d009ace9",
       "workflow_evidence": [
         {
           "name": "AB-Serial Analyzer · pruebas y capturas reales",
-          "sha": "99279f7c95ef9b5665a1bbdfb5f3f85a3512c522",
+          "sha": "6b31f5f7faa7457ffe139770412923d6da679f6d",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/40119115624",
+          "url": "https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/40121035184",
           "current_head": false
         }
       ],
       "ci_conclusion": "historical / mixed revisions",
-      "ci_url": "https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/40119115624",
+      "ci_url": "https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/40121035184",
       "broken_local_readme_links": []
     },
     {
@@ -472,27 +472,27 @@
         ".github/workflows/repository-quality.yml"
       ],
       "assets": [],
-      "head_sha": "f12cae9326af58161bc2ffb6a9b0b1068c394361",
+      "head_sha": "c12c1e8ef5dfd7a5c575e9cf07b01ece1edc7f58",
       "workflow_evidence": [
         {
-          "name": "AgroVive · source integrity",
-          "sha": "f12cae9326af58161bc2ffb6a9b0b1068c394361",
+          "name": "Calidad documental · MS ROBOTIKA",
+          "sha": "c12c1e8ef5dfd7a5c575e9cf07b01ece1edc7f58",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/39877555294",
+          "url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/40121007401",
           "current_head": true
         },
         {
-          "name": "Calidad documental · MS ROBOTIKA",
-          "sha": "f12cae9326af58161bc2ffb6a9b0b1068c394361",
+          "name": "AgroVive · source integrity",
+          "sha": "c12c1e8ef5dfd7a5c575e9cf07b01ece1edc7f58",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/39877555216",
+          "url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/40121007462",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/39877555294",
+      "ci_url": "https://github.com/msrobotika/AgroVive-M5-Dashboard/actions/runs/40121007401",
       "broken_local_readme_links": []
     },
     {
@@ -515,19 +515,19 @@
         "docs/05-Evidencias.png",
         "docs/pantallas.png"
       ],
-      "head_sha": "0c602bc80dddf06756387eefd8806d1b939ac34a",
+      "head_sha": "a50376c0a55caddd0e5164c14c6a0057befc4dcd",
       "workflow_evidence": [
         {
           "name": "Checks",
-          "sha": "0c602bc80dddf06756387eefd8806d1b939ac34a",
+          "sha": "a50376c0a55caddd0e5164c14c6a0057befc4dcd",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/MSA-BLE-Scout/actions/runs/39812074400",
+          "url": "https://github.com/msrobotika/MSA-BLE-Scout/actions/runs/40121013236",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/MSA-BLE-Scout/actions/runs/39812074400",
+      "ci_url": "https://github.com/msrobotika/MSA-BLE-Scout/actions/runs/40121013236",
       "broken_local_readme_links": []
     },
     {
@@ -546,27 +546,27 @@
       "assets": [
         "docs/screenshots/chipsafe.png"
       ],
-      "head_sha": "539933cd87e43ad978e59db725dd68d7b20b51f3",
+      "head_sha": "5a593c341d93e9f07e676371ca623a9456ebc3b7",
       "workflow_evidence": [
         {
           "name": "ChipSafe · Python host checks",
-          "sha": "539933cd87e43ad978e59db725dd68d7b20b51f3",
+          "sha": "5a593c341d93e9f07e676371ca623a9456ebc3b7",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39877739563",
+          "url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/40121100944",
           "current_head": true
         },
         {
           "name": "Calidad documental · MS ROBOTIKA",
-          "sha": "539933cd87e43ad978e59db725dd68d7b20b51f3",
+          "sha": "5a593c341d93e9f07e676371ca623a9456ebc3b7",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39877739541",
+          "url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/40121100992",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/39877739563",
+      "ci_url": "https://github.com/msrobotika/MSA-ChipSafe/actions/runs/40121100944",
       "broken_local_readme_links": []
     },
     {
@@ -587,19 +587,19 @@
         "docs/screenshots/ciberdeck-network-037.png",
         "docs/screenshots/cyberdeck-dashboard.png"
       ],
-      "head_sha": "ebcf93e356cae922155150e7304295ec887b924d",
+      "head_sha": "d737f6bae4b0e5fd733681afa95a82ee0f3bee76",
       "workflow_evidence": [
         {
           "name": "CyberDeck · Android source integrity",
-          "sha": "ebcf93e356cae922155150e7304295ec887b924d",
+          "sha": "d737f6bae4b0e5fd733681afa95a82ee0f3bee76",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/MSA-CyberDeck/actions/runs/39877744556",
+          "url": "https://github.com/msrobotika/MSA-CyberDeck/actions/runs/40121024629",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/MSA-CyberDeck/actions/runs/39877744556",
+      "ci_url": "https://github.com/msrobotika/MSA-CyberDeck/actions/runs/40121024629",
       "broken_local_readme_links": []
     },
     {
@@ -626,19 +626,19 @@
         "ui/captures/radar.png",
         "ui/captures/radar.svg"
       ],
-      "head_sha": "73e213a9182cc42c25e8a960796074808b7b97d4",
+      "head_sha": "8de649278027b08be4e7b4d11bbc630275ab05c6",
       "workflow_evidence": [
         {
           "name": "RogueWatch · clean-source integrity",
-          "sha": "73e213a9182cc42c25e8a960796074808b7b97d4",
+          "sha": "8de649278027b08be4e7b4d11bbc630275ab05c6",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/MSA-RogueWatch/actions/runs/39813265871",
+          "url": "https://github.com/msrobotika/MSA-RogueWatch/actions/runs/40121021515",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/MSA-RogueWatch/actions/runs/39813265871",
+      "ci_url": "https://github.com/msrobotika/MSA-RogueWatch/actions/runs/40121021515",
       "broken_local_readme_links": []
     },
     {
@@ -661,19 +661,19 @@
         "docs/screenshots/networks.png",
         "docs/screenshots/spectrum.png"
       ],
-      "head_sha": "d0928ee191fb25f689fdde9706b7f244a4aed8ca",
+      "head_sha": "7e255fe8cf0da9c5b047e447406653931de23875",
       "workflow_evidence": [
         {
           "name": "CI",
-          "sha": "d0928ee191fb25f689fdde9706b7f244a4aed8ca",
+          "sha": "7e255fe8cf0da9c5b047e447406653931de23875",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/39812066234",
+          "url": "https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/40121016175",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/39812066234",
+      "ci_url": "https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/40121016175",
       "broken_local_readme_links": []
     },
     {
@@ -691,27 +691,27 @@
         ".github/workflows/profile-featured-links.yml"
       ],
       "assets": [],
-      "head_sha": "040e1cb8ff3b71e2f92922f533336c8b6b6e3229",
+      "head_sha": "135e7e62ccbf7c1d17c76dad0a93d410e025ce6b",
       "workflow_evidence": [
         {
           "name": "Auditoría del portafolio MS ROBOTIKA",
-          "sha": "040e1cb8ff3b71e2f92922f533336c8b6b6e3229",
+          "sha": "135e7e62ccbf7c1d17c76dad0a93d410e025ce6b",
           "status": "in_progress",
           "conclusion": null,
-          "url": "https://github.com/msrobotika/msrobotika/actions/runs/40120953067",
+          "url": "https://github.com/msrobotika/msrobotika/actions/runs/40121512406",
           "current_head": true
         },
         {
           "name": "Featured profile links QA",
-          "sha": "9d1466a936b4be42f43a22b7bf10a909f6c6bccd",
+          "sha": "135e7e62ccbf7c1d17c76dad0a93d410e025ce6b",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/msrobotika/actions/runs/40120286437",
-          "current_head": false
+          "url": "https://github.com/msrobotika/msrobotika/actions/runs/40121512374",
+          "current_head": true
         }
       ],
       "ci_conclusion": "in progress",
-      "ci_url": "https://github.com/msrobotika/msrobotika/actions/runs/40120953067",
+      "ci_url": "https://github.com/msrobotika/msrobotika/actions/runs/40121512406",
       "broken_local_readme_links": []
     },
     {
@@ -728,27 +728,27 @@
         ".github/workflows/repository-quality.yml"
       ],
       "assets": [],
-      "head_sha": "36ba35218177c123afa964e61bea88c40de86883",
+      "head_sha": "6f159bffdc8c87ba072fc6b36fe6708b541f24cc",
       "workflow_evidence": [
         {
           "name": "Offscreen · pure ranking regression",
-          "sha": "36ba35218177c123afa964e61bea88c40de86883",
+          "sha": "6f159bffdc8c87ba072fc6b36fe6708b541f24cc",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/Offscreen/actions/runs/39877732427",
+          "url": "https://github.com/msrobotika/Offscreen/actions/runs/40121010414",
           "current_head": true
         },
         {
           "name": "Calidad documental · MS ROBOTIKA",
-          "sha": "36ba35218177c123afa964e61bea88c40de86883",
+          "sha": "6f159bffdc8c87ba072fc6b36fe6708b541f24cc",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/msrobotika/Offscreen/actions/runs/39877732414",
+          "url": "https://github.com/msrobotika/Offscreen/actions/runs/40121010423",
           "current_head": true
         }
       ],
       "ci_conclusion": "success at current HEAD",
-      "ci_url": "https://github.com/msrobotika/Offscreen/actions/runs/39877732427",
+      "ci_url": "https://github.com/msrobotika/Offscreen/actions/runs/40121010414",
       "broken_local_readme_links": []
     }
   ],
