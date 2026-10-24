@@ -1,6 +1,6 @@
 # MS ROBOTIKA - Informe técnico automatizado
 
-Generado: 2026-10-24T18:37:29+00:00 (UTC). GitHub API / rama predeterminada.
+Generado: 2026-10-24T18:39:01+00:00 (UTC). GitHub API / rama predeterminada.
 
 Repositorios públicos analizados: 20
 
@@ -13,7 +13,7 @@ Repositorios públicos analizados: 20
 | [AB-GRAFCET-Studio-v0.1-c](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c) | Archivo | [historical / mixed revisions](https://github.com/msrobotika/AB-GRAFCET-Studio-v0.1-c/actions/runs/39927207200) | 5 | 0 |
 | [AB-KOP-Studio-v0.1](https://github.com/msrobotika/AB-KOP-Studio-v0.1) | Archivo | [historical / mixed revisions](https://github.com/msrobotika/AB-KOP-Studio-v0.1/actions/runs/39784636094) | 5 | 0 |
 | [AB-Modbus-Studio](https://github.com/msrobotika/AB-Modbus-Studio) | Archivo | [historical / mixed revisions](https://github.com/msrobotika/AB-Modbus-Studio/actions/runs/40121029055) | 6 | 0 |
-| [AB-PLC-Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | Archivo | [failure recorded](https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40121045652) | 8 | 0 |
+| [AB-PLC-Simulator](https://github.com/msrobotika/AB-PLC-Simulator) | Archivo | [failure recorded](https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40119104556) | 8 | 0 |
 | [AB-SCADA-Studio](https://github.com/msrobotika/AB-SCADA-Studio) | Archivo | [historical / mixed revisions](https://github.com/msrobotika/AB-SCADA-Studio/actions/runs/40121047814) | 3 | 0 |
 | [AB-SCL-Studio](https://github.com/msrobotika/AB-SCL-Studio) | Archivo | [historical / mixed revisions](https://github.com/msrobotika/AB-SCL-Studio/actions/runs/39814813857) | 4 | 0 |
 | [AB-Serial-Analyzer-v0.1-](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-) | Archivo | [historical / mixed revisions](https://github.com/msrobotika/AB-Serial-Analyzer-v0.1-/actions/runs/40121035184) | 3 | 0 |
@@ -24,7 +24,7 @@ Repositorios públicos analizados: 20
 | [MSA-CyberDeck](https://github.com/msrobotika/MSA-CyberDeck) | Archivo | [success at current HEAD](https://github.com/msrobotika/MSA-CyberDeck/actions/runs/40121024629) | 4 | 0 |
 | [MSA-RogueWatch](https://github.com/msrobotika/MSA-RogueWatch) | Archivo | [success at current HEAD](https://github.com/msrobotika/MSA-RogueWatch/actions/runs/40121021515) | 10 | 0 |
 | [MSA-WiFi-Sentinel](https://github.com/msrobotika/MSA-WiFi-Sentinel) | Archivo | [success at current HEAD](https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/40121016175) | 6 | 0 |
-| [msrobotika](https://github.com/msrobotika/msrobotika) | No consta | [in progress](https://github.com/msrobotika/msrobotika/actions/runs/40121512406) | 0 | 0 |
+| [msrobotika](https://github.com/msrobotika/msrobotika) | No consta | [in progress](https://github.com/msrobotika/msrobotika/actions/runs/40121607407) | 0 | 0 |
 | [Offscreen](https://github.com/msrobotika/Offscreen) | Archivo | [success at current HEAD](https://github.com/msrobotika/Offscreen/actions/runs/40121010414) | 0 | 0 |
 
 ## Incidencias documentales
@@ -62,8 +62,8 @@ Una ejecución antigua correcta no acredita el HEAD actual. Un fallo se conserva
 | MSA-CyberDeck | [CyberDeck · Android source integrity](https://github.com/msrobotika/MSA-CyberDeck/actions/runs/40121024629) | success | `d737f6bae4b0` | Sí |
 | MSA-RogueWatch | [RogueWatch · clean-source integrity](https://github.com/msrobotika/MSA-RogueWatch/actions/runs/40121021515) | success | `8de649278027` | Sí |
 | MSA-WiFi-Sentinel | [CI](https://github.com/msrobotika/MSA-WiFi-Sentinel/actions/runs/40121016175) | success | `7e255fe8cf0d` | Sí |
-| msrobotika | [Auditoría del portafolio MS ROBOTIKA](https://github.com/msrobotika/msrobotika/actions/runs/40121512406) | in_progress | `135e7e62ccbf` | Sí |
-| msrobotika | [Featured profile links QA](https://github.com/msrobotika/msrobotika/actions/runs/40121512374) | success | `135e7e62ccbf` | Sí |
+| msrobotika | [Auditoría del portafolio MS ROBOTIKA](https://github.com/msrobotika/msrobotika/actions/runs/40121607407) | in_progress | `a7d5e5130741` | Sí |
+| msrobotika | [Featured profile links QA](https://github.com/msrobotika/msrobotika/actions/runs/40121512374) | success | `135e7e62ccbf` | No |
 | Offscreen | [Offscreen · pure ranking regression](https://github.com/msrobotika/Offscreen/actions/runs/40121010414) | success | `6f159bffdc8c` | Sí |
 | Offscreen | [Calidad documental · MS ROBOTIKA](https://github.com/msrobotika/Offscreen/actions/runs/40121010423) | success | `6f159bffdc8c` | Sí |
 

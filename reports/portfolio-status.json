@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "timestamp_utc": "2026-10-24T18:37:29+00:00",
+  "timestamp_utc": "2026-10-24T18:39:01+00:00",
   "owner": "msrobotika",
   "count": 20,
   "repositories": [
@@ -308,7 +308,7 @@
         }
       ],
       "ci_conclusion": "failure recorded",
-      "ci_url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40121045652",
+      "ci_url": "https://github.com/msrobotika/AB-PLC-Simulator/actions/runs/40119104556",
       "broken_local_readme_links": []
     },
     {
@@ -691,14 +691,14 @@
         ".github/workflows/profile-featured-links.yml"
       ],
       "assets": [],
-      "head_sha": "135e7e62ccbf7c1d17c76dad0a93d410e025ce6b",
+      "head_sha": "a7d5e5130741fbeac297e037f18c319ed5200c5b",
       "workflow_evidence": [
         {
           "name": "Auditoría del portafolio MS ROBOTIKA",
-          "sha": "135e7e62ccbf7c1d17c76dad0a93d410e025ce6b",
+          "sha": "a7d5e5130741fbeac297e037f18c319ed5200c5b",
           "status": "in_progress",
           "conclusion": null,
-          "url": "https://github.com/msrobotika/msrobotika/actions/runs/40121512406",
+          "url": "https://github.com/msrobotika/msrobotika/actions/runs/40121607407",
           "current_head": true
         },
         {
@@ -707,11 +707,11 @@
           "status": "completed",
           "conclusion": "success",
           "url": "https://github.com/msrobotika/msrobotika/actions/runs/40121512374",
-          "current_head": true
+          "current_head": false
         }
       ],
       "ci_conclusion": "in progress",
-      "ci_url": "https://github.com/msrobotika/msrobotika/actions/runs/40121512406",
+      "ci_url": "https://github.com/msrobotika/msrobotika/actions/runs/40121607407",
       "broken_local_readme_links": []
     },
     {
