@@ -2,6 +2,8 @@
 
 Revisión / Reviewed: 24/10/2026.
 
+[Revisión de los 20 repositorios / Portfolio review](docs/PORTFOLIO_REVIEW.md) · [Identidad común / Visual identity](docs/PORTFOLIO_IDENTITY.md) · [Inventario automático / Automated inventory](reports/portfolio-status.md)
+
 ## AB Suite
 
 El producto mantenido reúne las nueve herramientas en [un único repositorio](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n), con lanzador, distribución e instrucciones comunes. / The maintained product brings all nine tools into one repository with a shared launcher, distribution and instructions.

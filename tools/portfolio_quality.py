@@ -111,7 +111,7 @@ def markdown(report):
     lines = ["# MS ROBOTIKA - Informe técnico automatizado", "",
              "Generado: " + report["timestamp_utc"] + " (UTC). GitHub API / rama predeterminada.",
              "", "Repositorios públicos analizados: " + str(report["count"]),
-             "", "| Repositorio | Licencia | Última CI completada | Recursos visuales | Enlaces locales rotos |",
+             "", "| Repositorio | Licencia | Evidencia de CI por revisión | Recursos visuales | Enlaces locales rotos |",
              "|---|---|---|---:|---:|"]
     for r in report["repositories"]:
         ci = r["ci_conclusion"]

@@ -86,4 +86,6 @@ Estas herramientas están destinadas a equipos propios o autorizados; las alerta
 
 [Catálogo y mantenimiento / Catalogue](PROJECTS.md) · [Contribuir / Contribute](CONTRIBUTING.md) · [Seguridad / Security](SECURITY.md) · [Estándar de repositorios / Repository standard](docs/REPO_STANDARD.md)
 
+[Revisión de los 20 repositorios / Portfolio review](docs/PORTFOLIO_REVIEW.md) · [Identidad MS ROBOTIKA / Visual identity](docs/PORTFOLIO_IDENTITY.md)
+
 <sub>MS ROBOTIKA · Perfil revisado el 24 de octubre de 2026 / Profile reviewed 24 October 2026.</sub>

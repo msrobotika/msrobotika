@@ -29,7 +29,7 @@ Aplicable al código actual y a las futuras publicaciones. Se distingue entre **
 4. Nota de compatibilidad, limitaciones y permisos de uso.
 5. Registro de cambios y comprobación de enlaces del README.
 
-Revisión inicial del portafolio: **2026-10-22**. Esto es una política de calidad, no una certificación universal de los 16 proyectos.
+Revisión inicial del portafolio: **2026-10-22**. [Revisión actual de los 20 repositorios públicos](PORTFOLIO_REVIEW.md) · [Identidad visual y editorial](PORTFOLIO_IDENTITY.md). Esta política no certifica el funcionamiento de todos los proyectos.
 
 
 ## Control periódico automatizado

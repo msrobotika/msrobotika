@@ -1,6 +1,6 @@
 # MS ROBOTIKA · Featured profile links QA
 
-Checked UTC: 2026-10-24T18:20:37+00:00
+Checked UTC: 2026-10-24T18:35:58+00:00
 Source: GitHub REST v2022-11-28, current branch plus public main files.
 Only link/existence/PNG-format QA; no hardware or full-browser smoke.
 
