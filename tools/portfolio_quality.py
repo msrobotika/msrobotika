@@ -71,8 +71,28 @@ def inspect(repo):
     workflows = sorted(x for x in files if x.startswith(".github/workflows/") and x.endswith((".yml", ".yaml")))
     media = sorted(x for x in files if IMG.search(x) and
                    ("/screenshots/" in x or "/captures/" in x or x.startswith("docs/")))
-    runs = get(location + "/actions/runs?per_page=6").get("workflow_runs", [])
-    latest = next((x for x in runs if x.get("status") == "completed"), None)
+    head = get(location + "/commits/" + branch)["sha"]
+    runs = get(location + "/actions/runs?per_page=100&branch=" + branch).get("workflow_runs", [])
+    # One successful job must not hide a failed workflow, or imply that an old
+    # run tested the current source revision. Keep each latest workflow visible.
+    latest_by_workflow = {}
+    for run in runs:
+        latest_by_workflow.setdefault(run["workflow_id"], run)
+    evidence = [{"name": r["name"], "sha": r["head_sha"],
+                 "status": r["status"], "conclusion": r.get("conclusion"),
+                 "url": r["html_url"], "current_head": r["head_sha"] == head}
+                for r in latest_by_workflow.values()]
+    if any(x["conclusion"] in ("failure", "timed_out", "action_required") for x in evidence):
+        conclusion = "failure recorded"
+    elif any(x["status"] != "completed" for x in evidence):
+        conclusion = "in progress"
+    elif evidence and all(x["current_head"] and x["conclusion"] == "success" for x in evidence):
+        conclusion = "success at current HEAD"
+    elif evidence:
+        conclusion = "historical / mixed revisions"
+    else:
+        conclusion = "not-verified"
+    latest = runs[0] if runs else None
     return {
         "repository": name, "url": repo["html_url"], "branch": repo["default_branch"],
         "readme": bool(readme),
@@ -81,7 +101,8 @@ def inspect(repo):
         "project_status": "docs/PROJECT_STATUS.md" in files,
         "contributing": "CONTRIBUTING.md" in files,
         "workflows": workflows, "assets": media,
-        "ci_conclusion": latest.get("conclusion", "unknown") if latest else "not-verified",
+        "head_sha": head, "workflow_evidence": evidence,
+        "ci_conclusion": conclusion,
         "ci_url": latest.get("html_url") if latest else None,
         "broken_local_readme_links": broken,
     }
@@ -111,6 +132,13 @@ def markdown(report):
         if not r["workflows"] and r["repository"] != OWNER:
             issues.append("- " + r["repository"] + ": no se encontró workflow de pruebas en main.")
     lines.extend(issues or ["No se detectaron incidencias en estas comprobaciones básicas."])
+    lines += ["", "## Evidencia por workflow", "",
+              "Una ejecución antigua correcta no acredita el HEAD actual. Un fallo se conserva aunque otro workflow haya pasado.", "",
+              "| Repositorio | Workflow | Resultado | Revisión | HEAD actual |",
+              "|---|---|---|---|---|"]
+    for r in report["repositories"]:
+        for w in r.get("workflow_evidence", []):
+            lines.append(f"| {r['repository']} | [{w['name']}]({w['url']}) | {w['conclusion'] or w['status']} | `{w['sha'][:12]}` | {'Sí' if w['current_head'] else 'No'} |")
     lines += ["", "## Límites del informe", "",
               "- La existencia de una CI, licencia o imagen no demuestra funcionamiento, derechos de terceros ni seguridad.",
               "- Las referencias locales del README se comprueban mediante expresiones Markdown/HTML simples.",

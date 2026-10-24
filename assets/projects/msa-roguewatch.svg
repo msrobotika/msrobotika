@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="236" viewBox="0 0 1200 236" role="img" aria-labelledby="title desc">
+<title id="title">MS ROBOTIKA · RogueWatch</title><desc id="desc">DEVICE LAB / LABORATORIO · Interface prototype · Network fingerprints</desc>
+<rect width="1200" height="236" rx="18" fill="#111820"/>
+<path d="M0 212H1200M958 0V236M1022 0V236M1086 0V236M1150 0V236" stroke="#26323e" stroke-width="1"/>
+<path d="M978 156h50V80h50v76h50v-42h50" fill="none" stroke="#65daca" stroke-width="3" opacity=".55"/>
+<circle cx="978" cy="156" r="5" fill="#65daca"/><circle cx="1178" cy="114" r="5" fill="#65daca"/>
+<path d="M35 35h8v23h23v8H35zM79 35h8v31H56v-8h23z" fill="#65daca"/>
+<g font-family="Segoe UI,Arial,sans-serif"><text x="104" y="56" fill="#d6dee8" font-size="18" font-weight="600" letter-spacing="3">MS ROBOTIKA</text>
+<text x="36" y="118" fill="#f4f7fb" font-size="43" font-weight="650">RogueWatch</text>
+<text x="38" y="156" fill="#bac7d5" font-size="20">Interface prototype · Network fingerprints</text>
+<text x="38" y="196" fill="#65daca" font-size="12" font-weight="600" letter-spacing="2">DEVICE LAB / LABORATORIO</text></g></svg>
