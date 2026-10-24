@@ -93,6 +93,9 @@ def inspect(repo):
     else:
         conclusion = "not-verified"
     latest = runs[0] if runs else None
+    summary_url = next((x["url"] for x in evidence
+                        if x["conclusion"] in ("failure", "timed_out", "action_required")),
+                       latest["html_url"] if latest else None)
     return {
         "repository": name, "url": repo["html_url"], "branch": repo["default_branch"],
         "readme": bool(readme),
@@ -103,7 +106,7 @@ def inspect(repo):
         "workflows": workflows, "assets": media,
         "head_sha": head, "workflow_evidence": evidence,
         "ci_conclusion": conclusion,
-        "ci_url": latest.get("html_url") if latest else None,
+        "ci_url": summary_url,
         "broken_local_readme_links": broken,
     }
 
