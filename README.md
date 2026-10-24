@@ -1,8 +1,10 @@
 # MS ROBOTIKA · AB Suite
 
-**Tu espacio para practicar programación y automatización.**
+**Aprende haciendo. Programa, simula y crea tus propios proyectos.**
 
-**Your workspace for programming and automation practice.**
+**Learn by doing. Program, simulate and build your own projects.**
+
+**AB Suite · Primera fase beta / First beta phase · Open source · ES/EN**
 
 Nueve herramientas, un lanzador y una instalación. Elige las que necesites y crea tus propios proyectos.
 
@@ -11,6 +13,10 @@ Nine tools, one launcher, one installation. Choose the tools you need and build 
 **[Descargar e instalar / Download & install](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n#descargar-e-instalar)** · [Ver las nueve herramientas / Explore the suite](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n) · [Guía / First project](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/NEW_USER_WORKFLOW.md)
 
 [![AB Suite: lanzador actual con sus nueve herramientas / Current launcher with all nine tools](https://raw.githubusercontent.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/main/docs/screenshots/suite.png)](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n)
+
+Un proyecto propio de **MS ROBOTIKA** para quienes quieren aprender y experimentar con lógica, automatización, comunicaciones, visión y datos. **Empieza desde cero, elige tus herramientas y practica a tu ritmo.**
+
+An original **MS ROBOTIKA** project for learning and experimenting with logic, automation, communications, vision and data. **Start from scratch, choose your tools and practise at your own pace.**
 
 ## Una suite, tu forma de trabajar · One suite, your workflow
 
@@ -30,6 +36,20 @@ Every application opens from the same catalogue. Use one tool or combine several
 | [Vision Inspector](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/vision) | Inspeccionar imágenes y capturas de cámara · Inspect images and camera captures |
 | [AB BI](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/tree/main/apps/bi) | Importar datos y crear análisis propios · Import data and build your own analysis |
 
+## Primera fase beta: estamos construyéndola contigo · First beta: built with your feedback
+
+**Esta es la primera fase de AB Suite.** Las nueve herramientas ya forman parte del mismo entorno, pero tienen distintos grados de madurez. Aún encontrarás limitaciones, funciones por pulir y errores que corregir.
+
+Trabajamos en ellas día a día: iremos mejorando la facilidad de uso, los editores, la fiabilidad, las conexiones y las prácticas guiadas. Las mejoras llegarán de forma progresiva, con cambios y comprobaciones documentados. Cada herramienta evolucionará a su ritmo, priorizando los problemas reales y las necesidades de quienes la utilizan.
+
+**This is AB Suite's first beta phase.** All nine tools share one environment, with different levels of maturity. Expect limitations, rough edges and bugs. We are working on usability, editors, reliability, connections and guided practice, with gradual, documented improvements. Each tool will evolve at its own pace, guided by real issues and user needs.
+
+**Tu experiencia puede orientar la próxima mejora.** Cuéntanos qué intentabas hacer, los pasos, el resultado esperado y qué ocurrió. / **Your experience can shape the next improvement.** Tell us your goal, steps, expected result and what happened.
+
+[Informar de un fallo o proponer una mejora / Report a bug or suggest an improvement](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/issues) · [Ver avances / Follow progress](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/CHANGELOG.md) · [Contribuir / Contribute](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/CONTRIBUTING.md)
+
+Si te interesa el proyecto, puedes **dejar una estrella en AB Suite** para encontrarlo de nuevo o usar **Watch** en su repositorio para elegir qué novedades seguir. / If the project interests you, **star AB Suite** to find it again, or use **Watch** in its repository to choose which updates to follow.
+
 ## Instalar y empezar · Install and start
 
 1. **Windows:** [descarga la distribución de revisión](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n#descargar-e-instalar), extrae el ZIP y elige **Setup.exe** o **Portable.zip**. Incluye los motores. GitHub requiere iniciar sesión para descargar el artefacto. / Download the review distribution, extract it and choose Setup or Portable. Runtimes are included; artifact download requires GitHub sign-in.
@@ -48,9 +68,9 @@ La instalación desde fuentes requiere Node.js 20+ y Python 3.11+. / Running fro
 
 [Galería actual de las nueve aplicaciones / Current nine-tool gallery](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/SCREENSHOTS.md) · [Primer recorrido / First-run guide](docs/FEATURED_DEMOS.md)
 
-**Estado / Status:** versión de revisión **0.6.1**, español e inglés, código de la suite bajo MIT. Instalador Windows sin firma digital; aún no hay versión pública estable. Las capturas proceden de la aplicación ejecutada con datos de laboratorio. [Pruebas y límites / Validation and limits](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/VALIDATION.md).
+**Estado / Status:** primera fase **beta**, distribución de revisión **0.6.1**, español e inglés, código de la suite bajo MIT. Instalador Windows sin firma digital; aún no hay versión pública estable. Las capturas proceden de la aplicación ejecutada con datos de laboratorio. [Pruebas y límites / Validation and limits](https://github.com/msrobotika/AB-Suite-Core-arquitectura-de-integraci-n/blob/main/docs/VALIDATION.md).
 
-Review version **0.6.1**, Spanish and English, MIT suite source. Windows installer is unsigned; a stable public release is still pending. Screenshots show the running application with laboratory data. Physical hardware validation remains separate.
+First **beta** phase, review distribution **0.6.1**, Spanish and English, MIT suite source. Windows installer is unsigned; a stable public release is still pending. Screenshots show the running application with laboratory data. Physical hardware validation remains separate.
 
 ## Otros proyectos · Other projects
 
